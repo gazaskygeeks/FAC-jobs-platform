@@ -7,7 +7,7 @@ CREATE TABLE "users_table" (
 	"id" SERIAL PRIMARY KEY,
 	"username" TEXT NOT NULL,
 	"role" TEXT NOT NULL,
-	"reg_date" DATE NOT NULL
+	"reg_date" DATE timestamp with time zone NOT NULL DEFAULT (current_timestamp AT TIME ZONE 'UTC')
 );
 
 
@@ -19,7 +19,7 @@ CREATE TABLE "users_info" (
 	"interests" VARCHAR NOT NULL,
 	"skills" TEXT[] NOT NULL,
 	"cv" TEXT NOT NULL,
-	"login_date" DATE NOT NULL,
+	"login_date" DATE timestamp with time zone NOT NULL DEFAULT (current_timestamp AT TIME ZONE 'UTC'),
 	"status" TEXT NOT NULL,
 	"social_links" TEXT[] NOT NULL,
 	"portfolio" TEXT NOT NULL,
