@@ -17,13 +17,13 @@ CREATE TABLE "users_info" (
 	"campus" TEXT NOT NULL,
 	"cohort" TEXT NOT NULL,
 	"interests" VARCHAR NOT NULL,
-	"skills" TEXT NOT NULL,
+	"skills" TEXT[] NOT NULL,
 	"cv" TEXT NOT NULL,
 	"login_date" DATE NOT NULL,
 	"status" TEXT NOT NULL,
-	"social_links" TEXT NOT NULL,
+	"social_links" TEXT[] NOT NULL,
 	"portfolio" TEXT NOT NULL,
-	"projects" TEXT NOT NULL
+	"projects" TEXT[] NOT NULL
 );
 
 
