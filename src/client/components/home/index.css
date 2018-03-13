@@ -52,6 +52,16 @@
     padding: 10px;
 }
 .home__btn:hover{
-  color: #009C9B;
+  color: #ffffff;
   cursor: pointer;
+  border: 1px solid #4cb5ab;
+  background-color: #4cb5ab61;
+  transition: background-color 2s ease-out;
+}
+
+@media only screen and (max-width: 568px) {
+    .home__container{
+      margin-top: 15%;
+      height: 48%;
+    }
 }
