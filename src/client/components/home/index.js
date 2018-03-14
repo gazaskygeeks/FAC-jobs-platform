@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import './index.css';
 
 class Home extends Component {
+  constructor() {
+    //there is code here;
+  };
   render() {
     return (
       <div className='home'>
