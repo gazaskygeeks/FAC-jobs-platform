@@ -5,6 +5,7 @@ import './index.css';
 class Home extends Component {
   constructor() {
     //there is code here;
+    super();
   };
   render() {
     return (
