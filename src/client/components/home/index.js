@@ -12,7 +12,7 @@ class Home extends Component {
         </div>
         <div className='home__container'>
           <div className='home__subContainer'>
-            <img className='home__img' src='./assets/logo-facapt.png' />
+            <img className='home__img' src='./assets/logo-facapt3.png' />
             <div className='home__text'>Founders & Coders sustainable opportunity-based Community</div>
           </div>
           <input className='home__btn' type='submit' value='Sign in with GitHub' />
