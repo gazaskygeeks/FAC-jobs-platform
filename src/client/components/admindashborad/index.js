@@ -1,41 +1,29 @@
 import React, { Component } from 'react';
 
-import './index.css';
+import Students from './students';
+import Filter from './filter';
 
-class Admindashborad extends Component {
+import './style.css';
+
+class Admindashboard extends Component {
   render() {
     return (
-      <div className='admindashborad'>
-        <div className='admindashborad__container'>
-          <div className='admindashborad__allstudents'>
-            <div className='student'>
-              <img className='student__img' src='./assets/student.png' />
-              <div className='student__info'>
-                <div className='student__name'>Walaa M.</div>
-                <div className='student__job'>Full Stack Developer</div>
-                <div className='student__skills'><span className='student__span'>Skills: </span>
-                Node.js, HTML5, CSS3
-                </div>
-                <div className='student__campus'><span className='student__span'>Campus: </span>
-                FACG3
-                </div>
-                <div className='student__interest'><span className='student__span'>Interest: </span>
-                Freelancing
-                </div>
-              </div>
-              <div className='student__status'>
-                <div className='student__circle'></div>
-                <input className='student__view' type='submit'/>
-              </div>
-            </div>
+      <div className='admindashboard'>
+        <div className='testNav'></div>
+        <div className='admindashboard__container'>
+          <div className='admindashboard__students'>
+            <Students />
+            <Students />
+            <Students />
           </div>
-          <div className='admindashborad__filter'>
-
+          <div className='admindashboard__filter'>
+            <Filter />
           </div>
         </div>
+        <div className='testNav'></div>
       </div>
     );
   }
 }
 
-export default Admindashborad;
+export default Admindashboard;
