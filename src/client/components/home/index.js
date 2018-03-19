@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../../../routes/authRoutes';
 
 import './index.css';
 
@@ -21,8 +20,7 @@ class Home extends Component {
             <div className='home__text'>Founders & Coders
               sustainable opportunity-based Community</div>
           </div>
-          <a className='home__btn' href="/auth/github">Sign in with</a>
-          // <input className='home__btn' href="/auth/github" type='submit' value='Sign in with' />
+          <a className='home__btn' href="auth/github">Sign in with</a>
         </div>
       </div>
     );

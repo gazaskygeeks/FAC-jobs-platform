@@ -7,7 +7,7 @@ router.get('/auth/github',
       {scope: ['email']})
 );
 
-router.get('/auth/gitgub/callback',
+router.get('/auth/github/callback',
       passport.authenticate('github'),
       (req,res)=>{
         res.redirect('/')

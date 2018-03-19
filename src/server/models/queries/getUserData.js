@@ -6,15 +6,14 @@ getUser.github_id = (github_id, callback) => {
   const sqlQuery = `
     SELECT *
       FROM users_table
-      WHERE github_id = '${github_id}'
+      WHERE github_id ='${github_id}'
   `;
-
   connect.query(sqlQuery, (err, response) => {
     if (err) {
+      console.log('err', err);
       return callback(new Error('Database error while fetching user'));
     }
-
-    callback(null, response.rows[0]);
+    callback(null, response.rows[0] ? response.rows[0] : [] );
   });
 };
 
