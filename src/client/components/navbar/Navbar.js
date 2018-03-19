@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Search from '../search/Search';
 
 import './navbar.css';
 
@@ -10,7 +9,6 @@ class Navbar extends Component {
         <div className='logo'>
           <img src='/assets/logo.png' className='logo' alt='star' />
         </div>
-        <Search />
         <div>
           <i className='far fa-bell bell'></i>
           <div className='dropdown'>

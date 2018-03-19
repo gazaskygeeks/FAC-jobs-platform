@@ -1,4 +1,13 @@
+.studenProfileStyle {
+  background-color: #E5E5E5;
+}
+
+
 .wholeStudentContainers {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
   background-color: #E5E5E5;
 }
 
@@ -50,7 +59,6 @@
 }
 
 .studentState {
-position: absolute;
 width: 190px;
 height: 39px;
 left: 967px;
@@ -66,7 +74,6 @@ border-radius: 5px;
   line-height: normal;
   font-size: 18px;
   border-radius: 10px;
-  position: absolute;
   width: 190px;
   height: 45px;
   left: 967px;
@@ -79,7 +86,6 @@ border-radius: 5px;
 }
 
 .studentPurpose {
-position: absolute;
 width: 190px;
 height: 54px;
 left: 968px;
@@ -110,8 +116,10 @@ border-radius: 5px;
 
 .studentContactInfo {
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
 }
+
 .studentSkills {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -123,8 +131,7 @@ border-radius: 5px;
   background-color: #F0F0F0;
   -webkit-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
   -moz-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
-  box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
-}
+ }
 
 .addbtn {
   font-size: 32px;
@@ -149,8 +156,7 @@ border-radius: 5px;
   padding: 0;
   -webkit-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
   -moz-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
-  box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
-}
+ }
 
 .studentSingleSkills {
   display: flex;
@@ -160,4 +166,11 @@ border-radius: 5px;
   height: 39px;
   background: #F0F0F0;
   border-radius: 455.5px;
+}
+
+@media (max-width: 786px) {
+  .wholeStudentContainers {
+    font-size: 15px;
+    width: 900px;
+  }
 }
