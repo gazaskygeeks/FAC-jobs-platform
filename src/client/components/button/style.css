@@ -1,0 +1,81 @@
+.btn {
+  position: absolute;
+  bottom: -113px;
+  left: 423px;
+  height: 10px;
+}
+
+.next__btn {
+  position: fixed;
+  top: 101%;
+  right: -42%;
+  width: 130px;
+  height: 43px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn__next {
+  color: black;
+  font-size: 36px;
+  font-family: Lato;
+}
+
+.btn__next:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn__next:hover+#fa-angle-right {
+  color: #fff;
+}
+
+.next__btn__q {
+  color: black;
+  font-size: 59px;
+  font-weight: bold;
+}
+
+.previous__btn {
+  position: fixed;
+  top: 101%;
+  right: 98%;
+  width: 187px;
+  height: 43px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn__previous {
+  color: black;
+  font-size: 36px;
+  font-family: Lato;
+}
+
+.btn__previous:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn__previous:hover+#fa-angle-left {
+  color: #fff;
+}
+
+.previous__btn__q {
+  color: black;
+  font-size: 59px;
+  font-weight: bold;
+}
+
+.go_profile {
+    position: fixed;
+    top: 101%;
+    right: -48%;
+    width: 228px;
+    height: 43px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

@@ -1,0 +1,36 @@
+.setting{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../../../public/assets/Artboard 1.png');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.setting__nav{
+  display: flex;
+  justify-content: center;
+  height: 79px;
+  width: 100%;
+  background-color: white;
+}
+.setting__nav img{
+  height: 73px;
+}
+.setting__nav h1{
+  font-family: Lato;
+}
+.setting__container{
+  width: 822px;
+  height: 513px;
+  background-color: white;
+}
+.setting__container h1{
+  text-align:center;
+  font-family: Lato;
+  font-weight: normal;  
+}
