@@ -1,24 +1,42 @@
 import React, { Component } from 'react';
 
 import './style.css';
+import PropTypes from 'prop-types';
 
 class Students extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+    console.log(this.props.dataStudent,'eeeeeeeeeeeeeeeee');
+    const arrayOfSkills = this.props.dataStudent.skills;
+
     return (
       <div className='students__allstudents'>
         <div className='student'>
-          <img className='student__img' src='./assets/student.png' />
+          <img className='student__img' src={this.props.dataStudent.avatar} />
           <div className='student__info'>
-            <div className='student__name'>Walaa M.</div>
+            <div className='student__name'>{this.props.dataStudent.username}</div>
             <div className='student__job student__span'>Full Stack Developer</div>
-            <div className='student__skills'><span className='student__span'>Skills: </span>
-                Node.js, HTML5, CSS3
+            <div><span className='student__span'>Skills: </span>
+              {
+                arrayOfSkills.map((skill,i) => {
+                  if (i !== arrayOfSkills.length-1) {
+                    return `${skill}, `;
+                  } else {
+                    return `${skill}`;
+                  }
+                })
+              }
             </div>
-            <div className='student__campus'><span className='student__span'>Campus: </span>
-                FACG3
+            <div><span className='student__span'>Cohrot: </span>
+              {this.props.dataStudent.cohort}
             </div>
-            <div className='student__interest'><span className='student__span'>Interest: </span>
-                Freelancing
+            <div ><span className='student__span'>Campus: </span>
+              {this.props.dataStudent.campus}
+            </div>
+            <div><span className='student__span'>Interest: </span>
+              {this.props.dataStudent.interests}
             </div>
           </div>
           <div className='student__status'>
@@ -30,5 +48,9 @@ class Students extends Component {
     );
   }
 }
+
+Students.propTypes = {
+  dataStudent: PropTypes.array
+};
 
 export default Students;

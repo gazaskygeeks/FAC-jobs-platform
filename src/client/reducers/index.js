@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({
+import students from './viewStudentsReducer';
 
+export default combineReducers({
+  students
 });
