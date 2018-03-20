@@ -4,7 +4,7 @@ const post = {};
 
 post.users = (github_id, github_name, github_email, github_avatar, new_user, github_url,role,callback)=>{
   const sqlQuery = `
-    INSERT INTO users_table (github_id,name,email,avatar,newUser,profile_url)
+    INSERT INTO users_table (github_id,username,email,avatar,new_user,profile_url,bio)
     VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *;
   `;
