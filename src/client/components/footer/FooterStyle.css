@@ -1,16 +1,16 @@
 /* footer style*/
 
 #footer {
-clear: both;
-width: 100%;
-height: 105px;
-background-color: #fff;
+  clear: both;
+  width: 100%;
+  height: 105px;
+  background-color: #fff;
 }
 
 .footer-center {
-	width: 100%;
-	margin: 0 auto;
-	height:4em;
+  width: 100%;
+  margin: 0 auto;
+  height:4em;
 }
 
 .footer-copy {
