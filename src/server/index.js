@@ -34,16 +34,15 @@ passport.use(new Strategy({
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done)=>{
   console.log('profile', profile);
-  
+
   getUserData.github_id(profile._json.id,(err,userObj)=>{
     if(err) {
       return done(err)
     }
     if(Object.keys(userObj).length === 0){
-  postGithubData.users(profile._json.id, profile._json.name, profile._json.email, 
-    profile._json.avatar_url, 'true' , profile._json.url,'false',(err,userObj)=>{
-      console.log('userObj',userObj);
-      
+  postGithubData.users(profile._json.id, profile._json.name, profile._json.email,
+    profile._json.avatar_url, 'true' , profile._json.html_url,'false',(err,userObj)=>{
+
     if (err){
       done(err)
     }else{
