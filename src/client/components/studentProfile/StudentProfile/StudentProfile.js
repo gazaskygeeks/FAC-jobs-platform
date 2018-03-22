@@ -14,10 +14,10 @@ class Profile extends Component {
           <div className='studentProfile'>
             <div className='studentContainer'>
               <div className='studentImg'>
-                <img src='/assets/student.jpg' alt='' />
+                <img src={`${item.avatar}`} alt='' />
               </div>
               <div className='studentInfo'>
-                <h1 className='studentName'>Yahya Barrawi</h1>
+                <h1 className='studentName'>{item.username}</h1>
                 <p className='studentLocation'>
                   <i className='fas fa-map-marker-alt dropbtn'></i>
               Gaza
@@ -54,7 +54,7 @@ class Profile extends Component {
                 <i className='fas fa-plus-circle addbtn'></i>
               </div>
               <ul className='studentSkillsList'>
-                <li className='studentSingleSkills'><a>{item.portfolio}</a></li>
+                <li className='studentPortfolio'><a>{item.portfolio}</a></li>
               </ul>
             </div>
             <div className='studentSkills'>
@@ -64,7 +64,7 @@ class Profile extends Component {
               </div>
               <ul className='studentSkillsList'>{
                 item.projects.map((project, index) => {
-                  return (<li className='studentSingleSkills' key={index}><a>{project}</a></li>);
+                  return (<li className='studentPortfolio' key={index}><a href={`${project}`}>{project}</a></li>);
                 })
               }
               </ul>

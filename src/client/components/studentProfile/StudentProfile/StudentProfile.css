@@ -59,12 +59,12 @@
 }
 
 .studentState {
-width: 190px;
-height: 39px;
-left: 967px;
-top: 193px;
-background: #EB5757;
-border-radius: 5px;
+  width: 190px;
+  height: 39px;
+  left: 967px;
+  top: 193px;
+  background: #EB5757;
+  border-radius: 5px;
 }
 
 .studentGitter {
@@ -86,12 +86,12 @@ border-radius: 5px;
 }
 
 .studentPurpose {
-width: 190px;
-height: 54px;
-left: 968px;
-top: 301px;
-background: #BDBDBD;
-border-radius: 5px;
+  width: 190px;
+  height: 54px;
+  left: 968px;
+  top: 301px;
+  background: #BDBDBD;
+  border-radius: 5px;
 }
 
 .studentCohort {
@@ -163,6 +163,16 @@ border-radius: 5px;
   justify-content: center;
   align-items: center;
   width: 117px;
+  height: 39px;
+  background: #F0F0F0;
+  border-radius: 455.5px;
+}
+
+.studentPortfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 273px;
   height: 39px;
   background: #F0F0F0;
   border-radius: 455.5px;

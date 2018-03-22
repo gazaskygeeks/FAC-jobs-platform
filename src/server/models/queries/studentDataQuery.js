@@ -3,7 +3,7 @@ const dbConnection = require('../database/dbConnection');
 const studentData = (student_id , cb) => {
   const sql = {
     text: `SELECT * FROM users_info
-                    INNER JOIN users_table ON users_table.id = users_info.id
+                    INNER JOIN users_table ON users_table.id = users_info.user_id
                     WHERE user_id = $1`,
 
     values: [student_id]
