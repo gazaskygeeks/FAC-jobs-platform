@@ -16,10 +16,6 @@ require('./middlewares/appMiddleware')(app, express);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use((err, req, res, next) => {
-  res.status(500).send('Something broke!');
-  next();
-});
 
 
 app.use(passport.initialize());
@@ -82,4 +78,8 @@ app.use('/api/v1/', (req, res) => {
 app.use('/*', express.static(path.join(__dirname,'..','..','public','index.html')));
 app.listen(process.env.PORT || 3000, () => {
   console.log('server runs on 3000');
+});
+app.use((err, req, res, next) => {
+  res.status(500).send('Something broke!');
+  next();
 });
