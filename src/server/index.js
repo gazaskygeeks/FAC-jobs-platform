@@ -33,19 +33,23 @@ passport.use(new Strategy({
 
   getUserData.github_id(profile._json.id,(err,userObj)=>{
     if(err) {
+      console.log('user EXISTS');
       return done(err)
     }
-    if(Object.keys(userObj).length === 0){
+    else if(Object.keys(userObj).length === 0){
   postGithubData.users(profile._json.id, profile._json.name, profile._json.email,
     profile._json.avatar_url, 'true' , profile._json.html_url,'false',(err,userObj)=>{
 
     if (err){
       done(err)
+      console.log('user EXISTS');
     }else{
       done(null,userObj);
         }
       });
-    } else{
+    }
+    ///if user exist will return this line
+    else{
       done(null,userObj);
     }
   });
