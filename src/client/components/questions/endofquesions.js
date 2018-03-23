@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
+import * as bulidProfile from '../../actions/storeanswer';
 import ButtonBack from '../button/backBtn';
+
 import './style.css';
 
 class End extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit() {
+    this.props.completeLogin();
+  }
+
   render() {
     return (
-      <div>
-        <div className='q__container'>
+      <div className='question__container'>
+        <div className='q__container end'>
           <h2 className='end__h1'>Great!</h2>
           <div>
             <p className='end__p'>Thanks for contacting us
@@ -16,17 +28,29 @@ class End extends Component {
             </p>
             <i className='fa fa-heart' style={{ fontSize: '48px',color: 'white' }}></i>
           </div>
-          <div className='btn' onClick={this.handleNext}>
-            <div className='go_profile'><h1 className='btn__next'>Go to profile</h1>
-              <i className='fa fa-angle-right next__btn__q' id='fa-angle-right'></i>
-            </div>
-          </div>
-          <ButtonBack onClick='Q6'/>
 
         </div>
+        <div className='buttons'>
+
+          <ButtonBack prevQuestion='Q6'/>
+          <div className='next__btn end__btn' onClick={this.handleSubmit}>
+            <h1 className='btn__next'>Go to profile</h1>
+            <i className='fa fa-angle-right next__btn__q' id='fa-angle-right'></i>
+          </div>
+
+        </div>
+
       </div>
     );
   }
 }
 
-export default End;
+End.propTypes = {
+  completeLogin: PropTypes.func
+};
+
+const mapDispatchToProps = {
+  completeLogin: bulidProfile.saveAnswer
+
+};
+export default connect(null, mapDispatchToProps)(End);

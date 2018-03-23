@@ -16,15 +16,13 @@ class Start extends Component {
 
   render() {
     return (
-      <div>
-        <div className='start__container'>
-          <img src='./assets/logo1.png'/>
-          <h1>Hi Walaa!</h1>
-          <p>Start building your profile through these simple steps</p>
-          <div className='start__btn' onClick={this.handleSubmit}>
-            <h1 className='btn__start'>Start</h1>
-            <i className='fa fa-angle-right  start__btn__w' id='fa-angle-right'></i></div>
-        </div>
+      <div className='start__container'>
+        <img src='./assets/logo1.png'/>
+        <h1>Hi Walaa!</h1>
+        <p>Start building your profile through these simple steps</p>
+        <div className='start__btn' onClick={this.handleSubmit}>
+          <h1 className='btn__start'>Start</h1>
+          <i className='fa fa-angle-right  start__btn__w' id='fa-angle-right'></i></div>
       </div>
     );
   }

@@ -1,35 +1,63 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
+import * as storeAnswer from '../../actions/storeanswer';
 import ButtonNext from '../button/nextBtn';
 import './style.css';
 
 class Q1 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleSelectCompus = this.handleSelectCompus.bind(this);
+    this.handleSelectChort = this.handleSelectChort.bind(this);
+  }
+  handleSelectCompus(event) {
+    const compus= event.target.value;
+    this.props.storeAnswer({ name: 'compus', value: compus });
+  }
+  handleSelectChort(event) {
+    const cohort= event.target.value;
+    this.props.storeAnswer({ name: 'cohort', value: cohort });
+  }
+
   render() {
     return (
-      <div>
+      <div className='question__container'>
         <div className='q__container'>
           <h1>What cohort and campus you are in?</h1>
           <div>
             <h3 className='q__h3'>Campus</h3>
-            <select className='dropdown'>
-              <option>Gaza</option>
-              <option>London</option>
-              <option>Nazareth</option>
+            <select className='dropdown' onChange={this.handleSelectCompus}>
+              <option value='Gaza'>Gaza</option>
+              <option value='London'>London</option>
+              <option value='Nazareth'>Nazareth</option>
             </select>
           </div>
           <div>
             <h3 className='q__h3'>Chort</h3>
-            <select className='dropdown'>
-              <option>FACG3</option>
-              <option>FACG2</option>
-              <option>FACG1</option>
+            <select className='dropdown' onChange={this.handleSelectChort}>
+              <option value='FACG3'>FACG3</option>
+              <option value='FACG2'>FACG2</option>
+              <option value='FACG1'>FACG1</option>
             </select>
           </div>
-          <ButtonNext onClick='Q2'/>
+        </div>
+        <div className='buttons'>
+
+          <div />
+          <ButtonNext nextQuestion='Q2' />
         </div>
       </div>
     );
   }
 }
+Q1.propTypes = {
+  storeAnswer: PropTypes.func
+};
+const mapDispatchToProps ={
+  storeAnswer: storeAnswer.compilationOfAnswers
+};
 
-export default Q1;
+export default connect(null, mapDispatchToProps)(Q1);

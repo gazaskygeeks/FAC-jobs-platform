@@ -1,12 +1,48 @@
 .q__container {
-  position: absolute;
-  top: 41%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.projects_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 550px;
 }
 
 .q__container h1 {
-  font-size: 31px;
+  font-size: 22px;
+}
+
+.projects_links {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.projects_inputs {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.portfolio_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.portfolio_name {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.portfolio_input {
+  display: flex;
+  flex: 1;
 }
 
 .q__input {
@@ -19,12 +55,12 @@
   width: 317px;
   height: 53px;
   border-radius: 10px;
-  margin-left: 99px;
 }
 
 .q__input__stack {
   width: 388px;
   height: 50px;
+  text-indent: 72px;
   border-radius: 10px;
   background-image: url('../../../../public/assets/stack.png');
   background-repeat: no-repeat;
@@ -35,6 +71,7 @@
 .q__input__in {
   width: 388px;
   height: 50px;
+  text-indent: 72px;
   border-radius: 10px;
   background-image: url('../../../../public/assets/in.png');
   background-repeat: no-repeat;
@@ -67,6 +104,12 @@
   font-size: 31px;
 }
 
+.movment {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  height: 80px;
+}
 
 /*Select tech skills*/
 
@@ -151,4 +194,50 @@
 
 .custom-radios input[type="radio"]:checked+label span img {
   opacity: 1;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.end {
+  padding: 11px;
+}
+
+.end__btn {
+  width: 275px;
+}
+
+.q6__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.q6_input {
+  display: flex;
+  flex-direction: column;
+}
+
+.q6_input input {
+  height: 44px;
+  width: 210px;
+  margin-bottom: 13px;
+}
+
+.q6_links {
+  display: flex;
+  flex-direction: column;
+  height: 248px;
+}
+
+.q6__h3 {
+  height: 198px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.q6_p__h3 {
+  height: 75px;
 }

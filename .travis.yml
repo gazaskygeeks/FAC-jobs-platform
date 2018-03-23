@@ -3,3 +3,7 @@ node_js:
 - "stable"
 script:
 - node tests.js
+
+notifications:
+  slack:
+    on_success: never

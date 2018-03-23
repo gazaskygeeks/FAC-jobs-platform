@@ -11,10 +11,9 @@
 }
 
 .container-question {
-  background-color: #00C4AE;
+  background-color: rgba(0,  194, 174, 0.5);
   width: 742px;
-  height: 373px;
-  opacity: 0.5;
+  height: 390px;
   border-radius: 10px;
 }
 

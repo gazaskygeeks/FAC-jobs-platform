@@ -9,11 +9,11 @@ export const start = () => {
     type: START
   };
 };
-export const success = appointments => {
+export const success = data => {
 
   return {
     type: SUCCESS,
-    payload: appointments
+    payload: data
   };
 };
 export const firstQ = data => dispatch => {

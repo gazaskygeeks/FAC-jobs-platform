@@ -11,15 +11,13 @@ class ButtonBack extends Component {
     this.handlePrevious = this.handlePrevious.bind(this);
   }
   handlePrevious() {
-    this.props.firstQ(this.props.onClick);
+    this.props.firstQ(this.props.prevQuestion);
   }
   render() {
     return (
-      <div className='btn' onClick={this.handlePrevious}>
-        <div className='previous__btn'>
-          <i className='fa fa-angle-left previous__btn__q' id='fa-angle-left'></i>
-          <h1 className='btn__previous' id='btn__previous'>Previous</h1>
-        </div>
+      <div className='previous__btn' onClick={this.handlePrevious}>
+        <i className='fa fa-angle-left previous__btn__q' id='fa-angle-left'></i>
+        <h1 className='btn__previous' id='btn__previous'>Previous</h1>
       </div>
 
     );
@@ -27,7 +25,7 @@ class ButtonBack extends Component {
 }
 
 ButtonBack.propTypes = {
-  onClick: PropTypes.string,
+  prevQuestion: PropTypes.string,
   firstQ: PropTypes.func
 };
 

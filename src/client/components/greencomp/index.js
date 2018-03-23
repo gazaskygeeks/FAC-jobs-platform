@@ -16,23 +16,45 @@ import './style.css';
 class Form extends Component {
   constructor(props) {
     super(props);
+
+    this.renderView = this.renderView.bind(this);
   }
-  render() {
+
+  renderView() {
     const { questionNumber } =this.props;
+
+    switch (questionNumber) {
+      case 'Welcome':
+        return <Welcome />;
+      case 'Q1':
+        return <Q1 />;
+      case 'Q2':
+        return <Q2 />;
+      case 'Q3':
+        return <Q3 />;
+      case 'Q4':
+        return <Q4/>;
+      case 'Q5':
+        return <Q5 />;
+      case 'Q6':
+        return <Q6 />;
+      case 'End':
+        return <End/>;
+      default:
+        return <Welcome />;
+    }
+
+  }
+
+  render() {
+    console.log(this.props);
 
     return (
       <div id='questions' className='questions'>
         <div id='start' className='start'>
           <div className='container-question'>
+            {this.renderView()}
           </div>
-          <div>{questionNumber==='Welcome'?<Welcome/>
-            :questionNumber==='Q1'?<Q1/>
-              :questionNumber==='Q2'?<Q2/>
-                :questionNumber==='Q3'?<Q3/>
-                  :questionNumber==='Q4'?<Q4/>
-                    :questionNumber==='Q5'?<Q5/>
-                      :questionNumber==='Q6'?<Q6/>
-                        :questionNumber==='End'?<End/>:null}</div>
 
         </div>
       </div>
@@ -46,7 +68,7 @@ Form.propTypes = {
 };
 
 const mapStateToProps = state => {
-  return { questionNumber: state.questionNumber };
+  return { questionNumber: state.data.questionNumber };
 };
 
 export default connect(mapStateToProps, null)(Form);

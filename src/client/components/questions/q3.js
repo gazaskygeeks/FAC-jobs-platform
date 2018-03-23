@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
+import * as storeAnswer from '../../actions/storeanswer';
 import ButtonNext from '../button/nextBtn';
 import ButtonBack from '../button/backBtn';
+
 import './style.css';
 
 class Q3 extends Component {
@@ -11,6 +15,7 @@ class Q3 extends Component {
       showReply: false
     };
     this.showCheckboxes = this.showCheckboxes.bind(this);
+    this.getSkills = this.getSkills.bind(this);
 
   }
   showCheckboxes(e) {
@@ -23,10 +28,19 @@ class Q3 extends Component {
     }
     this.setState({ showReply: !this.state.showReply });
   }
+  getSkills() {
+    const skills = [];
+    const checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
 
+    for (let i = 0; i < checkboxes.length; i++) {
+      skills.push(checkboxes[i].value);
+    }
+    this.props.storeAnswer({ name: 'skills', value: skills });
+
+  }
   render() {
     return (
-      <div>
+      <div className='question__container'>
         <div className='q__container'>
           <h1>Tell us your top 5 tech skills</h1>
           <div className='selectBox' onClick={this.showCheckboxes}>
@@ -35,20 +49,32 @@ class Q3 extends Component {
             </select>
             <div className='overSelect'></div>
           </div>
-          <div id='checkboxes' className='checkboxes'>
+          <div id='checkboxes' className='checkboxes' onClick={this.getSkills}>
             <label htmlFor='node'>
-              <input type='checkbox' id='node' />Node</label>
+              <input type='checkbox' id='node' value='Node' />Node</label>
             <label htmlFor='html'>
-              <input type='checkbox' id='html' />HTML</label>
+              <input type='checkbox' id='html' value='HTML' />HTML</label>
             <label htmlFor='express'>
-              <input type='checkbox' id='express' />Express</label>
+              <input type='checkbox' id='express' value='Express'/>Express</label>
           </div>
-          <ButtonNext onClick='Q4'/>
-          <ButtonBack onClick='Q2'/>
+
+        </div>
+        <div className='buttons'>
+
+          <ButtonBack prevQuestion='Q2'/>
+          <ButtonNext nextQuestion='Q4'/>
         </div>
       </div>
     );
   }
 }
 
-export default Q3;
+Q3.propTypes = {
+  storeAnswer: PropTypes.func
+};
+const mapDispatchToProps ={
+  storeAnswer: storeAnswer.compilationOfAnswers
+
+};
+
+export default connect(null, mapDispatchToProps)(Q3);

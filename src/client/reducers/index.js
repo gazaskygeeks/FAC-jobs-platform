@@ -1,27 +1,9 @@
-import { START,SUCCESS } from '../constants';
+import { combineReducers } from 'redux';
 
-const initialState = {
-  questionNumber: 'Welcome'
-};
+import data from './quesionReducer';
+import questionAnswer from './questionsAnswerReducer';
 
-const data = (state = initialState, action) => {
-  switch (action.type) {
-    case START: {
-      return {
-        ...state,
-        error: undefined
-      };
-    }
-    case SUCCESS: {
-      return {
-        ...state,
-        error: undefined,
-        questionNumber: action.payload
-      };
-    }
-    default:
-      return state;
-  }
-};
-
-export default data;
+export default combineReducers({
+  data,
+  questionAnswer
+});
