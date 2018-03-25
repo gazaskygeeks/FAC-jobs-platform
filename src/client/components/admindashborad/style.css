@@ -1,0 +1,16 @@
+.testNav{
+  width: 100%;
+  height: 60px;
+  background: gray;
+}
+.admindashboard{
+  background-color: #E5E5E5;
+  height: 100%;
+}
+
+.admindashboard__container{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}

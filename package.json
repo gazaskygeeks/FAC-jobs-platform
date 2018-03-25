@@ -35,7 +35,7 @@
     "moment": "^2.20.1",
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-autosuggest": "^9.3.4",
     "react-big-calendar": "^0.18.0",
