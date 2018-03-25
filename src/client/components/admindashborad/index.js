@@ -11,7 +11,7 @@ import * as viewStudentsAction from '../../actions/viewStudentsAction';
 
 import './style.css';
 
-class Admindashboard extends Component {
+class AdminDashboard extends Component {
   componentDidMount() {
     const { fetchStudentsView } = this.props;
     fetchStudentsView();
@@ -19,8 +19,6 @@ class Admindashboard extends Component {
   }
   render() {
     const { isFetching, error , dataStudents } = this.props.data;
-    console.log(dataStudents,' aaaaaaaaaaa');
-    console.log(isFetching,' isFetching');
 
     return (
 
@@ -49,7 +47,7 @@ class Admindashboard extends Component {
   }
 }
 
-Admindashboard.propTypes = {
+AdminDashboard.propTypes = {
   fetchStudentsView: PropTypes.func,
   data: PropTypes.obj,
   dataStudents: PropTypes.array,
@@ -68,4 +66,4 @@ const mapDispatchToProps = {
   fetchStudentsView: viewStudentsAction.fetchStudentsView
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Admindashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminDashboard);

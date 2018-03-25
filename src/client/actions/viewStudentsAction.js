@@ -28,7 +28,6 @@ export const studentsFetchFailure = massage => {
 };
 
 export const fetchStudentsView = () => dispatch => {
-  console.log('it is me ^_^');
   dispatch(studentsFetchStart());
   fetch('/api/v1/students')
     .then(res => {

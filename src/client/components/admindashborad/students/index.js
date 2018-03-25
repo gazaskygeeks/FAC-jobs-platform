@@ -8,7 +8,6 @@ class Students extends Component {
     super(props);
   }
   render() {
-    console.log(this.props ,'eeeeeeeeeeeeeeeee');
     const arrayOfSkills = this.props.dataStudent.skills;
 
     return (
