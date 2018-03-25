@@ -41,11 +41,12 @@ class Profile extends Component {
               <div className='studentStdHeader'>
                 <h1 className='portfolio'>Skills:</h1>
               </div>
-              <ul className='studentSkillsList'>{
-                item.skills.map((skill, index) => {
-                  return (<li className='studentSingleSkills' key={index}><a>{skill}</a></li>);
-                })
-              }
+              <ul className='studentSkillsList'>
+                {
+                  item.skills.map((skill, index) => {
+                    return (<li className='studentSingleSkills' key={index}><a>{skill}</a></li>);
+                  })
+                }
               </ul>
             </div>
             <div className='studentSkills'>
