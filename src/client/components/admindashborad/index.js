@@ -19,8 +19,7 @@ class Admindashboard extends Component {
   }
   render() {
     const { isFetching, error , dataStudents } = this.props.data;
-    // const dataStudents = this.props.data.dataStudents;
-    console.log(dataStudents,'aaaaaaaaaaa');
+    console.log(dataStudents,' aaaaaaaaaaa');
     console.log(isFetching,' isFetching');
 
     return (
@@ -41,7 +40,7 @@ class Admindashboard extends Component {
             })}
           </div>
           <div className='admindashboard__filter'>
-            <Filter />
+            <Filter allStudents={dataStudents}/>
           </div>
         </div>
         <div className='testNav'></div>
