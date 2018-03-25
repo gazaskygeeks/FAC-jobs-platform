@@ -7,7 +7,7 @@ import store from './store';
 
 import Home from './components/home';
 import Page404 from './components/page404';
-import Admindashborad from './components/admindashborad';
+import AdminDashboard from './components/admindashborad';
 
 import './index.css';
 
@@ -17,7 +17,7 @@ ReactDOM.render(
       <div className='app'>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/dashborad' component={Admindashborad} />
+          <Route exact path='/dashboard' component={AdminDashboard} />
           <Route component={Page404} />
         </Switch>
       </div>
