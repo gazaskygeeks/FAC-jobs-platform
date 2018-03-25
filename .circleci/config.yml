@@ -28,3 +28,4 @@ jobs:
           command: npm run test
           environment:
             NODE_ENV: test
+            DATABASE_URL: postgres://yahya:yahya@localhost:5432/facapt_db
