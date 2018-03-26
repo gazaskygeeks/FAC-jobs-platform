@@ -9,7 +9,7 @@ import { BeatLoader } from 'react-spinners';
 
 import * as viewStudentsAction from '../../actions/viewStudentsAction';
 
-// import NavBar from '../navbar/Navbar.js';
+import NavBar from '../navbar/Navbar.js';
 import Footer from '../footer/Footer.js';
 import './style.css';
 
@@ -24,7 +24,7 @@ class AdminDashboard extends Component {
     return (
 
       <div className='admindashboard'>
-        {/* <NavBar /> */}
+        <NavBar />
         <div className='admindashboard__container'>
           <div className='admindashboard__students'>
             <center className='beatLoader'>
