@@ -43,7 +43,7 @@ class Q3 extends Component {
         <div className='q__container'>
           <h1>Tell us your top 5 tech skills</h1>
           <div className='selectBox' onClick={this.showCheckboxes}>
-            <select className='dropdown'>
+            <select className='Q_dropdown'>
               <option>Choose at least 3 tech</option>
             </select>
             <div className='overSelect'></div>

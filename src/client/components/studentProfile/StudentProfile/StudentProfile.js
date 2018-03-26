@@ -24,7 +24,7 @@ class Profile extends Component {
                 </p>
                 <p className='studentCohort'>{item.campus}</p>
                 <p className='studentCohort'>{item.cohort}</p>
-                <a href='https://github.com/' target='__blank' className='fab fa-github githubbtn'></a>
+                <a href={`https://github.com/${item.username}`} target='__blank' className='fab fa-github githubbtn'></a>
                 <a href='https://www.linkedin.com/' target='__blank' className='fab fa-linkedin inbtn'></a>
               </div>
               <div className='studentContactInfo'>

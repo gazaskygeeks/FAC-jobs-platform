@@ -4,7 +4,7 @@ exports.post = (req, res) => {
     if (dataBaseConnectionErorr) {
       res.status(500).send(dataBaseConnectionErorr);
     } else {
-      res.redirect('/profile/'+`${req.body.id}`);
+      res.redirect(`/profile/${req.body.id}`);
     }
   });
 };
