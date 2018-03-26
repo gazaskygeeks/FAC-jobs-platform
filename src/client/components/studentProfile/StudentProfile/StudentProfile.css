@@ -1,0 +1,191 @@
+.studenProfileStyle {
+  background-color: #E5E5E5;
+}
+
+
+.wholeStudentContainers {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #E5E5E5;
+}
+
+.studentProfile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 872px;
+  padding-top: 25px;
+  margin: auto;
+}
+
+.studentContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  height: 369px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
+  box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
+}
+
+.studentImg img {
+  width: 213px;
+  height: 200px;
+  left: 365px;
+  top: 213px;
+  background-blend-mode: darken;
+  mix-blend-mode: darken;
+  border-radius: 108.5px;
+}
+
+.studentInfo {
+  flex-direction: column;
+}
+
+.studentName {
+  font-size: 36px;
+  color: #424040;
+}
+
+.studentLocation {
+  display: flex;
+  align-items: center;
+  color: #424040;
+  font-size: 24px;
+}
+
+.studentState {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 21px;
+  width: 135px;
+  height: 39px;
+  background: #EB5757;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.studentGitter {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 18px;
+  border-radius: 10px;
+  width: 190px;
+  height: 45px;
+}
+
+.gitterbtn {
+  color: #ED2067;
+  padding: 8px;
+}
+
+.studentPurpose {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 21px;
+  width: 170px;
+  height: 54px;
+  background: #ED2067;
+  border-radius: 5px;
+  padding-top: 15px;
+}
+
+.studentCohort {
+  display: flex;
+  font-size: 24px;
+  color: #000000;
+  padding-left: 17px;
+}
+
+.githubbtn {
+  font-size: 34px;
+  padding-right: 5px;
+  color: inherit;
+  padding-left: 17px;
+}
+
+.inbtn {
+  font-size: 34px;
+  color: #017BB7;
+  padding-left: 17px;
+}
+
+.studentContactInfo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 60%;
+}
+
+.studentSkills {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.studentStdHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F0F0F0;
+  -webkit-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
+ }
+
+.addbtn {
+  font-size: 32px;
+  color: #C4C4C4;
+  align-self:  center;
+  padding-right: 21px;
+}
+
+.portfolio {
+  padding-left: 30px;
+}
+
+
+.studentSkillsList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  height: 117px;
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
+ }
+
+.studentSingleSkills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 117px;
+  height: 39px;
+  background: #F0F0F0;
+  border-radius: 455.5px;
+}
+
+.studentSingleProject {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 39px;
+  background: #F0F0F0;
+  border-radius: 455.5px;
+}
+
+@media (max-width: 786px) {
+  .wholeStudentContainers {
+    font-size: 15px;
+    width: 900px;
+  }
+}
