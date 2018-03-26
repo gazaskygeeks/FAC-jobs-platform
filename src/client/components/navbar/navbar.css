@@ -2,19 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 105px;
-  width: 95%;
   margin-bottom: 0;
+  background-color: white;
 }
 
 .logo {
   flex: 1;
-  padding-left: 100px;
+  padding-left: 32px;
 }
 
 .rightSideNav {
   display: flex;
-  right: 20px;
+  margin-right: 20px;
 }
 
 .bell {

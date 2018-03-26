@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const storeanswer = require('./formdata');
 const studentProfile = require('./studentProfile');
+const students = require('./students.js');
 
 router.get('/auth/github',
   passport.authenticate('github',
@@ -37,5 +38,7 @@ router.get('/api/logout',(req,res) => {
 router.post('/storeanswer', storeanswer.post);
 
 router.get('/profile/:student_id', studentProfile.get);
+
+router.get('/students', students.get);
 
 module.exports = router;

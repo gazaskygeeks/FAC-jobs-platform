@@ -7,6 +7,8 @@ import Home from './components/home';
 import Form from './components/greencomp';
 import StudentProfile from './components/studentProfile';
 import Page404 from './components/page404';
+import AdminDashboard from './components/admindashborad';
+
 import './index.css';
 
 ReactDOM.render(
@@ -15,7 +17,9 @@ ReactDOM.render(
       <div className='app'>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/dashboard' component={AdminDashboard} />
           <Route exact path='/form' component={Form} />
+          <Route exact path='/profile' component={StudentProfile} />
           <Route exact path='/profile/:student_id' component={StudentProfile} />
           <Route component={Page404} />
         </Switch>
