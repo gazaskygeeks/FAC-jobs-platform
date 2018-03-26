@@ -62,7 +62,7 @@
   height: 50px;
   text-indent: 72px;
   border-radius: 10px;
-  background-image: url('../../../../public/assets/stack.png');
+  background-image: url('/assets/stack.png');
   background-repeat: no-repeat;
   background-position: 13px;
   background-size: 43px;
@@ -73,7 +73,7 @@
   height: 50px;
   text-indent: 72px;
   border-radius: 10px;
-  background-image: url('../../../../public/assets/in.png');
+  background-image: url('/assets/in.png');
   background-repeat: no-repeat;
   background-position: 13px;
   background-size: 43px;

@@ -55,6 +55,10 @@ class Q3 extends Component {
               <input type='checkbox' id='html' value='HTML' />HTML</label>
             <label htmlFor='express'>
               <input type='checkbox' id='express' value='Express'/>Express</label>
+            <label htmlFor='css'>
+              <input type='checkbox' id='css' value='CSS'/>CSS</label>
+            <label htmlFor='react'>
+              <input type='checkbox' id='react' value='React'/>React</label>
           </div>
 
         </div>

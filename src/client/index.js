@@ -19,7 +19,6 @@ ReactDOM.render(
           <Route exact path='/' component={Home} />
           <Route exact path='/dashboard' component={AdminDashboard} />
           <Route exact path='/form' component={Form} />
-          <Route exact path='/profile' component={StudentProfile} />
           <Route exact path='/profile/:student_id' component={StudentProfile} />
           <Route component={Page404} />
         </Switch>

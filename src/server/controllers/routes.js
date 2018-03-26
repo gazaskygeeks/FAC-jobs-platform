@@ -37,7 +37,7 @@ router.get('/api/logout',(req,res) => {
 
 router.post('/storeanswer', storeanswer.post);
 
-router.get('/:student_id', studentProfile.get);
+router.get('/getstudent/:student_id', studentProfile.get);
 
 router.get('/students', students.get);
 
