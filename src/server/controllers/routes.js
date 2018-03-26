@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const storeanswer = require('./formdata');
 
 router.get('/auth/github',
   passport.authenticate('github',
@@ -31,8 +32,6 @@ router.get('/api/logout',(req,res) => {
   req.logout();
   res.redirect('/');
 });
-
-const storeanswer = require('./formdata');
 
 router.post('/storeanswer', storeanswer.post);
 
