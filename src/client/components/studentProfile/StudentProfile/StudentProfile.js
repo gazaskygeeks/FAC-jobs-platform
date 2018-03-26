@@ -14,10 +14,10 @@ class Profile extends Component {
           <div className='studentProfile'>
             <div className='studentContainer'>
               <div className='studentImg'>
-                <img src='/assets/student.jpg' alt='' />
+                <img src={item.avatar} alt='' />
               </div>
               <div className='studentInfo'>
-                <h1 className='studentName'>Yahya Barrawi</h1>
+                <h1 className='studentName'>{item.username}</h1>
                 <p className='studentLocation'>
                   <i className='fas fa-map-marker-alt dropbtn'></i>
               Gaza
