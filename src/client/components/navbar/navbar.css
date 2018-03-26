@@ -1,29 +1,20 @@
-body {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  margin-right: 10vw;
-  margin-left: 1vw;
-  color: #55635C;
-  font-family: serif;
-}
-
-.logo {
-  display: flex;
-  padding-left: 100px;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 105px;
-  width: 1440px;
+  width: 95%;
   margin-bottom: 0;
+}
+
+.logo {
+  flex: 1;
+  padding-left: 100px;
+}
+
+.rightSideNav {
+  display: flex;
+  right: 20px;
 }
 
 .bell {
@@ -84,6 +75,6 @@ h1 {
 
 @media only screen and (max-width:1024px) {
   h1 {
-    font-size: 24px;
+    font-size: 16px;
   }
 }

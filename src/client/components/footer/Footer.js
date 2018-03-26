@@ -9,7 +9,8 @@ class Footer extends Component {
         <footer id='footer'>
           <div className='footer-center'>
             <div className='footer-copy'>
-              2018 FAC-Jobs.com © All Rights Reserved. Designed by WYMY
+              2018 FAC-Jobs.com Founder & Coders Jobs Provider App
+               © All Rights Reserved. Designed by WYMY
             </div>
           </div>
         </footer>
