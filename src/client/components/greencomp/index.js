@@ -27,6 +27,8 @@ class Form extends Component {
       case 'Welcome':
         return <Welcome />;
       case 'Q1':
+        console.log('ghjbknjkhkjhkjhg');
+
         return <Q1 />;
       case 'Q2':
         return <Q2 />;

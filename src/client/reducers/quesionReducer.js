@@ -1,4 +1,4 @@
-import { START,SUCCESS } from '../constants/actionTypes';
+import { START_GET_Q,SUCCESS_GET_Q } from '../constants/actionTypes';
 
 const initialState = {
   questionNumber: 'Welcome'
@@ -6,13 +6,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case START: {
+    case START_GET_Q: {
       return {
         ...state,
         error: undefined
       };
     }
-    case SUCCESS: {
+    case SUCCESS_GET_Q: {
       return {
         ...state,
         error: undefined,
