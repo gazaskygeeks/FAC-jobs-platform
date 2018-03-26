@@ -16,9 +16,9 @@ class Navbar extends Component {
               <i className='fas fa-sliders-h dropbtn'></i>
               <div className='dropdown-content'>
                 <a href='#'>Settings
-                <i className='fas fa-cog settings'></i></a>
+                  <i className='fas fa-cog settings'></i></a>
                 <a href='#'>Logout
-                <i className='fas fa-sign-out-alt settings'></i></a>
+                  <i className='fas fa-sign-out-alt settings'></i></a>
               </div>
             </div>
           </div>

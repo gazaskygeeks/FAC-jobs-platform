@@ -1,0 +1,37 @@
+.start__container {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start__container p {
+  font-size: 16px;
+}
+
+.btn__start {
+  position: absolute;
+  bottom: -17%;
+  right: -147px;
+  color: black;
+  font-size: 36px;
+  font-family: Lato;
+}
+
+.btn__start:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn__start:hover+#fa-angle-right {
+  color: #fff;
+}
+
+.start__btn__w {
+  position: absolute;
+  bottom: -12%;
+  right: -179px;
+  color: black;
+  font-size: 59px;
+  font-weight: bold;
+}

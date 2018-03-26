@@ -20,7 +20,7 @@ class Home extends Component {
             <div className='home__text'>Founders & Coders
               sustainable opportunity-based Community</div>
           </div>
-          <input className='home__btn' type='submit' value='Sign in with' />
+          <a className='home__btn' href='auth/github'>Sign in with</a>
         </div>
       </div>
     );
