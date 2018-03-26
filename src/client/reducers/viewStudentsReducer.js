@@ -1,8 +1,11 @@
 import {
   STUDENTS_FETCH_START,
   STUDENTS_FETCH_SUCCESS,
-  STUDENTS_FETCH_FAILURE
+  STUDENTS_FETCH_FAILURE,
+  FILTER_STUDENTS
 } from '../constants/actionTypes.js';
+
+import filterHelper from '../helpers/filter';
 
 const initalState = {
   dataStudents: [],
@@ -30,6 +33,12 @@ const students = (state = initalState, action) => {
         ...state,
         isFetching: false,
         error: action.payload
+      };
+    }
+    case FILTER_STUDENTS: {
+      return {
+        ...state,
+        dataStudents: filterHelper(action.payload)
       };
     }
     default:

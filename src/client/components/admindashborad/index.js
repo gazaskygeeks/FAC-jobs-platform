@@ -9,13 +9,14 @@ import { BeatLoader } from 'react-spinners';
 
 import * as viewStudentsAction from '../../actions/viewStudentsAction';
 
+// import NavBar from '../navbar/Navbar.js';
+import Footer from '../footer/Footer.js';
 import './style.css';
 
 class AdminDashboard extends Component {
   componentDidMount() {
     const { fetchStudentsView } = this.props;
     fetchStudentsView();
-
   }
   render() {
     const { isFetching, error , dataStudents } = this.props.data;
@@ -23,7 +24,7 @@ class AdminDashboard extends Component {
     return (
 
       <div className='admindashboard'>
-        <div className='testNav'></div>
+        {/* <NavBar /> */}
         <div className='admindashboard__container'>
           <div className='admindashboard__students'>
             <center className='beatLoader'>
@@ -41,7 +42,7 @@ class AdminDashboard extends Component {
             <Filter allStudents={dataStudents}/>
           </div>
         </div>
-        <div className='testNav'></div>
+        <Footer />
       </div>
     );
   }

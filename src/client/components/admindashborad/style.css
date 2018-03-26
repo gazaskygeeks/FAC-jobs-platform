@@ -14,3 +14,20 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+  .admindashboard__container {
+    width: 90%
+  }
+  .filter{
+    width: 30vw;
+  }
+  .student{
+    width: 50vw;
+  }
+}
+@media only screen and (max-width: 568px) {
+    .admindashboard__container{
+      display: block;
+    }
+}
