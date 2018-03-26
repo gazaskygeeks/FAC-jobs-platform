@@ -1,4 +1,4 @@
-import { START_LOGIN,SUCCESS_LOGIN ,FAILURE_LOGIN } from '../constants';
+import { START_LOGIN,SUCCESS_LOGIN ,FAILURE_LOGIN } from '../constants/actionTypes';
 
 const initialState = {
   user: ''

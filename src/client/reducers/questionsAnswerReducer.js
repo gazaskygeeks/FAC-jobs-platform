@@ -1,6 +1,6 @@
 import {
   STORE_ANSWER
-} from '../constants';
+} from '../constants/actionTypes';
 
 const initialState = {
   compus: '',

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const storeanswer = require('./formdata');
+const studentProfile = require('./studentProfile');
 
 router.get('/auth/github',
   passport.authenticate('github',
@@ -15,7 +16,7 @@ router.get('/auth/github/callback',
       res.redirect('/form');
     } else if (req.authInfo==='user EXIST') {
       res.user=req.user;
-      res.redirect('/profile');
+      res.redirect(`/profile/${req.session.passport.user.id}`);
 
     } else {
       res.redirect('/');
@@ -34,5 +35,7 @@ router.get('/api/logout',(req,res) => {
 });
 
 router.post('/storeanswer', storeanswer.post);
+
+router.get('/profile/:student_id', studentProfile.get);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 import {
   STORE_ANSWER,
   STORE_DATA_FAILURE
-} from '../constants';
+} from '../constants/actionTypes';
 
 export const compilationOfAnswers = data => {
   return {

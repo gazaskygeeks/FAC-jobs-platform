@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import * as start from '../../actions';
+import * as start from '../../actions/getQuestion';
 import './style.css';
 
 class ButtonBack extends Component {

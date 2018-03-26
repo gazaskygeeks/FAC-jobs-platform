@@ -2,7 +2,7 @@ import {
   START_LOGIN,
   SUCCESS_LOGIN,
   FAILURE_LOGIN
-} from '../constants';
+} from '../constants/actionTypes';
 
 export const start = () => {
   return {

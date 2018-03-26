@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import store from './store';
 import Home from './components/home';
 import Form from './components/greencomp';
@@ -16,8 +16,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/form' component={Form} />
-          <Route exact path='/profile' component={StudentProfile} />
-          <Redirect to='/' />
+          <Route exact path='/profile/:student_id' component={StudentProfile} />
           <Route component={Page404} />
         </Switch>
       </div>

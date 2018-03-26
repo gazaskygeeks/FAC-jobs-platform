@@ -1,4 +1,4 @@
-import { START,SUCCESS } from '../constants';
+import { START,SUCCESS } from '../constants/actionTypes';
 
 const initialState = {
   questionNumber: 'Welcome'
