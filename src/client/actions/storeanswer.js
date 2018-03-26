@@ -17,8 +17,7 @@ export const dataSavedFailure = massage => {
   };
 };
 export const saveAnswer= () => (dispatch, getState) => {
-  console.log(getState().questionAnswer,'statttte');
-  const data = getState().questionAnswer;
+  const data = { questionAnswer: getState().questionAnswer,id: getState().login.user.id };
 
   fetch('/api/v1/storeanswer', {
     method: 'POST',

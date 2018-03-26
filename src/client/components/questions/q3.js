@@ -29,7 +29,7 @@ class Q3 extends Component {
     this.setState({ showReply: !this.state.showReply });
   }
   getSkills() {
-    const skills = [];
+    const skills =[];
     const checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
 
     for (let i = 0; i < checkboxes.length; i++) {

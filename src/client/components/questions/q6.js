@@ -12,10 +12,17 @@ class Q6 extends Component {
     super(props);
     this.state = {};
     this.handleLinks = this.handleLinks.bind(this);
+    this.handlePortfolio = this.handlePortfolio.bind(this);
   }
-  handleLinks() {
-    const opportunity= document.querySelector('input[name="color"]:checked').value;
-    this.props.storeAnswer({ name: 'opportunity', value: opportunity });
+  handleLinks(ev) {
+    const projectlinks= [];
+    projectlinks.push(ev.target.value);
+    this.props.storeAnswer({ name: 'projects', value: projectlinks });
+
+  }
+  handlePortfolio(ev) {
+    const portfolio= ev.target.value;
+    this.props.storeAnswer({ name: 'portfolio', value: portfolio });
 
   }
   render() {
@@ -33,7 +40,7 @@ class Q6 extends Component {
             <div className='q6_input'>
               <input type='text' placeholder='Link your project 1' onChange={this.handleLinks}/>
               <input type='text' placeholder='Link your project 2' onChange={this.handleLinks}/>
-              <input type='text' placeholder='Link your portfolio' onChange={this.handleLinks}/>
+              <input type='text' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
               <h3>Upload CV. <i className='fa fa-upload'></i></h3>
             </div>
           </div>

@@ -1,0 +1,82 @@
+.home{
+  background-image: url("https://i.imgur.com/rIsO7pH.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.home__container{
+  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 48%;
+  justify-content: space-between;
+}
+.home__subContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home__img{
+  width: 265px;
+  height: 196px;
+}
+
+.home__nav{
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  padding: 15px 15px 0 0 ;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+.home__about:hover, .home__contact:hover{
+  color: #009C9B;
+  cursor: pointer;
+}
+.home__about{
+  margin-right: 15px;
+  border-right: 2px solid #009C9B;
+  padding-right: 15px;
+}
+
+.home__text{
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.home__btn{
+  border: 1px solid;
+  background-color: inherit;
+  color: white;
+  font-size: 23px;
+  padding: 10px;
+  width: 200px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  background-image: url('https://i.imgur.com/UswIAJ7.png');
+  background-repeat: no-repeat;
+  background-position: 125px;
+  background-size: 66px;
+}
+.home__btn:hover{
+  color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #4cb5ab;
+  background-color: #4cb5ab61;
+  transition: background-color 2s ease-out;
+}
+.home__logo{
+    width: 65px;
+}
+
+@media only screen and (max-width: 568px) {
+    .home__container{
+      margin-top: 15%;
+      height: 48%;
+    }
+}

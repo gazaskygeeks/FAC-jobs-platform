@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import * as start from '../../actions';
+import * as login from '../../actions/login';
 import './style.css';
 
 class Start extends Component {
@@ -14,11 +15,16 @@ class Start extends Component {
     this.props.firstQ('Q1');
   }
 
+  componentDidMount() {
+    this.props.login();
+  }
+
   render() {
+
     return (
       <div className='start__container'>
         <img src='./assets/logo1.png'/>
-        <h1>Hi Walaa!</h1>
+        <h1>Hi {this.props.user.name}</h1>
         <p>Start building your profile through these simple steps</p>
         <div className='start__btn' onClick={this.handleSubmit}>
           <h1 className='btn__start'>Start</h1>
@@ -28,11 +34,18 @@ class Start extends Component {
   }
 }
 Start.propTypes = {
-  firstQ: PropTypes.func
+  firstQ: PropTypes.func,
+  login: PropTypes.func,
+  user: PropTypes.obj
 };
-
+const mapStateToProps = state => {
+  return {
+    user: state.login.user
+  };
+};
 const mapDispatchToProps = {
-  firstQ: start.firstQ
+  firstQ: start.firstQ,
+  login: login.loginuser
 
 };
-export default connect(null, mapDispatchToProps)(Start);
+export default connect(mapStateToProps, mapDispatchToProps)(Start);

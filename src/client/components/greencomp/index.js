@@ -47,8 +47,6 @@ class Form extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div id='questions' className='questions'>
         <div id='start' className='start'>

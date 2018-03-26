@@ -9,7 +9,9 @@ const initialState = {
   skills: '',
   stackoverflow: '',
   linkedin: '',
-  opportunity: ''
+  opportunity: '',
+  portfolio: '',
+  projects: ''
 };
 
 export default (state = initialState, { type, payload }) => {

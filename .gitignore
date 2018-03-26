@@ -5,6 +5,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+bundle.js
+bundle.js.map
+config.env
+
 # Runtime data
 pids
 *.pid
@@ -56,7 +60,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-
-public/bundle.js
-public/bundle.js.map
