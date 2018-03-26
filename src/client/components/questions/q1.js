@@ -29,15 +29,17 @@ class Q1 extends Component {
           <h1>What cohort and campus you are in?</h1>
           <div>
             <h3 className='q__h3'>Campus</h3>
-            <select className='dropdown' onChange={this.handleSelectCompus}>
+            <select className='Q_dropdown' onChange={this.handleSelectCompus}>
+              <option selected disabled>Choose Campus</option>
               <option value='Gaza'>Gaza</option>
               <option value='London'>London</option>
               <option value='Nazareth'>Nazareth</option>
             </select>
           </div>
           <div>
-            <h3 className='q__h3'>Chort</h3>
-            <select className='dropdown' onChange={this.handleSelectChort}>
+            <h3 className='q__h3'>Cohort</h3>
+            <select className='Q_dropdown' onChange={this.handleSelectChort}>
+              <option selected disabled>Choose cohort</option>
               <option value='FACG3'>FACG3</option>
               <option value='FACG2'>FACG2</option>
               <option value='FACG1'>FACG1</option>

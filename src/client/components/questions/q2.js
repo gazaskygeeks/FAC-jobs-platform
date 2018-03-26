@@ -26,8 +26,8 @@ class Q2 extends Component {
           <h1>Tell us what you are interesting in
           (freelancing, mentoring, CFing, Contracts....)</h1>
           <div>
-            <h3 className='q__h3'>Campus</h3>
-            <select className='dropdown' onChange={this.handleSelectInteresting}>
+            <select className='Q_dropdown' onChange={this.handleSelectInteresting}>
+              <option selected disabled>Choose your interest</option>
               <option>Freelancing</option>
               <option>Mentoring</option>
               <option>CFing</option>
