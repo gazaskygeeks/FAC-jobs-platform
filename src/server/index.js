@@ -26,12 +26,12 @@ passport.use(new Strategy({
   callbackURL: 'http://localhost:3000/auth/github/callback',
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done) => {
-
+  console.log(profile.username);
   getUserData.github_id(profile._json.id,(err,userObj) => {
     if (err) {
       return done(err);
     } else if (Object.keys(userObj).length === 0) {
-      postGithubData.users(profile._json.id, profile._json.name, profile._json.email,
+      postGithubData.users(profile._json.id, profile.username, profile._json.email,
         profile._json.avatar_url, 'true' , profile._json.html_url,'false',profile._json.bio,(err2,userObj2) => {
 
           if (err) {
