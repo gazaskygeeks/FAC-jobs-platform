@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Loader } from 'react-loaders';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as studentDataAction from '../../actions/studentProfile';
@@ -20,23 +19,9 @@ class StudentProfile extends Component {
       <div>
         <Navbar />
         <div>
-          {
-            isFetching
-              ? <center className='center'>
-                <Loader loaded={false} type='ball-pulse-rise' />
-              </center>
-              :<Profile
-                studentData={studentData}
-              />
-          }
-          {
-            error && (
-              <div className='studentData-error'>
-                { error }
-              </div>
-            )
-          }
-
+          <Profile
+            studentData={studentData}
+          />
         </div>
         <Footer />
       </div>
