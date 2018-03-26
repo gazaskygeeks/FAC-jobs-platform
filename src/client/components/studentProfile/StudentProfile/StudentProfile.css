@@ -59,10 +59,15 @@
 }
 
 .studentState {
-  width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 21px;
+  width: 135px;
   height: 39px;
   background: #EB5757;
   border-radius: 5px;
+  padding-top: 10px;
 }
 
 .studentGitter {
@@ -82,10 +87,15 @@
 }
 
 .studentPurpose {
-  width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 21px;
+  width: 170px;
   height: 54px;
-  background: #BDBDBD;
+  background: #ED2067;
   border-radius: 5px;
+  padding-top: 15px;
 }
 
 .studentCohort {
@@ -158,6 +168,16 @@
   justify-content: center;
   align-items: center;
   width: 117px;
+  height: 39px;
+  background: #F0F0F0;
+  border-radius: 455.5px;
+}
+
+.studentSingleProject {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
   height: 39px;
   background: #F0F0F0;
   border-radius: 455.5px;

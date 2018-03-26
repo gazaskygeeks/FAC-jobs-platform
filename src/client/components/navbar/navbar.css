@@ -1,8 +1,3 @@
-.logo {
-  display: flex;
-  padding-left: 100px;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -10,6 +5,16 @@
   height: 105px;
   width: 95%;
   margin-bottom: 0;
+}
+
+.logo {
+  flex: 1;
+  padding-left: 100px;
+}
+
+.rightSideNav {
+  display: flex;
+  right: 20px;
 }
 
 .bell {
@@ -70,6 +75,6 @@
 
 @media only screen and (max-width:1024px) {
   h1 {
-    font-size: 24px;
+    font-size: 16px;
   }
 }

@@ -28,13 +28,13 @@ class Profile extends Component {
                 <a href='https://www.linkedin.com/' target='__blank' className='fab fa-linkedin inbtn'></a>
               </div>
               <div className='studentContactInfo'>
-                <button className='studentState'>{item.status}</button>
-                <button className='studentPurpose'>{item.interests}</button>
-                <button className='studentGitter'>
+                <span className='studentState'>{item.status}</span>
+                <span className='studentPurpose'>{item.interests}</span>
+                <span className='studentGitter'>
                   <a href={`https://gitter.im/${item.username}`} target='__blank'>
                     <i className='fab fa-gitter gitterbtn'>  Messege on gitter</i>
                   </a>
-                </button>
+                </span>
               </div>
             </div>
             <div className='studentSkills'>
@@ -65,7 +65,7 @@ class Profile extends Component {
               </div>
               <ul className='studentSkillsList'>{
                 item.projects.map((project, index) => {
-                  return (<li className='studentSingleSkills' key={index}><a>{project}</a></li>);
+                  return (<li className='studentSingleProject' key={index}><a>{project}</a></li>);
                 })
               }
               </ul>
