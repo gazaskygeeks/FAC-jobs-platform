@@ -7,7 +7,7 @@ const students = require('./students.js');
 
 router.get('/auth/github',
   passport.authenticate('github',
-    { scope: ['email'] })
+    { scope: ['read:org'] })
 );
 
 router.get('/auth/github/callback',
