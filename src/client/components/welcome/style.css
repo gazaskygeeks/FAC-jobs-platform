@@ -1,18 +1,30 @@
 .start__container {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
 }
-
+.start__img{
+  width: 303px;
+  height: 198px;
+  margin: 0 auto;
+}
 .start__container p {
-  font-size: 16px;
+  font-size: 20px;
+  margin: 13px;
 }
-
+.start__h1{
+  margin: 0;
+}
+.start__btn{
+  width: 159px;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  justify-content: space-evenly;
+}
 .btn__start {
-  position: absolute;
-  bottom: -17%;
-  right: -147px;
   color: black;
   font-size: 36px;
   font-family: Lato;
@@ -28,9 +40,6 @@
 }
 
 .start__btn__w {
-  position: absolute;
-  bottom: -12%;
-  right: -179px;
   color: black;
   font-size: 59px;
   font-weight: bold;

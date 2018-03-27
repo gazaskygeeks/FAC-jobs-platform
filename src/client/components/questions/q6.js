@@ -40,8 +40,8 @@ class Q6 extends Component {
             <div className='q6_input'>
               <input type='text' placeholder='Link your project 1' onChange={this.handleLinks}/>
               <input type='text' placeholder='Link your project 2' onChange={this.handleLinks}/>
-              <input type='text' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
-              <h3>Upload CV. <i className='fa fa-upload'></i></h3>
+              <input className='q6__lastInput'type='text' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
+              <h3 className='q6_input__h3'>Upload CV. <i className='fa fa-upload'></i></h3>
             </div>
           </div>
         </div>

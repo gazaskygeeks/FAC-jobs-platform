@@ -15,6 +15,7 @@
   width: 742px;
   height: 390px;
   border-radius: 10px;
+  display: flex;
 }
 
 .start {
