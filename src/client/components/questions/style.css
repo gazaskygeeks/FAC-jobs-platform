@@ -145,7 +145,7 @@
 .checkboxes label {
   display: block;
   padding-bottom: 2px;
- border: 1px #f3f3f2 solid;
+  border: 1px solid #f3f3f2;
 }
 
 .checkboxes label:hover {
