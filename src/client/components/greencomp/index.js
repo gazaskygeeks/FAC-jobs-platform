@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
 import Welcome from '../welcome/';
 import Q1 from '../questions/q1.js';
@@ -39,7 +40,7 @@ class Form extends Component {
       case 'Q6':
         return <Q6 />;
       case 'End':
-        return <End/>;
+        return <Route component={End}/>;
       default:
         return <Welcome />;
     }
