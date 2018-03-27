@@ -7,6 +7,7 @@ import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Profile from './StudentProfile/StudentProfile.js';
 import './StudentProfile/StudentProfile.css';
+import { BeatLoader } from 'react-spinners';
 
 class StudentProfile extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class StudentProfile extends Component {
           {
             isFetching
               ? <center className='center'>
+                <BeatLoader color={'#66D49D'} loading={isFetching} width={200} />
                 <Loader loaded={false} type='ball-pulse-rise' />
                 <h1>Info inbound<br/>
                 Wait!!</h1>

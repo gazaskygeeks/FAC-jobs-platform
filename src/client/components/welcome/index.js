@@ -23,8 +23,8 @@ class Start extends Component {
 
     return (
       <div className='start__container'>
-        <img src='./assets/logo1.png'/>
-        <h1>Hi {this.props.user.name}</h1>
+        <img className='start__img' src='./assets/logo1.png'/>
+        <h1 className='start__h1'>Hi {this.props.user.name}</h1>
         <p>Start building your profile through these simple steps</p>
         <div className='start__btn' onClick={this.handleSubmit}>
           <h1 className='btn__start'>Start</h1>

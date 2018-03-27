@@ -19,7 +19,24 @@
   padding-top: 25px;
   margin: auto;
 }
-
+.studentGitter__img{
+  width: 45px;
+}
+.studentGitter__span{
+  text-decoration: none;
+  color: #FF0064;
+  margin: auto;
+  font-size: 19px;
+  text-align: center;
+  margin-right: 30px;
+}
+.studentGitter__a{
+  text-decoration: none;
+}
+.studentGitter{
+  display: flex;
+  justify-content: center;
+}
 .studentContainer {
   display: flex;
   justify-content: space-around;
@@ -27,19 +44,23 @@
   flex-direction: row;
   height: 369px;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
+  /* -webkit-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
   -moz-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
-  box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
-}
+  box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56); */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
+}
+.studentContainer__container{
+  display: flex;
+  align-items: center;
+}
 .studentImg img {
   width: 213px;
-  height: 200px;
   left: 365px;
-  top: 213px;
   background-blend-mode: darken;
   mix-blend-mode: darken;
   border-radius: 108.5px;
+  margin-right: 2px;
 }
 
 .studentInfo {
@@ -49,6 +70,8 @@
 .studentName {
   font-size: 36px;
   color: #424040;
+  margin: 0;
+  padding-left: 10px;
 }
 
 .studentLocation {
@@ -56,18 +79,20 @@
   align-items: center;
   color: #424040;
   font-size: 24px;
+  margin: 0;
 }
 
 .studentState {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 21px;
+  font-size: 25px;
   width: 135px;
   height: 39px;
   background: #EB5757;
   border-radius: 5px;
   padding-top: 10px;
+  color: #fff;
 }
 
 .studentGitter {
@@ -90,12 +115,19 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 21px;
+  font-size: 28px;
   width: 170px;
   height: 54px;
   background: #ED2067;
   border-radius: 5px;
   padding-top: 15px;
+  color: #fff;
+}
+
+.studentTitle{
+  font-size: 24px;
+  padding-left: 17px;
+  margin: 7px 0;
 }
 
 .studentCohort {
@@ -103,6 +135,7 @@
   font-size: 24px;
   color: #000000;
   padding-left: 17px;
+  margin: 0;
 }
 
 .githubbtn {
@@ -122,6 +155,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  align-items: center;
   height: 60%;
 }
 
@@ -129,13 +163,19 @@
   padding-top: 25px;
   padding-bottom: 25px;
 }
+.studentInfo a{
+  text-decoration: none;
+  margin-top: 10px;
+}
 
 .studentStdHeader {
   display: flex;
   justify-content: space-between;
   background-color: #F0F0F0;
-  -webkit-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
-  -moz-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
+  /* -webkit-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56); */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
  }
 
 .addbtn {
@@ -159,8 +199,10 @@
   background-color: #FFFFFF;
   margin: 0;
   padding: 0;
-  -webkit-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
-  -moz-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
+  /* -webkit-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56); */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
  }
 
 .studentSingleSkills {

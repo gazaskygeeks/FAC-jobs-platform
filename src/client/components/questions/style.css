@@ -4,7 +4,12 @@
   justify-content: space-between;
   padding: 10px;
 }
-
+.question__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%
+}
 .projects_container {
   display: flex;
   justify-content: space-between;
@@ -58,7 +63,7 @@
 }
 
 .q__input__stack {
-  width: 388px;
+  width: 80%;
   height: 50px;
   text-indent: 72px;
   border-radius: 10px;
@@ -66,10 +71,11 @@
   background-repeat: no-repeat;
   background-position: 13px;
   background-size: 43px;
+  font-size: 16px;
 }
 
 .q__input__in {
-  width: 388px;
+  width: 80%;
   height: 50px;
   text-indent: 72px;
   border-radius: 10px;
@@ -77,6 +83,8 @@
   background-repeat: no-repeat;
   background-position: 13px;
   background-size: 43px;
+  font-size: 16px;
+
 }
 
 .Q_dropdown {
@@ -85,6 +93,7 @@
   height: 54px;
   font-size: 17px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 ;
@@ -101,7 +110,7 @@
 }
 
 .end__p {
-  font-size: 31px;
+  font-size: 24px;
 }
 
 .movment {
@@ -118,25 +127,25 @@
 }
 
 .selectBox select {
-  width: 100%;
   font-weight: bold;
 }
 
 .overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
 
 .checkboxes {
   display: none;
   border: 1px #dadada solid;
+  width: 341px;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 21px;
 }
 
 .checkboxes label {
   display: block;
+  padding-bottom: 2px;
+ border: 1px #f3f3f2 solid;
 }
 
 .checkboxes label:hover {
@@ -171,34 +180,48 @@
   background-position: center;
   text-align: center;
   line-height: 44px;
+  cursor: pointer;
+
 }
 
 .custom-radios input[type="radio"]+label span img {
   opacity: 0;
   transition: all .1s ease;
+  cursor: pointer;
+
 }
 
 .custom-radios input[type="radio"]#color-1+label span {
   background-color: #2ecc71;
+  cursor: pointer;
+
 }
 
 .custom-radios input[type="radio"]#color-2+label span {
   background-color: #3498db;
   margin-left: 45px;
+  cursor: pointer;
+
 }
 
 .custom-radios input[type="radio"]#color-3+label span {
   background-color: #e74c3c;
   margin-left: -10px;
+  cursor: pointer;
+
 }
 
 .custom-radios input[type="radio"]:checked+label span img {
   opacity: 1;
+  cursor: pointer;
+
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+
 }
 
 .end {
@@ -217,6 +240,7 @@
 .q6_input {
   display: flex;
   flex-direction: column;
+  height: 248px;
 }
 
 .q6_input input {
@@ -224,11 +248,18 @@
   width: 210px;
   margin-bottom: 13px;
 }
+.q6__lastInput{
+  margin: 0 !important;
 
+}
 .q6_links {
   display: flex;
   flex-direction: column;
   height: 248px;
+}
+.q6_input__h3{
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .q6__h3 {
@@ -240,4 +271,7 @@
 
 .q6_p__h3 {
   height: 75px;
+}
+.Link{
+  text-decoration: none;
 }
