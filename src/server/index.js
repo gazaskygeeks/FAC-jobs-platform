@@ -23,7 +23,7 @@ passport.use(new Strategy({
 
   clientID: process.env.GITHUB_CLIENTID,
   clientSecret: process.env.GITHUB_SECRET,
-  callbackURL: 'http://localhost:3000/auth/github/callback',
+  callbackURL: '/auth/github/callback',
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done) => {
   console.log(profile.username);
