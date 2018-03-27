@@ -9,7 +9,6 @@ class Search extends Component {
   };
   onSubmit(e) {
     e.preventDefault();
-    console.log(e.target.search.value);
   }
   render() {
     // const { myList } = this.props;

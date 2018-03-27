@@ -1,0 +1,277 @@
+.q__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.question__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%
+}
+.projects_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 550px;
+}
+
+.q__container h1 {
+  font-size: 22px;
+}
+
+.projects_links {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.projects_inputs {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.portfolio_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.portfolio_name {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.portfolio_input {
+  display: flex;
+  flex: 1;
+}
+
+.q__input {
+  width: 317px;
+  height: 53px;
+  border-radius: 10px;
+}
+
+.q__input__project2 {
+  width: 317px;
+  height: 53px;
+  border-radius: 10px;
+}
+
+.q__input__stack {
+  width: 80%;
+  height: 50px;
+  text-indent: 72px;
+  border-radius: 10px;
+  background-image: url('/assets/stack.png');
+  background-repeat: no-repeat;
+  background-position: 13px;
+  background-size: 43px;
+  font-size: 16px;
+}
+
+.q__input__in {
+  width: 80%;
+  height: 50px;
+  text-indent: 72px;
+  border-radius: 10px;
+  background-image: url('/assets/in.png');
+  background-repeat: no-repeat;
+  background-position: 13px;
+  background-size: 43px;
+  font-size: 16px;
+
+}
+
+.Q_dropdown {
+  background-color: #F2F2F2;
+  width: 345px;
+  height: 54px;
+  font-size: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+;
+.q1__h3 {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: normal;
+  font-family: Lato;
+  text-align: left;
+}
+
+.end__h1 {
+  font-size: 42px;
+}
+
+.end__p {
+  font-size: 24px;
+}
+
+.movment {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  height: 80px;
+}
+
+/*Select tech skills*/
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  font-weight: bold;
+}
+
+.overSelect {
+}
+
+.checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+  width: 341px;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 21px;
+}
+
+.checkboxes label {
+  display: block;
+  padding-bottom: 2px;
+  border: 1px solid #f3f3f2;
+}
+
+.checkboxes label:hover {
+  background-color: #1e90ff;
+}
+
+/*Colored radio*/
+
+.custom-radios div {
+  display: inline-block;
+}
+
+.custom-radios input[type="radio"] {
+  display: none;
+}
+
+.custom-radios input[type="radio"]+label {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+.custom-radios input[type="radio"]+label span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: -1px 4px 0 0;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  line-height: 44px;
+  cursor: pointer;
+
+}
+
+.custom-radios input[type="radio"]+label span img {
+  opacity: 0;
+  transition: all .1s ease;
+  cursor: pointer;
+
+}
+
+.custom-radios input[type="radio"]#color-1+label span {
+  background-color: #2ecc71;
+  cursor: pointer;
+
+}
+
+.custom-radios input[type="radio"]#color-2+label span {
+  background-color: #3498db;
+  margin-left: 45px;
+  cursor: pointer;
+
+}
+
+.custom-radios input[type="radio"]#color-3+label span {
+  background-color: #e74c3c;
+  margin-left: -10px;
+  cursor: pointer;
+
+}
+
+.custom-radios input[type="radio"]:checked+label span img {
+  opacity: 1;
+  cursor: pointer;
+
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+}
+
+.end {
+  padding: 11px;
+}
+
+.end__btn {
+  width: 275px;
+}
+
+.q6__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.q6_input {
+  display: flex;
+  flex-direction: column;
+  height: 248px;
+}
+
+.q6_input input {
+  height: 44px;
+  width: 210px;
+  margin-bottom: 13px;
+}
+.q6__lastInput{
+  margin: 0 !important;
+
+}
+.q6_links {
+  display: flex;
+  flex-direction: column;
+  height: 248px;
+}
+.q6_input__h3{
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.q6__h3 {
+  height: 198px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.q6_p__h3 {
+  height: 75px;
+}
+.Link{
+  text-decoration: none;
+}

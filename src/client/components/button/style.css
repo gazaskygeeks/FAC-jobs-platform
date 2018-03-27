@@ -1,0 +1,58 @@
+.next__btn {
+  width: 159px;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  justify-content: space-evenly;
+}
+
+.btn__next {
+  color: black;
+  font-size: 36px;
+  font-family: Lato;
+}
+
+
+.btn__next:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn__next:hover+#fa-angle-right {
+  color: #fff;
+}
+
+.next__btn__q {
+  color: black;
+  font-size: 59px;
+  font-weight: bold;
+}
+
+.previous__btn {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  justify-content: space-evenly;
+}
+
+.btn__previous {
+  color: black;
+  font-size: 36px;
+  font-family: Lato;
+}
+
+.btn__previous:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn__previous:hover+#fa-angle-left {
+  color: #fff;
+}
+
+.previous__btn__q {
+  color: black;
+  font-size: 59px;
+  font-weight: bold;
+}

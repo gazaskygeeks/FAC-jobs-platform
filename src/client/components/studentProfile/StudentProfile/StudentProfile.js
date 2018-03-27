@@ -13,28 +13,34 @@ class Profile extends Component {
         <div className='wholeStudentContainers' key={item.id}>
           <div className='studentProfile'>
             <div className='studentContainer'>
-              <div className='studentImg'>
-                <img src={item.avatar} alt='' />
+              <div className='studentContainer__container'>
+
+                <div className='studentImg'>
+                  <img src={item.avatar} alt='' />
+                </div>
+
+                <div className='studentInfo'>
+                  <h1 className='studentName'>{item.username}</h1>
+                  <p className='studentLocation'>
+                    <i className='fas fa-map-marker-alt dropbtn'></i>
+                    {item.campus}
+                  </p>
+                  <p className='studentCohort'>{item.cohort}</p>
+                  <p className='studentTitle'>Full Stack developer</p>
+                  <a href={`https://github.com/${item.username}`} target='__blank' className='fab fa-github githubbtn'></a>
+                  <a href='https://www.linkedin.com/' target='__blank' className='fab fa-linkedin inbtn'></a>
+                </div>
               </div>
-              <div className='studentInfo'>
-                <h1 className='studentName'>{item.username}</h1>
-                <p className='studentLocation'>
-                  <i className='fas fa-map-marker-alt dropbtn'></i>
-              Gaza
-                </p>
-                <p className='studentCohort'>{item.campus}</p>
-                <p className='studentCohort'>{item.cohort}</p>
-                <a href='https://github.com/' target='__blank' className='fab fa-github githubbtn'></a>
-                <a href='https://www.linkedin.com/' target='__blank' className='fab fa-linkedin inbtn'></a>
-              </div>
+
               <div className='studentContactInfo'>
                 <span className='studentState'>{item.status}</span>
                 <span className='studentPurpose'>{item.interests}</span>
-                <span className='studentGitter'>
-                  <a href={`https://gitter.im/${item.username}`} target='__blank'>
-                    <i className='fab fa-gitter gitterbtn'>  Messege on gitter</i>
-                  </a>
-                </span>
+                <a className='studentGitter__a' href={`https://gitter.im/${item.username}`} target='__blank'>
+                  <div className='studentGitter'>
+                    <img className='studentGitter__img' src='/assets/gittericon.png' />
+                    <span className='studentGitter__span' >Messege on Gitter</span>
+                  </div>
+                </a>
               </div>
             </div>
             <div className='studentSkills'>

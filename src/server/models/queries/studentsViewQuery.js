@@ -6,9 +6,7 @@ const viewAllStudents = cb => {
                 = users_table.id)`
   };
   dbConnection.query(sql, (dataBaseConnectionErorr, dataUser) => {
-    console.log(dataBaseConnectionErorr,' dataBaseConnectionErorr');
     if (dataBaseConnectionErorr) return cb(dataBaseConnectionErorr);
-    console.log('data user : ', dataUser.rows);
 
     return cb(null, dataUser.rows);
   });
