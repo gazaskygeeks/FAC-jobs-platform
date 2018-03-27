@@ -14,7 +14,7 @@ class Profile extends Component {
           <div className='studentProfile'>
             <div className='studentContainer'>
               <div className='studentImg'>
-                <img src={`${item.avatar}`} alt='' />
+                <img src={item.avatar} alt='' />
               </div>
               <div className='studentInfo'>
                 <h1 className='studentName'>{item.username}</h1>
@@ -24,28 +24,29 @@ class Profile extends Component {
                 </p>
                 <p className='studentCohort'>{item.campus}</p>
                 <p className='studentCohort'>{item.cohort}</p>
-                <a href='https://github.com/' target='__blank' className='fab fa-github githubbtn'></a>
+                <a href={`https://github.com/${item.username}`} target='__blank' className='fab fa-github githubbtn'></a>
                 <a href='https://www.linkedin.com/' target='__blank' className='fab fa-linkedin inbtn'></a>
               </div>
               <div className='studentContactInfo'>
-                <button className='studentState'>{item.status}</button>
-                <button className='studentPurpose'>{item.interests}</button>
-                <button className='studentGitter'>
+                <span className='studentState'>{item.status}</span>
+                <span className='studentPurpose'>{item.interests}</span>
+                <span className='studentGitter'>
                   <a href={`https://gitter.im/${item.username}`} target='__blank'>
                     <i className='fab fa-gitter gitterbtn'>  Messege on gitter</i>
                   </a>
-                </button>
+                </span>
               </div>
             </div>
             <div className='studentSkills'>
               <div className='studentStdHeader'>
                 <h1 className='portfolio'>Skills:</h1>
               </div>
-              <ul className='studentSkillsList'>{
-                item.skills.map((skill, index) => {
-                  return (<li className='studentSingleSkills' key={index}><a>{skill}</a></li>);
-                })
-              }
+              <ul className='studentSkillsList'>
+                {
+                  item.skills.map((skill, index) => {
+                    return (<li className='studentSingleSkills' key={index}><a>{skill}</a></li>);
+                  })
+                }
               </ul>
             </div>
             <div className='studentSkills'>
@@ -54,7 +55,7 @@ class Profile extends Component {
                 <i className='fas fa-plus-circle addbtn'></i>
               </div>
               <ul className='studentSkillsList'>
-                <li className='studentPortfolio'><a>{item.portfolio}</a></li>
+                <li className='studentSingleSkills'><a>{item.portfolio}</a></li>
               </ul>
             </div>
             <div className='studentSkills'>
@@ -64,7 +65,7 @@ class Profile extends Component {
               </div>
               <ul className='studentSkillsList'>{
                 item.projects.map((project, index) => {
-                  return (<li className='studentPortfolio' key={index}><a href={`${project}`}>{project}</a></li>);
+                  return (<li className='studentSingleProject' key={index}><a>{project}</a></li>);
                 })
               }
               </ul>

@@ -59,12 +59,15 @@
 }
 
 .studentState {
-  width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 21px;
+  width: 135px;
   height: 39px;
-  left: 967px;
-  top: 193px;
   background: #EB5757;
   border-radius: 5px;
+  padding-top: 10px;
 }
 
 .studentGitter {
@@ -76,8 +79,6 @@
   border-radius: 10px;
   width: 190px;
   height: 45px;
-  left: 967px;
-  top: 383px;
 }
 
 .gitterbtn {
@@ -86,12 +87,15 @@
 }
 
 .studentPurpose {
-  width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 21px;
+  width: 170px;
   height: 54px;
-  left: 968px;
-  top: 301px;
-  background: #BDBDBD;
+  background: #ED2067;
   border-radius: 5px;
+  padding-top: 15px;
 }
 
 .studentCohort {
@@ -116,8 +120,9 @@
 
 .studentContactInfo {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
+  height: 60%;
 }
 
 .studentSkills {
@@ -168,11 +173,11 @@
   border-radius: 455.5px;
 }
 
-.studentPortfolio {
+.studentSingleProject {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 273px;
+  width: 280px;
   height: 39px;
   background: #F0F0F0;
   border-radius: 455.5px;

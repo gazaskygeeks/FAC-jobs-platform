@@ -24,6 +24,8 @@ class StudentProfile extends Component {
             isFetching
               ? <center className='center'>
                 <Loader loaded={false} type='ball-pulse-rise' />
+                <h1>Info inbound<br/>
+                Wait!!</h1>
               </center>
               :<Profile
                 studentData={studentData}
@@ -36,7 +38,6 @@ class StudentProfile extends Component {
               </div>
             )
           }
-
         </div>
         <Footer />
       </div>

@@ -29,7 +29,7 @@ export const studentDataFetchFailure = massage => {
 
 export const fetchStudentData = student_id => dispatch => {
   dispatch(studntDataFetchStart());
-  fetch(`/api/v1/profile/${student_id}`)
+  fetch(`/api/v1/getstudent/${student_id}`)
     .then(res => {
       if (res.status >= 400) {
         throw new Error('Bad response from server');
