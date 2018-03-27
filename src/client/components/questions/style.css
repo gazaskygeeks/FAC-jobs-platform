@@ -136,7 +136,6 @@
 .checkboxes {
   display: none;
   border: 1px #dadada solid;
-  display: block;
   width: 341px;
   justify-content: center;
   margin: 0 auto;
@@ -272,4 +271,7 @@
 
 .q6_p__h3 {
   height: 75px;
+}
+.Link{
+  text-decoration: none;
 }
