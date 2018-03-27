@@ -23,7 +23,7 @@ passport.use(new Strategy({
 
   clientID: process.env.GITHUB_CLIENTID,
   clientSecret: process.env.GITHUB_SECRET,
-  callbackURL: '/auth/github/callback',
+  callbackURL: 'https://facapt.herokuapp.com/auth/github/callback',
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done) => {
   console.log(profile.username);
