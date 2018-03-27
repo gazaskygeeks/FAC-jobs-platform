@@ -21,9 +21,9 @@ app.use(passport.session());
 
 passport.use(new Strategy({
 
-  clientID: process.env.GITHUB_CLIENTID,
-  clientSecret: process.env.GITHUB_SECRET,
-  callbackURL: 'http://localhost:3000/auth/github/callback',
+  clientID: process.env.GITHUB_CLIENTID_HEROKU,
+  clientSecret: process.env.GITHUB_SECRET_HEROKU,
+  callbackURL: 'http://facapt.herokuapp.com/auth/github/callback',
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done) => {
   console.log(profile.username);
