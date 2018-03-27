@@ -10,6 +10,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const Strategy = require('passport-github2').Strategy;
 const authRoutes = require('../server/controllers/routes');
+const axios = require('axios');
 
 require('./middlewares/appMiddleware')(app, express);
 
@@ -26,37 +27,49 @@ passport.use(new Strategy({
   callbackURL: 'http://localhost:3000/auth/github/callback',
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done) => {
-  console.log(profile.username);
-  getUserData.github_id(profile._json.id,(err,userObj) => {
-    if (err) {
-      return done(err);
-    } else if (Object.keys(userObj).length === 0) {
-      if (profile._json.html_url==='https://github.com/freelancedad') {
-        postGithubData.users(profile._json.id, profile.username, profile._json.email,
-          profile._json.avatar_url, true , profile._json.html_url,true,profile._json.bio,(err2,userObj2) => {
-            if (err) {
-              done(err2);
+  axios.get(`https://api.github.com/user/orgs?access_token=${accessToken}`)
+    .then(response => {
+      if (response.data.length === 0) {
+        done('You aren\'t a member from FAC ',null,null);
+      } else if (response.data[0].login==='foundersandcoders') {
+        getUserData.github_id(profile._json.id,(err,userObj) => {
+          if (err) {
+            return done(err);
+          } else if (Object.keys(userObj).length === 0) {
+            if (profile._json.html_url==='https://github.com/freelancedad') {
+              postGithubData.users(profile._json.id, profile.username, profile._json.email,
+                profile._json.avatar_url, true , profile._json.html_url,true,profile._json.bio,(err2,userObj2) => {
+                  if (err) {
+                    done(err2);
+                  } else {
+                    done(null,userObj2,'admin ADDED');
+                  }
+                });
             } else {
-              done(null,userObj2,'admin ADDED');
+              postGithubData.users(profile._json.id, profile.username, profile._json.email,
+                profile._json.avatar_url, true , profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
+
+                  if (err) {
+                    done(err2);
+                  } else {
+                    done(null,userObj2,'user ADDED');
+                  }
+                });
+
             }
-          });
+          } else {
+            done(null,userObj,'user EXIST');
+
+          }
+        });
       } else {
-        postGithubData.users(profile._json.id, profile.username, profile._json.email,
-          profile._json.avatar_url, true , profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
-
-            if (err) {
-              done(err2);
-            } else {
-              done(null,userObj2,'user ADDED');
-            }
-          });
-
+        done(null,null,'You aren\'t a member from FAC ');
       }
-    } else {
-      done(null,userObj,'user EXIST');
+    })
+    .catch(error => {
+      console.log(error);
+    });
 
-    }
-  });
 }));
 
 app.use(
@@ -88,6 +101,11 @@ app.use('/api/v1/', (req, res) => {
 app.use('/*', express.static(path.join(__dirname,'..','..','public','index.html')));
 app.listen(process.env.PORT || 3000, () => {
   console.log('server runs on 3000');
+});
+app.use((err, req, res, next) => {
+  throw err;
+  res.status(401).send(err);
+  next();
 });
 app.use((err, req, res, next) => {
   throw err;
