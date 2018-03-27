@@ -41,4 +41,8 @@ router.get('/getstudent/:student_id', studentProfile.get);
 
 router.get('/students', students.get);
 
+const studentProfile = require('./studentProfile');
+
+router.get('/profile/:student_id', studentProfile.get);
+
 module.exports = router;

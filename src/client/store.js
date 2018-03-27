@@ -6,3 +6,4 @@ import rootReducer from './reducers';
 
 const logger = createLogger();
 export default createStore(rootReducer,applyMiddleware(thunk,logger));
+

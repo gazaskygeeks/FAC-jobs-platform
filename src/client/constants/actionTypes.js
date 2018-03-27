@@ -15,3 +15,4 @@ export const FAILURE_LOGIN = Symbol('FAILURE_LOGIN');
 
 export const STORE_ANSWER = Symbol(' STORE_ANSWER');
 export const STORE_DATA_FAILURE = Symbol(' STORE_ANSWER');
+

@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-
 import students from './viewStudentsReducer';
 import studentData from './studentProfile-reducer';
 import data from './quesionReducer';
@@ -12,5 +11,4 @@ export default combineReducers({
   login,
   studentData,
   students
-
 });
