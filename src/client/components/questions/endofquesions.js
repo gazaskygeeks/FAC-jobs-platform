@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import * as bulidProfile from '../../actions/storeanswer';
@@ -17,9 +16,11 @@ class End extends Component {
   }
   handleSubmit() {
     this.props.completeLogin();
+    this.props.history.push(`/profile/${this.props.id()}`);
   }
 
   render() {
+    console.log(this.props,' prpos here');
 
     return (
       <div className='question__container'>
@@ -37,12 +38,10 @@ class End extends Component {
         <div className='buttons'>
 
           <ButtonBack prevQuestion='Q6'/>
-          <Link className='Link' to={`/profile/${this.props.id()}`}>
-            <div className='next__btn end__btn' onClick={this.handleSubmit}>
-              <h1 className='btn__next'>Go to profile</h1>
-              <i className='fa fa-angle-right next__btn__q' id='fa-angle-right'></i>
-            </div>
-          </Link>
+          <div className='next__btn end__btn' onClick={this.handleSubmit}>
+            <h1 className='btn__next'>Go to profile</h1>
+            <i className='fa fa-angle-right next__btn__q' id='fa-angle-right'></i>
+          </div>
 
         </div>
 
@@ -53,7 +52,8 @@ class End extends Component {
 
 End.propTypes = {
   completeLogin: PropTypes.func,
-  id: PropTypes.func
+  id: PropTypes.func,
+  history: PropTypes.obj
 };
 
 const mapDispatchToProps = {
