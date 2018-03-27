@@ -13,11 +13,18 @@ router.get('/auth/github',
 router.get('/auth/github/callback',
   passport.authenticate('github'),
   (req,res) => {
-    if (req.authInfo==='user ADDED') {
+    if (req.authInfo==='admin ADDED') {
+      res.redirect('/dashboard');
+
+    } else if (req.authInfo==='user ADDED') {
       res.redirect('/form');
     } else if (req.authInfo==='user EXIST') {
-      res.user=req.user;
-      res.redirect(`/profile/${req.session.passport.user.id}`);
+      if (req.user.profile_url==='https://github.com/freelancedad') {
+        res.redirect('/dashboard');
+
+      } else {
+        res.redirect(`/profile/${req.session.passport.user.id}`);
+      }
 
     } else {
       res.redirect('/');

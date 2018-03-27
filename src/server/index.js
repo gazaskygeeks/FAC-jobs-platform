@@ -31,15 +31,27 @@ passport.use(new Strategy({
     if (err) {
       return done(err);
     } else if (Object.keys(userObj).length === 0) {
-      postGithubData.users(profile._json.id, profile.username, profile._json.email,
-        profile._json.avatar_url, 'true' , profile._json.html_url,'false',profile._json.bio,(err2,userObj2) => {
+      if (profile._json.html_url==='https://github.com/freelancedad') {
+        postGithubData.users(profile._json.id, profile.username, profile._json.email,
+          profile._json.avatar_url, true , profile._json.html_url,true,profile._json.bio,(err2,userObj2) => {
+            if (err) {
+              done(err2);
+            } else {
+              done(null,userObj2,'admin ADDED');
+            }
+          });
+      } else {
+        postGithubData.users(profile._json.id, profile.username, profile._json.email,
+          profile._json.avatar_url, true , profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
 
-          if (err) {
-            done(err2);
-          } else {
-            done(null,userObj2,'user ADDED');
-          }
-        });
+            if (err) {
+              done(err2);
+            } else {
+              done(null,userObj2,'user ADDED');
+            }
+          });
+
+      }
     } else {
       done(null,userObj,'user EXIST');
 
