@@ -25,3 +25,10 @@
   color: #000;
   text-align: center;
 }
+
+@media (max-width:786px) {
+  #footer{
+    height: 75px;
+  }
+
+}
