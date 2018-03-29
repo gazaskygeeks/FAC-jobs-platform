@@ -13,7 +13,6 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  height: 58vw;
 }
 
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
