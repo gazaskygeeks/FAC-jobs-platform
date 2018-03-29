@@ -48,10 +48,10 @@ class Students extends Component {
         <div className='student__status'>
           {
             (this.props.dataStudent.status === 'Urgent')?
-              this.setState({ backgroundColor: '#e74c3c' }):
+              this.setState({ backgroundColor: 'green' }):
               (this.props.dataStudent.status==='Kind Of')?
-                this.setState({ backgroundColor: '#2ecc71' }):
-                this.setState({ backgroundColor: '#3498db' })
+                this.setState({ backgroundColor: 'orange' }):
+                this.setState({ backgroundColor: 'red' })
           }
           <div className='student__circle' title={this.props.dataStudent.status}
             style={this.state}></div>
