@@ -23,3 +23,9 @@
   text-align: center;
   color: white;
 }
+
+@media only screen and (max-width: 700px) {
+    .container-question {
+        width: 358px;
+    }
+}

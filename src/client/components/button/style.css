@@ -1,3 +1,13 @@
+.buttonWithErrorMessage{
+  display: flex;
+    text-align: center;
+    width: 68%;
+    justify-content: space-between;
+}
+
+.errorMessage{
+  color: red;
+}
 .next__btn {
   width: 159px;
   display: flex;
