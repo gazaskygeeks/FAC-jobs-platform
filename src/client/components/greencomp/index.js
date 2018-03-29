@@ -28,7 +28,7 @@ class Form extends Component {
       case 'Welcome':
         return <Welcome />;
       case 'Q1':
-        return <Q1 />;
+        return <Q1/>;
       case 'Q2':
         return <Q2 />;
       case 'Q3':

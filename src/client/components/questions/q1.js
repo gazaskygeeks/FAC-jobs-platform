@@ -13,8 +13,43 @@ class Q1 extends Component {
     this.handleSelectCompus = this.handleSelectCompus.bind(this);
     this.handleSelectChort = this.handleSelectChort.bind(this);
   }
+
   handleSelectCompus(event) {
     const compus= event.target.value;
+    const gaza=document.getElementsByName('gaza');
+    const nazareth=document.getElementsByName('nazareth');
+    const london=document.getElementsByName('london');
+    if (compus==='Gaza') {
+      Array.prototype.slice.call(gaza).map(e => {
+        return e.removeAttribute('hidden');
+      });
+      Array.prototype.slice.call(nazareth).map(e => {
+        return e.setAttribute('hidden', false);
+      });
+      Array.prototype.slice.call(london).map(e => {
+        return e.setAttribute('hidden', false); ;
+      });
+    } else if (compus==='Nazareth') {
+      Array.prototype.slice.call(nazareth).map(e => {
+        return e.removeAttribute('hidden');
+      });
+      Array.prototype.slice.call(gaza).map(e => {
+        return e.setAttribute('hidden', false);
+      });
+      Array.prototype.slice.call(london).map(e => {
+        return e.setAttribute('hidden', false); ;
+      });
+    } else {
+      Array.prototype.slice.call(london).map(e => {
+        return e.removeAttribute('hidden');
+      });
+      Array.prototype.slice.call(gaza).map(e => {
+        return e.setAttribute('hidden', false);
+      });
+      Array.prototype.slice.call(nazareth).map(e => {
+        return e.setAttribute('hidden', false); ;
+      });
+    }
     this.props.storeAnswer({ name: 'compus', value: compus });
   }
   handleSelectChort(event) {
@@ -23,6 +58,7 @@ class Q1 extends Component {
   }
 
   render() {
+
     return (
       <div className='question__container'>
         <div className='q__container'>
@@ -40,24 +76,29 @@ class Q1 extends Component {
             <h3 className='q__h3'>Cohort</h3>
             <select className='Q_dropdown' onChange={this.handleSelectChort}>
               <option selected disabled>Choose cohort</option>
-              <option value='FACG3'>FACG3</option>
-              <option value='FACG2'>FACG2</option>
-              <option value='FACG1'>FACG1</option>
+              <option name='gaza' value='FACG3' hidden>FACG3</option>
+              <option name='gaza' value='FACG2' hidden>FACG2</option>
+              <option name='gaza' value='FACG1' hidden>FACG1</option>
+              <option name='nazareth' value='FACN1' hidden>FACN1</option>
+              <option name='nazareth' value='FACN2' hidden>FACN2</option>
+              <option name='nazareth' value='FACN3' hidden>FACN3</option>
+              <option name='london' value='FAC' hidden>FAC</option>
+              <option name='london' value='FAC11' hidden>FAC11</option>
+              <option name='london' value='FAC12' hidden>FAC12</option>
+              <option name='london' value='FAC10' hidden>FAC10</option>
             </select>
           </div>
         </div>
         <div className='buttons'>
-
           <div />
-          <ButtonNext nextQuestion='Q2' />
+          <ButtonNext nextQuestion='Q2' error='' />
         </div>
       </div>
     );
   }
 }
 Q1.propTypes = {
-  storeAnswer: PropTypes.func
-};
+  storeAnswer: PropTypes.func };
 const mapDispatchToProps ={
   storeAnswer: storeAnswer.compilationOfAnswers
 };

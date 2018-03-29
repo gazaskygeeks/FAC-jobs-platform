@@ -8,6 +8,7 @@ export const STUDENTDATA_FETCH_FAILURE = Symbol('STUDENTDATA_FETCH_FAILURE');
 
 export const START_GET_Q = Symbol('START_GET_Q');
 export const SUCCESS_GET_Q = Symbol('SUCCESS_GET_Q');
+export const FAIL_GET_Q = Symbol('FAIL_GET_Q');
 
 export const START_LOGIN = Symbol('START_LOGIN');
 export const SUCCESS_LOGIN = Symbol('SUCCESS_LOGIN');

@@ -1,4 +1,4 @@
-import { START_GET_Q,SUCCESS_GET_Q } from '../constants/actionTypes';
+import { START_GET_Q,SUCCESS_GET_Q,FAIL_GET_Q } from '../constants/actionTypes';
 
 const initialState = {
   questionNumber: 'Welcome'
@@ -17,6 +17,12 @@ export default (state = initialState, action) => {
         ...state,
         error: undefined,
         questionNumber: action.payload
+      };
+    }
+    case FAIL_GET_Q: {
+      return {
+        ...state,
+        error: action.error
       };
     }
     default:

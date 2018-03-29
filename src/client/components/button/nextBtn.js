@@ -13,14 +13,18 @@ class ButtonNext extends Component {
   };
 
   handleNext() {
-    this.props.firstQ(this.props.nextQuestion);
+    const error = this.props.firstQ(this.props.nextQuestion);
+    this.setState({ error });
   }
 
   render() {
     return (
-      <div className='next__btn' onClick={this.handleNext}>
-        <h1 className='btn__next'>Next</h1>
-        <i className='fa fa-angle-right next__btn__q' id='fa-angle-right'></i>
+      <div className='buttonWithErrorMessage'>
+        <h4 className='errorMessage'>{this.state.error}</h4>
+        <div className='next__btn' onClick={this.handleNext}>
+          <h1 className='btn__next'>Next</h1>
+          <i className='fa fa-angle-right next__btn__q' id='fa-angle-right'></i>
+        </div>
       </div>
     );
   }
