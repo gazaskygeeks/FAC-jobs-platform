@@ -81,6 +81,7 @@ class Filter extends Component {
             <option value='Urgent' >Urgent</option>
             <option value='Kind Of' >Kind Of</option>
             <option value='Not Intersted' >Not Intersted</option>
+            <option value='' >All Status</option>
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
@@ -89,6 +90,8 @@ class Filter extends Component {
             <option value='Gaza' >Gaza</option>
             <option value='London' >London</option>
             <option value='Nazareth' >Nazareth</option>
+            <option value='' >All Cumpuses</option>
+
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
@@ -100,6 +103,8 @@ class Filter extends Component {
                 return <option value={cohort} key={index}>{cohort}</option>;
               })
             }
+            <option value='' >All Cohorts</option>
+
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
@@ -109,6 +114,8 @@ class Filter extends Component {
             <option value='CSS' >CSS</option>
             <option value='Node.js' >Node.js</option>
             <option value='React.js' >React.js</option>
+            <option value='' >Any Skill</option>
+
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
@@ -117,6 +124,8 @@ class Filter extends Component {
             <option value='Freelancing' >Freelancing</option>
             <option value='Mentoring' >Mentoring</option>
             <option value='CFing' >CFing</option>
+            <option value='' >Any interest</option>
+
           </select>
 
           <input type='submit' value='Search' className='filter__search'
