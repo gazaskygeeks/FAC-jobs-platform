@@ -19,7 +19,7 @@ class AdminDashboard extends Component {
     fetchStudentsView();
   }
   render() {
-    const { isFetching, error , dataStudents } = this.props.data;
+    const { isFetching, error , dataStudents,dataStudentsToFilter } = this.props.data;
 
     return (
 
@@ -34,7 +34,7 @@ class AdminDashboard extends Component {
             </center>
             {error && <div className='data-error'>{error}</div>}
 
-            {dataStudents.map(dataStudent => {
+            {dataStudentsToFilter.map(dataStudent => {
               return <Students dataStudent={dataStudent} key={dataStudent.id}/>;
             })}
           </div>
@@ -50,8 +50,8 @@ class AdminDashboard extends Component {
 
 AdminDashboard.propTypes = {
   fetchStudentsView: PropTypes.func,
-  data: PropTypes.obj,
-  dataStudents: PropTypes.array,
+  data: PropTypes.object,
+  dataStudents: PropTypes.object,
   error: PropTypes.string,
   isFetching: PropTypes.bool
 };

@@ -9,6 +9,18 @@ class Students extends Component {
     this.state = {
       backgroundColor: ''
     };
+    this._handleCircleColor = this._handleCircleColor.bind(this);
+
+  }
+  _handleCircleColor(status) {
+    const objColor = { backgroundColor: '' };
+    (status === 'Urgent')?
+      objColor.backgroundColor = '#e74c3c':
+      (status==='Kind Of')?
+        objColor.backgroundColor = '#2ecc71' :
+        objColor.backgroundColor = '#3498db';
+
+    return objColor;
   }
   render() {
     const arrayOfSkills = this.props.dataStudent.skills;
@@ -46,16 +58,11 @@ class Students extends Component {
           </div>
         </div>
         <div className='student__status'>
-          {
-            (this.props.dataStudent.status === 'Urgent')?
-              this.setState({ backgroundColor: '#e74c3c' }):
-              (this.props.dataStudent.status==='Kind Of')?
-                this.setState({ backgroundColor: '#2ecc71' }):
-                this.setState({ backgroundColor: '#3498db' })
-          }
           <div className='student__circle' title={this.props.dataStudent.status}
-            style={this.state}></div>
-          <input className='student__view' type='submit' value='View'></input>
+            style={this._handleCircleColor(this.props.dataStudent.status)}></div>
+          <a href={`/profile/${this.props.dataStudent.id}`}>
+            <input className='student__view' type='submit' value='View'></input>
+          </a>
         </div>
 
       </div>
