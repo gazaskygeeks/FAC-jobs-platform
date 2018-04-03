@@ -5,7 +5,6 @@ export default (array, dataToFilter) => {
       return user[key].includes(this[key])|| !this[key];
     });
   }
-
   const result = array.filter(search, dataToFilter);
 
   return result;

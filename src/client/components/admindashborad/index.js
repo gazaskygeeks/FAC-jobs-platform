@@ -27,16 +27,21 @@ class AdminDashboard extends Component {
         <NavBar />
         <div className='admindashboard__container'>
           <div className='admindashboard__students'>
-            <center className='beatLoader'>
-              {isFetching && (
+            {isFetching ?
+              <center className='admindashboard__beatLoader'>
                 <BeatLoader color={'#66D49D'} loading={isFetching} width={200} />
-              )}
-            </center>
+              </center>
+              :
+
+              (dataStudentsToFilter.length === 0)?
+                <div className='admindashboard__beatLoader'>Sorry, There Is No Result.</div>
+                :dataStudentsToFilter.map(dataStudent => {
+                  return <Students dataStudent={dataStudent} key={dataStudent.id}/>;
+                })
+
+            }
             {error && <div className='data-error'>{error}</div>}
 
-            {dataStudentsToFilter.map(dataStudent => {
-              return <Students dataStudent={dataStudent} key={dataStudent.id}/>;
-            })}
           </div>
           <div className='admindashboard__filter'>
             <Filter allStudents={dataStudents}/>

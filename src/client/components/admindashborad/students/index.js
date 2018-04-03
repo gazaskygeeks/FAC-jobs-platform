@@ -6,9 +6,6 @@ import PropTypes from 'prop-types';
 class Students extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      backgroundColor: ''
-    };
     this._handleCircleColor = this._handleCircleColor.bind(this);
 
   }
