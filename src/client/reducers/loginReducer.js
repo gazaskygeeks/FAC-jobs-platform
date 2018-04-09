@@ -1,7 +1,8 @@
 import { START_LOGIN,SUCCESS_LOGIN ,FAILURE_LOGIN } from '../constants/actionTypes';
 
 const initialState = {
-  user: ''
+  user: '',
+  isLogged: false
 };
 
 export default (state = initialState, action) => {
@@ -16,7 +17,8 @@ export default (state = initialState, action) => {
       return {
         ...state,
         error: undefined,
-        user: action.payload
+        user: action.payload,
+        isLogged: true
       };}
 
     case FAILURE_LOGIN: {

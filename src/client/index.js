@@ -9,7 +9,7 @@ import Profile from './components/studentProfile';
 import Page404 from './components/page404';
 import AdminDashboard from './components/admindashborad';
 import MainSettings from './components/settings';
-
+import PrivateRoute from './authRoute';
 import './index.css';
 
 ReactDOM.render(
@@ -17,8 +17,8 @@ ReactDOM.render(
     <BrowserRouter>
       <div className='app'>
         <Switch>
+          <PrivateRoute path='/dashboard' component={AdminDashboard} />
           <Route exact path='/' component={Home} />
-          <Route exact path='/dashboard' component={AdminDashboard} />
           <Route exact path='/form' component={Form} />
           <Route exact path='/profile/:student_name' component={Profile} />
           <Route exact path='/profilesettings' component={MainSettings} />
