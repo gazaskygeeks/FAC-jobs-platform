@@ -74,13 +74,15 @@ passport.use(new Strategy({
 
 app.use(
   cookieSession({
-    name: 'walaa',
-    maxAge: 30 * 24 * 60 * 60* 1000,
-    keys: [process.env.COOKIEKEY]
+    name: 'FAC-APT',
+    maxAge: 24 * 60 * 60* 1000,
+    keys: [process.env.COOKIEKEY],
+    httpOnly: false
   }),
 );
 passport.serializeUser((user, done) => {
-  done(null, { id: user.id,name: user.username });
+  console.log(user);
+  done(null, { id: user.id,name: user.username,isadmin: user.is_admin });
 });
 
 passport.deserializeUser((id, done) => {

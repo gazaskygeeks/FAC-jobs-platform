@@ -12,26 +12,32 @@ import { BeatLoader } from 'react-spinners';
 class StudentProfile extends Component {
   componentDidMount() {
     const { fetchStudentData } = this.props;
-    fetchStudentData(this.props.match.params.student_id);
+    fetchStudentData(this.props.match.params.student_name);
   }
   render() {
+    console.log(this.props,'proooops');
     const { isFetching , error , studentData } = this.props;
 
     return (
       <div>
-        <Navbar />
+
         <div>
           {
             isFetching
-              ? <center className='center'>
+              ? <center className='center' style={{ marginTop: '250px' }}>
                 <BeatLoader color={'#66D49D'} loading={isFetching} width={200} />
                 <Loader loaded={false} type='ball-pulse-rise' />
                 <h1>Info inbound<br/>
                 Wait!!</h1>
               </center>
-              :<Profile
-                studentData={studentData}
-              />
+              :<div>
+                <Navbar studentData={studentData} propsNav={this.props}/>
+                <Profile
+                  studentData={studentData}
+                />
+                <Footer />
+
+              </div>
           }
           {
             error && (
@@ -41,7 +47,6 @@ class StudentProfile extends Component {
             )
           }
         </div>
-        <Footer />
       </div>
     );
   }

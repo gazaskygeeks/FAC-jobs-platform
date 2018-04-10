@@ -196,20 +196,20 @@
 }
 
 .custom-radios input[type="radio"]#color-1+label span {
-  background-color: #2ecc71;
+  background-color: orange;
   cursor: pointer;
 
 }
 
 .custom-radios input[type="radio"]#color-2+label span {
-  background-color: #3498db;
+  background-color: red;
   margin-left: 45px;
   cursor: pointer;
 
 }
 
 .custom-radios input[type="radio"]#color-3+label span {
-  background-color: #e74c3c;
+  background-color: green;
   margin-left: -10px;
   cursor: pointer;
 

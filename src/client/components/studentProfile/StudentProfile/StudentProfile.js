@@ -71,7 +71,7 @@ class Profile extends Component {
               </div>
               <ul className='studentSkillsList'>{
                 item.projects.map((project, index) => {
-                  return (<li className='studentSingleProject' key={index}><a>{project}</a></li>);
+                  return (<li className='studentSingleSkills' key={index}><a>{project}</a></li>);
                 })
               }
               </ul>
