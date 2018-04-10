@@ -17,7 +17,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div className='app'>
         <Switch>
-          <PrivateRoute path='/dashboard' component={AdminDashboard} />
+          <PrivateRoute path='/dashboard' ComponentName={AdminDashboard} />
           <Route exact path='/' component={Home} />
           <Route exact path='/form' component={Form} />
           <Route exact path='/profile/:student_name' component={Profile} />

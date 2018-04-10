@@ -2,7 +2,8 @@ import { START_LOGIN,SUCCESS_LOGIN ,FAILURE_LOGIN } from '../constants/actionTyp
 
 const initialState = {
   user: '',
-  isLogged: false
+  isLogged: false,
+  isFetching: false
 };
 
 export default (state = initialState, action) => {
@@ -10,6 +11,7 @@ export default (state = initialState, action) => {
     case START_LOGIN: {
       return {
         ...state,
+        isFetching: true,
         error: undefined
       };
     }
@@ -18,13 +20,15 @@ export default (state = initialState, action) => {
         ...state,
         error: undefined,
         user: action.payload,
-        isLogged: true
+        isLogged: true,
+        isFetching: false
       };}
 
     case FAILURE_LOGIN: {
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        isFetching: false
 
       };
     }
