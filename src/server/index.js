@@ -1,6 +1,7 @@
 require('env2')('config.env');
 const path = require('path');
 const express = require('express');
+// const fileupload = require('express-fileupload');
 const app = express();
 const routes = require('./controllers/routes');
 const getUserData = require('./models/queries/getUserData');
@@ -38,7 +39,9 @@ passport.use(new Strategy({
           } else if (Object.keys(userObj).length === 0) {
             if (profile._json.html_url==='https://github.com/freelancedad') {
               postGithubData.users(profile._json.id, profile.username, profile._json.email,
-                profile._json.avatar_url, true , profile._json.html_url,true,profile._json.bio,(err2,userObj2) => {
+                profile._json.avatar_url,
+                true,
+                profile._json.html_url,true,profile._json.bio,(err2,userObj2) => {
                   if (err) {
                     done(err2);
                   } else {
@@ -47,19 +50,18 @@ passport.use(new Strategy({
                 });
             } else {
               postGithubData.users(profile._json.id, profile.username, profile._json.email,
-                profile._json.avatar_url, true , profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
-
+                profile._json.avatar_url,
+                true,
+                profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
                   if (err) {
                     done(err2);
                   } else {
                     done(null,userObj2,'user ADDED');
                   }
                 });
-
             }
           } else {
             done(null,userObj,'user EXIST');
-
           }
         });
       } else {
@@ -92,6 +94,7 @@ passport.deserializeUser((id, done) => {
   });
 });
 
+// app.use(fileupload());
 app.use(express.static('public'));
 app.use('/api/v1/', routes);
 app.use('/', authRoutes);

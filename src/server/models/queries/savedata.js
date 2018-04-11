@@ -12,7 +12,7 @@ const storedata = (data, cb) => {
       `${data.questionAnswer.cohort}`,
       `${data.questionAnswer.interesting}`,
       `{${data.questionAnswer.skills}}`,
-      'cv.pdf',
+      `${data.questionAnswer.cv}`,
       `${data.questionAnswer.opportunity}`,
       `{${data.questionAnswer.stackoverflow},${data.questionAnswer.linkedin}}`,
       `${data.questionAnswer.portfolio}`,
