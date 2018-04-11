@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './style.css';
 import PropTypes from 'prop-types';
@@ -6,10 +7,12 @@ import PropTypes from 'prop-types';
 class Students extends Component {
   constructor(props) {
     super(props);
+    console.log(props,'ppp');
     this.state = {
       backgroundColor: ''
     };
   }
+
   render() {
     const arrayOfSkills = this.props.dataStudent.skills;
 
@@ -48,15 +51,16 @@ class Students extends Component {
         <div className='student__status'>
           {
             (this.props.dataStudent.status === 'Urgent')?
-              this.setState({ backgroundColor: '#e74c3c' }):
+              this.setState({ backgroundColor: 'green' }):
               (this.props.dataStudent.status==='Kind Of')?
-                this.setState({ backgroundColor: '#2ecc71' }):
-                this.setState({ backgroundColor: '#3498db' })
+                this.setState({ backgroundColor: 'orange' }):
+                this.setState({ backgroundColor: 'red' })
           }
           <div className='student__circle' title={this.props.dataStudent.status}
             style={this.state}></div>
-          <input className='student__view' type='submit' value='View'></input>
-        </div>
+          <Link to={`/profile/${this.props.dataStudent.username}`}>
+            <input className='student__view' type='submit' value='View'/>
+          </Link>  </div>
 
       </div>
     );
@@ -64,7 +68,9 @@ class Students extends Component {
 }
 
 Students.propTypes = {
-  dataStudent: PropTypes.array
+  dataStudent: PropTypes.array,
+  history: PropTypes.obj
+
 };
 
 export default Students;
