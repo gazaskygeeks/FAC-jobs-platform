@@ -51,6 +51,7 @@ Note: Here are some quick instructions to remind you how to set up a database:
 
 In terminal type psql, or pgcli if installed. Within psql/pcli enter the following commands each followed by a return. Things in square brackets are for your desired values. Note that password is a string inside ' ' (NOT double quotes ""):
 
+
 ```
 CREATE DATABASE [db_name];
 ```
@@ -65,6 +66,7 @@ CREATE USER <user name> with password <your password>
 ```
 
 
+
  Add the database URL in the following format, adding your database's details in your config.env file:
 
 DATABASE_URL_LOCALLY = postgres://[username]:[password]@localhost:5432/[database]
@@ -72,6 +74,7 @@ DATABASE_URL_LOCALLY = postgres://[username]:[password]@localhost:5432/[database
 Build the database with:
 ```
 npm run build:db
+
 ```
 
 
