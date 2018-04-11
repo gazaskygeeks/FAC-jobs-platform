@@ -8,6 +8,7 @@
     "start": "node ./src/server/",
     "dev:build": "webpack --watch",
     "dev:start": "nodemon --exec node ./src/server/",
+    "build:db": "NODE_ENV=test node ./src/server/models/database/dbBuild.js",
     "test": "NODE_ENV=testing node ./src/server/tests/test.js | tap-spec",
     "lint": "eslint src --fix",
     "heroku-postbuild": "webpack -p --config webpack.config.js --progress"
