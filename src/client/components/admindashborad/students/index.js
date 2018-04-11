@@ -12,10 +12,10 @@ class Students extends Component {
   _handleCircleColor(status) {
     const objColor = { backgroundColor: '' };
     (status === 'Urgent')?
-      objColor.backgroundColor = '#e74c3c':
+      objColor.backgroundColor = 'green':
       (status==='Kind Of')?
-        objColor.backgroundColor = '#2ecc71' :
-        objColor.backgroundColor = '#3498db';
+        objColor.backgroundColor = 'orange' :
+        objColor.backgroundColor = 'red';
 
     return objColor;
   }
