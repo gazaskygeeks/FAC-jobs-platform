@@ -15,7 +15,6 @@ class Settings extends Component {
     return document.getElementById(id).value;
   }
   handleSubmit() {
-    console.log(this.getData('username'));
     const data ={ username: this.getData('username'),campus: this.getData('campus'),
       cohort: this.getData('cohort'),interests: this.getData('interests'),skills: this.getData('skills'),
       email: this.getData('email'),profile_url: this.getData('profile_url'),

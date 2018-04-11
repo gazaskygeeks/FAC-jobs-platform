@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './navbar.css';
 
@@ -11,7 +12,6 @@ class Navbar extends Component {
     this.props.propsNav.history.push('/profilesettings');
   }
   render() {
-    console.log(this.props,'Naaav props');
 
     return (
       <div>
@@ -36,4 +36,8 @@ class Navbar extends Component {
     );
   }
 }
+
+Navbar.propTypes = {
+  propsNav: PropTypes.obj
+};
 export default Navbar;

@@ -15,7 +15,6 @@ class StudentProfile extends Component {
     fetchStudentData(this.props.match.params.student_name);
   }
   render() {
-    console.log(this.props,'proooops');
     const { isFetching , error , studentData } = this.props;
 
     return (

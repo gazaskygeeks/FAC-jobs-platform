@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import * as bulidProfile from '../../actions/storeanswer';
-import * as getUsername from '../../actions/getUserIdAction';
+import getUsername from '../../actions/getUserIdAction';
 
 import ButtonBack from '../button/backBtn';
 
@@ -20,8 +20,6 @@ class End extends Component {
   }
 
   render() {
-    console.log(this.props,' prpos here');
-
     return (
       <div className='question__container'>
         <div className='q__container end'>
@@ -58,7 +56,7 @@ End.propTypes = {
 
 const mapDispatchToProps = {
   completeLogin: bulidProfile.saveAnswer,
-  name: getUsername.getUsername
+  name: getUsername
 
 };
 export default connect(null, mapDispatchToProps)(End);

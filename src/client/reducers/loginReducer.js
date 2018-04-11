@@ -1,9 +1,9 @@
 import { START_LOGIN,SUCCESS_LOGIN ,FAILURE_LOGIN } from '../constants/actionTypes';
-
+import { REQUEST_FAILED ,REQUEST_PENDING , REQUEST_SUCCEDED } from '../constants/requestStatuses';
 const initialState = {
   user: '',
   isLogged: false,
-  isFetching: false
+  reqestStatus: undefined
 };
 
 export default (state = initialState, action) => {
@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
     case START_LOGIN: {
       return {
         ...state,
-        isFetching: true,
+        reqestStatus: REQUEST_PENDING,
         error: undefined
       };
     }
@@ -21,14 +21,14 @@ export default (state = initialState, action) => {
         error: undefined,
         user: action.payload,
         isLogged: true,
-        isFetching: false
+        reqestStatus: REQUEST_SUCCEDED
       };}
 
     case FAILURE_LOGIN: {
       return {
         ...state,
         error: action.payload,
-        isFetching: false
+        reqestStatus: REQUEST_FAILED
 
       };
     }

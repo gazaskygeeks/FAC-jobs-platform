@@ -81,8 +81,8 @@ app.use(
   }),
 );
 passport.serializeUser((user, done) => {
-  console.log(user);
-  done(null, { id: user.id,name: user.username,isadmin: user.is_admin });
+  console.log(user,'useere');
+  done(null, { id: user.id,name: user.username,isadmin: user.is_admin,newuser: user.new_user });
 });
 
 passport.deserializeUser((id, done) => {

@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 class Students extends Component {
   constructor(props) {
     super(props);
-    console.log(props,'ppp');
     this.state = {
       backgroundColor: ''
     };
