@@ -74,14 +74,15 @@ passport.use(new Strategy({
 
 app.use(
   cookieSession({
-    name: 'FAC APT',
-    maxAge: 30 * 24 * 60 * 60* 1000,
-    keys: [process.env.COOKIEKEY]
+    name: 'FAC-APT',
+    maxAge: 24 * 60 * 60* 1000,
+    keys: [process.env.COOKIEKEY],
+    httpOnly: false
   }),
 );
 passport.serializeUser((user, done) => {
-  console.log(user.username);
-  done(null, { id: user.id,name: user.username });
+  console.log(user,'useere');
+  done(null, { id: user.id,name: user.username,isadmin: user.is_admin,newuser: user.new_user });
 });
 
 passport.deserializeUser((id, done) => {
