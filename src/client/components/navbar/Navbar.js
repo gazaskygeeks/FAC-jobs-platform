@@ -11,7 +11,6 @@ class Navbar extends Component {
     this.props.propsNav.history.push('/profilesettings');
   }
   render() {
-    console.log(this.props,'Naaav props');
 
     return (
       <div>

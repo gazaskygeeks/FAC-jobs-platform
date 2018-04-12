@@ -24,7 +24,7 @@ class StudentProfile extends Component {
         <div>
           {
             isFetching
-              ? <center className='center' style={{ marginTop: '250px' }}>
+              ? <center className='center studentProfile__BeatLoader'>
                 <BeatLoader color={'#66D49D'} loading={isFetching} width={200} />
                 <Loader loaded={false} type='ball-pulse-rise' />
                 <h1>Info inbound<br/>
