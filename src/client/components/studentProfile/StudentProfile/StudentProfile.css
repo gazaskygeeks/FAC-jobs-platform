@@ -92,12 +92,10 @@
   justify-content: center;
   text-align: center;
   font-size: 25px;
-  width: 135px;
-  height: 39px;
   background: #EB5757;
   border-radius: 5px;
-  padding-top: 10px;
   color: #fff;
+  padding: 5px;
 }
 
 .studentGitter {
@@ -158,9 +156,8 @@
 
 .studentContactInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
   height: 60%;
 }
 

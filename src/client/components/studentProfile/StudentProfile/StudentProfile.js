@@ -33,14 +33,14 @@ class Profile extends Component {
               </div>
 
               <div className='studentContactInfo'>
-                <span className='studentState'>{item.status}</span>
-                <span className='studentPurpose'>{item.interests}</span>
-                <a className='studentGitter__a' href={`https://gitter.im/${item.username}`} target='__blank'>
+                <div className='studentState'>{item.status}</div>
+                {/* <span className='studentPurpose'>{item.interests}</span> */}
+                {/* <a className='studentGitter__a' href={`https://gitter.im/${item.username}`} target='__blank'>
                   <div className='studentGitter'>
                     <img className='studentGitter__img' src='/assets/gittericon.png' />
                     <span className='studentGitter__span' >Messege on Gitter</span>
                   </div>
-                </a>
+                </a> */}
               </div>
             </div>
             <div className='studentSkills'>
@@ -51,6 +51,18 @@ class Profile extends Component {
                 {
                   item.skills.map((skill, index) => {
                     return (<li className='studentSingleSkills' key={index}><a>{skill}</a></li>);
+                  })
+                }
+              </ul>
+            </div>
+            <div className='studentSkills'>
+              <div className='studentStdHeader'>
+                <h1 className='portfolio'>Interests:</h1>
+              </div>
+              <ul className='studentSkillsList'>
+                {
+                  item.interests.map((e, index) => {
+                    return (<li className='studentSingleSkills' key={index}><a>{e}</a></li>);
                   })
                 }
               </ul>
@@ -70,8 +82,24 @@ class Profile extends Component {
                 <i className='fas fa-plus-circle addbtn'></i>
               </div>
               <ul className='studentSkillsList'>{
-                item.projects.map((project, index) => {
-                  return (<li className='studentSingleSkills' key={index}><a>{project}</a></li>);
+                // <div className='studentSkillsDiv'>
+                //   <div >
+                //     <li className='studentSingleSkills' ><a>{item.projects[0]}</a></li>
+                //     <li className='studentSingleSkills' ><a>{item.projects[1]}</a></li>
+                //   </div>
+                //   <div style={{ display: 'flex' }}>
+                //     <li className='studentSingleSkills' ><a>{item.projects[2]}</a></li>
+                //     <li className='studentSingleSkills' ><a>{item.projects[3]}</a></li>
+                //
+                //   </div>
+                // </div>
+                item.projects.map((project,i) => {
+                  return (
+
+                    <div key={i} style={{ display: 'flex' }}>
+                      <li className='studentSingleSkills' ><a>{ item.projects[i]}</a></li>
+                    </div>);
+
                 })
               }
               </ul>
