@@ -224,6 +224,18 @@
   background: #F0F0F0;
   border-radius: 455.5px;
 }
+.studentSingleSkills_a{
+  text-decoration: none;
+  color: #000;
+}
+.studentSingleSkills_a:hover{
+}
+.studentSingleSkills_li:hover{
+  cursor: pointer;
+  color: orange;
+  background-color: #b4b4b4
+}
+
 
 @media (max-width: 786px) {
   .wholeStudentContainers {

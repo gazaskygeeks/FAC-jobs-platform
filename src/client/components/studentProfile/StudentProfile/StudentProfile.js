@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import './StudentProfile.css';
 
 import PropTypes from 'prop-types';
+
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.handleUrl = this.handleUrl.bind(this);
+
+  }
+  handleUrl(url) {
+    if (url.includes === 'https://') {
+      return url;
+    } else {
+      return `https://${url}`;
+    }
+  }
   render() {
     if (!this.props.studentData)
 
@@ -81,27 +94,22 @@ class Profile extends Component {
                 <h1 className='portfolio'>Projects Links:</h1>
                 <i className='fas fa-plus-circle addbtn'></i>
               </div>
-              <ul className='studentSkillsList'>{
-                // <div className='studentSkillsDiv'>
-                //   <div >
-                //     <li className='studentSingleSkills' ><a>{item.projects[0]}</a></li>
-                //     <li className='studentSingleSkills' ><a>{item.projects[1]}</a></li>
-                //   </div>
-                //   <div style={{ display: 'flex' }}>
-                //     <li className='studentSingleSkills' ><a>{item.projects[2]}</a></li>
-                //     <li className='studentSingleSkills' ><a>{item.projects[3]}</a></li>
-                //
-                //   </div>
-                // </div>
-                item.projects.map((project,i) => {
-                  return (
+              <ul className='studentSkillsList'>
+                {
 
-                    <div key={i} style={{ display: 'flex' }}>
-                      <li className='studentSingleSkills' ><a>{ item.projects[i]}</a></li>
-                    </div>);
+                  item.projects.map((project,i) => {
+                    return (
+                      i%2 ===0?
+                        (<li className='studentSingleSkills studentSingleSkills_li'>
+                          <a className='studentSingleSkills_a' href={this.handleUrl(item.projects[i+1])}
+                            target='_blank'>{item.projects[i]}</a>
+                        </li>):
+                        <li></li>
+                    );
 
-                })
-              }
+                  })
+                }
+
               </ul>
             </div>
             <div className='studentSkills'>
