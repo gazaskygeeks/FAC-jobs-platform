@@ -11,7 +11,8 @@ const initialState = {
   linkedin: '',
   opportunity: '',
   portfolio: '',
-  projects: ''
+  projects: '',
+  cv: ''
 };
 
 export default (state = initialState, { type, payload }) => {
