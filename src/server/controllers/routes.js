@@ -39,9 +39,8 @@ router.get('/current_user',(req,res) => {
   res.send(req.session.passport.user);
 });
 
-router.get('/api/logout',(req,res) => {
-  req.logout();
-  res.redirect('/');
+router.get('/logout',(req,res) => {
+  res.clearCookie('FAC-APT'); res.redirect('/');
 });
 
 router.post('/storeanswer', storeanswer.post);
