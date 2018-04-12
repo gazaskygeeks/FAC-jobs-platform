@@ -31,5 +31,13 @@ CREATE TABLE IF NOT EXISTS users_info (
 	login_date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (current_timestamp),
   update_date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (current_timestamp)
 );
+CREATE TABLE IF NOT EXISTS message (
+	id SERIAL PRIMARY KEY,
+	sender_id INTEGER REFERENCES users_table(id),
+	resever_id INTEGER REFERENCES users_table(id),
+  message TEXT NOT NULL,
+  msg_date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT (current_timestamp)
+
+);
 
 COMMIT;
