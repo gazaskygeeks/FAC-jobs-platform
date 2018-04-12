@@ -27,6 +27,7 @@ passport.use(new Strategy({
   callbackURL: 'http://localhost:3000/auth/github/callback',
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done) => {
+  console.log(profile,'profile');
   axios.get(`https://api.github.com/user/orgs?access_token=${accessToken}`)
     .then(response => {
       if (response.data.length === 0) {

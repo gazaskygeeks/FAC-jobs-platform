@@ -8,6 +8,7 @@ import Form from './components/greencomp';
 import StudentProfile from './components/studentProfile';
 import Page404 from './components/page404';
 import AdminDashboard from './components/admindashborad';
+import Sort from './components/admindashborad/sort';
 
 import './index.css';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <div className='app'>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/sort' component={Sort} />
           <Route exact path='/dashboard' component={AdminDashboard} />
           <Route exact path='/form' component={Form} />
           <Route exact path='/profile/:student_id' component={StudentProfile} />

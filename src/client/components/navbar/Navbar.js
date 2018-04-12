@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import Sort from '../admindashborad/sort';
 
 import './navbar.css';
 
 class Navbar extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <div>
@@ -10,6 +14,7 @@ class Navbar extends Component {
           <div className='logo'>
             <img src='/assets/logo.png' className='logo' alt='star' />
           </div>
+          <Sort students={this.props}/>
           <div className='rightSideNav'>
             <i className='far fa-bell bell'></i>
             <div className='dropdown'>
