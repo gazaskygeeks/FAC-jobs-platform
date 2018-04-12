@@ -5,10 +5,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import store from './store';
 import Home from './components/home';
 import Form from './components/greencomp';
-import StudentProfile from './components/studentProfile';
+import Profile from './components/studentProfile';
 import Page404 from './components/page404';
 import AdminDashboard from './components/admindashborad';
+
 import Sort from './components/admindashborad/sort';
+
+import MainSettings from './components/settings';
+
 
 import './index.css';
 
@@ -21,7 +25,8 @@ ReactDOM.render(
           <Route exact path='/sort' component={Sort} />
           <Route exact path='/dashboard' component={AdminDashboard} />
           <Route exact path='/form' component={Form} />
-          <Route exact path='/profile/:student_id' component={StudentProfile} />
+          <Route exact path='/profile/:student_name' component={Profile} />
+          <Route exact path='/profilesettings' component={MainSettings} />
           <Route component={Page404} />
         </Switch>
       </div>

@@ -4,10 +4,14 @@ import Sort from '../admindashborad/sort';
 import './navbar.css';
 
 class Navbar extends Component {
+
   constructor(props){
     super(props);
+
   }
   render() {
+    console.log(this.props,'Naaav props');
+
     return (
       <div>
         <div className='navbar'>
@@ -20,7 +24,7 @@ class Navbar extends Component {
             <div className='dropdown'>
               <i className='fas fa-sliders-h dropbtn'></i>
               <div className='dropdown-content'>
-                <a href='#'>Settings
+                <a onClick={this.handleSubmit}>Settings
                   <i className='fas fa-cog settings'></i></a>
                 <a href='#'>Logout
                   <i className='fas fa-sign-out-alt settings'></i></a>

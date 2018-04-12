@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './style.css';
 import PropTypes from 'prop-types';
@@ -6,6 +7,7 @@ import PropTypes from 'prop-types';
 class Students extends Component {
   constructor(props) {
     super(props);
+
     this._handleCircleColor = this._handleCircleColor.bind(this);
 
   }
@@ -18,7 +20,9 @@ class Students extends Component {
         objColor.backgroundColor = '#3498db';
 
     return objColor;
+
   }
+
   render() {
     const arrayOfSkills = this.props.dataStudent.skills;
 
@@ -55,6 +59,7 @@ class Students extends Component {
           </div>
         </div>
         <div className='student__status'>
+
           <div className='student__circle' title={this.props.dataStudent.status}
             style={this._handleCircleColor(this.props.dataStudent.status)}></div>
           <a href={`/profile/${this.props.dataStudent.id}`}>
@@ -62,13 +67,16 @@ class Students extends Component {
           </a>
         </div>
 
+
       </div>
     );
   }
 }
 
 Students.propTypes = {
-  dataStudent: PropTypes.array
+  dataStudent: PropTypes.array,
+  history: PropTypes.obj
+
 };
 
 export default Students;

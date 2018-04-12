@@ -1,3 +1,3 @@
 export const getUserId = () => (dispatch,getState) => {
-  return getState().login.user.id;
+  return getState().login.user.name;
 };
