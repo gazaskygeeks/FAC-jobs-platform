@@ -9,11 +9,11 @@ class Filter extends Component {
     super(props);
     this.state = {
       options: [],
-      availability: null,
+      status: null,
       campus: null,
       cohort: null,
       skills: null,
-      interest: null
+      interests: null
     };
 
     this._handleDataChange = this._handleDataChange.bind(this);
@@ -52,8 +52,20 @@ class Filter extends Component {
   _handleFilterSubmit(ev) {
     ev.preventDefault();
     const { allStudents } = this.props;
-    const filterKeys = this.state;
-    this.props.filterStudents(allStudents, filterKeys);
+    const {
+      status,
+      campus,
+      cohort,
+      skills,
+      interests
+    } = this.state;
+    this.props.filterStudents(allStudents, {
+      status,
+      campus,
+      cohort,
+      skills,
+      interests
+    });
   }
 
   render() {
@@ -64,11 +76,12 @@ class Filter extends Component {
         <div className='filter__text' >Filter By: </div>
         <form className='filter__form' >
           <select className='filter__select' onChange={this._handleDataChange}
-            value={this.state.availability} name='availability'>
+            value={this.state.status} name='status'>
             <option value='' disabled selected >Status</option>
             <option value='Urgent' >Urgent</option>
             <option value='Kind Of' >Kind Of</option>
             <option value='Not Intersted' >Not Intersted</option>
+            <option value='' >All Status</option>
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
@@ -77,6 +90,8 @@ class Filter extends Component {
             <option value='Gaza' >Gaza</option>
             <option value='London' >London</option>
             <option value='Nazareth' >Nazareth</option>
+            <option value='' >All Cumpuses</option>
+
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
@@ -84,9 +99,12 @@ class Filter extends Component {
             <option value='' disabled selected>cohort</option>;
             {
               this.state.options.map((cohort, index) => {
+
                 return <option value={cohort} key={index}>{cohort}</option>;
               })
             }
+            <option value='' >All Cohorts</option>
+
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
@@ -96,14 +114,18 @@ class Filter extends Component {
             <option value='CSS' >CSS</option>
             <option value='Node.js' >Node.js</option>
             <option value='React.js' >React.js</option>
+            <option value='' >Any Skill</option>
+
           </select>
 
           <select className='filter__select' onChange={this._handleDataChange}
-            value={this.state.interest} name='interest'>
+            value={this.state.interests} name='interests'>
             <option value='' disabled selected>Interest</option>
             <option value='Freelancing' >Freelancing</option>
             <option value='Mentoring' >Mentoring</option>
             <option value='CFing' >CFing</option>
+            <option value='' >Any interest</option>
+
           </select>
 
           <input type='submit' value='Search' className='filter__search'
@@ -116,7 +138,7 @@ class Filter extends Component {
 }
 
 Filter.propTypes = {
-  allStudents: PropTypes.obj,
+  allStudents: PropTypes.array,
   filterStudents: PropTypes.func
 };
 

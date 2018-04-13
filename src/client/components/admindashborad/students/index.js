@@ -7,9 +7,18 @@ import PropTypes from 'prop-types';
 class Students extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      backgroundColor: ''
-    };
+    this._handleCircleColor = this._handleCircleColor.bind(this);
+
+  }
+  _handleCircleColor(status) {
+    const objColor = { backgroundColor: '' };
+    (status === 'Urgent')?
+      objColor.backgroundColor = 'green':
+      (status==='Kind Of')?
+        objColor.backgroundColor = 'orange' :
+        objColor.backgroundColor = 'red';
+
+    return objColor;
   }
 
   render() {
