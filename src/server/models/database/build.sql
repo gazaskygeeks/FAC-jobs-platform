@@ -31,13 +31,5 @@ CREATE TABLE IF NOT EXISTS users_info (
 );
 
 
-INSERT INTO users_table (github_id,name,email,avatar,new_user,profile_url,is_admin) VALUES
-  (12,'sis','sis@fac.com','pig.png', 'true','github.com/sis','false') ,
-  (13,'bro','bro@fac.com','cow.png', 'true', 'github.com/bro','false');
-
-INSERT INTO users_info (user_id , campus,cohort ,interests,skills,cv,status ,social_links,portfolio, projects)
-  VALUES (3,'Gaza','FACG3','Freelancer',['React.js','Node.js','Express.js','postgreSql'],'cv.pdf','Urgent',
-    ['https://www.linkedin.com/in/yasmin-hillis-66088515a/'],
-    'www.yasmin.com','https://gazaskygeeks-cinema.herokuapp.com')
 
 COMMIT;

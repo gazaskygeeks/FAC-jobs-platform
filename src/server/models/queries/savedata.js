@@ -1,6 +1,7 @@
 const dbConnection = require('../database/dbConnection');
 
 const storedata = (data, cb) => {
+  console.log(data);
 
   const sql = {
     text:
@@ -10,9 +11,9 @@ const storedata = (data, cb) => {
       `${data.id}`,
       `${data.questionAnswer.compus}`,
       `${data.questionAnswer.cohort}`,
-      `${data.questionAnswer.interesting}`,
+      `${data.questionAnswer.interesting[0]}`,
       `{${data.questionAnswer.skills}}`,
-      'cv.pdf',
+      `${data.questionAnswer.cv}`,
       `${data.questionAnswer.opportunity}`,
       `{${data.questionAnswer.stackoverflow},${data.questionAnswer.linkedin}}`,
       `${data.questionAnswer.portfolio}`,
@@ -23,4 +24,17 @@ const storedata = (data, cb) => {
   dbConnection.query(sql, cb);
 };
 
-module.exports = storedata;
+const updateNewUser = (data, cb) => {
+
+  const sql = {
+    text:
+        'UPDATE users_table set new_user=False where id=$1',
+    values: [
+      `${data.id}`
+
+    ]
+  };
+  dbConnection.query(sql, cb);
+};
+
+module.exports = { storedata,updateNewUser };

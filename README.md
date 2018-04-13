@@ -67,7 +67,9 @@ CREATE USER <user name> with password <your password>
 
 
 
+
  Add the database URL in the following format, adding your database's details in your config.env file:
+
 
 DATABASE_URL_LOCALLY = postgres://[username]:[password]@localhost:5432/[database]
 
