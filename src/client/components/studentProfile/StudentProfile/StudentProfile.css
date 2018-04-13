@@ -227,7 +227,9 @@
   background: #F0F0F0;
   border-radius: 455.5px;
 }
-
+.studentProfile__BeatLoader{
+  margin-top: 250px;
+}
 @media (max-width: 786px) {
   .wholeStudentContainers {
     font-size: 15px;
