@@ -26,7 +26,7 @@ class Navbar extends Component {
               <div className='dropdown-content'>
                 <a onClick={this.handleSubmit}>Settings
                   <i className='fas fa-cog settings'></i></a>
-                <a href='#'>Logout
+                <a href='/api/v1/logout'>Logout
                   <i className='fas fa-sign-out-alt settings'></i></a>
               </div>
             </div>
