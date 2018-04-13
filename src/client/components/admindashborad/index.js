@@ -24,7 +24,7 @@ class AdminDashboard extends Component {
     return (
 
       <div className='admindashboard'>
-        <NavBar />
+        <NavBar allStudents={dataStudents}/>
         <div className='admindashboard__container'>
           <div className='admindashboard__students'>
             {isFetching ?
@@ -35,15 +35,18 @@ class AdminDashboard extends Component {
 
               (dataStudentsToFilter.length === 0)?
                 <div className='admindashboard__beatLoader'>Sorry, There Is No Result.</div>
-                :dataStudentsToFilter.map(dataStudent => {
-                  return <Students dataStudent={dataStudent} key={dataStudent.id}/>;
+                :dataStudentsToFilter.map((dataStudent,i) => {
+                  while (dataStudent !== undefined && i<dataStudentsToFilter.length) {
+                    return <Students dataStudent={dataStudent} key={dataStudent.id}/>;
+
+                  }
                 })
 
             }
             {error && <div className='data-error'>{error}</div>}
 
           </div>
-          <div className='admindashboard__filter'>
+          <div className='adm indashboard__filter'>
             <Filter allStudents={dataStudents}/>
           </div>
         </div>

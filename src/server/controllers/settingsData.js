@@ -11,5 +11,4 @@ exports.get = (req, res) => {
       }
     }
   });
-
 };

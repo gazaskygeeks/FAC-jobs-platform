@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users_table, users_info CASCADE;
 CREATE TABLE IF NOT EXISTS users_table (
     id SERIAL PRIMARY KEY,
     github_id BIGINT UNIQUE NOT NULL,
-    name VARCHAR(35),
+    display_name VARCHAR(35),
     username TEXT UNIQUE NOT NULL,
     email VARCHAR(254) ,
     avatar VARCHAR(100) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS users_info (
   status TEXT NOT NULL,
 	campus TEXT NOT NULL,
 	cohort TEXT NOT NULL,
-  portfolio TEXT NOT NULL,
+  portfolio TEXT ,
 	interests TEXT[] NOT NULL,
 	skills TEXT[] NOT NULL,
   projects TEXT[] NOT NULL,

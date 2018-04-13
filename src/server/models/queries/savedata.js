@@ -1,8 +1,13 @@
 const dbConnection = require('../database/dbConnection');
 
 const storedata = (data, cb) => {
-  console.log(data);
-
+  const projects = data.questionAnswer.projects;
+  const arr = Object.keys(projects).map(key => projects[key]);
+  const newArrIntersts = arr.map(obj => {
+    return Object.keys(obj).map(key => {
+      return obj[key];
+    });
+  });
   const sql = {
     text:
         'INSERT INTO users_info (user_id,campus,cohort,interests,skills,cv,status,social_links,portfolio,projects)' +
@@ -11,13 +16,13 @@ const storedata = (data, cb) => {
       `${data.id}`,
       `${data.questionAnswer.compus}`,
       `${data.questionAnswer.cohort}`,
-      `${data.questionAnswer.interesting[0]}`,
+      `{${data.questionAnswer.interesting}}`,
       `{${data.questionAnswer.skills}}`,
       `${data.questionAnswer.cv}`,
       `${data.questionAnswer.opportunity}`,
       `{${data.questionAnswer.stackoverflow},${data.questionAnswer.linkedin}}`,
       `${data.questionAnswer.portfolio}`,
-      `{${data.questionAnswer.projects}}`
+      `{${newArrIntersts}}`
 
     ]
   };

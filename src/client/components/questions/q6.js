@@ -14,25 +14,48 @@ class Q6 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      files: '',
-      filename: ''
+      project1: {
+        name: '',
+        link: ''
+      },
+      project2: {
+        name: '',
+        link: ''
+      }
     };
     this.handleLinks = this.handleLinks.bind(this);
     this.handlePortfolio = this.handlePortfolio.bind(this);
   }
   handleLinks(ev) {
-    const projectlinks= [];
-    projectlinks.push(ev.target.value);
-    this.props.storeAnswer({ name: 'projects', value: projectlinks });
-
+    const state2 = this.state;
+    if (ev.target.name === 'name1') {
+      this.setState({
+        project1: { ...state2.project1,name: ev.target.value }
+      });
+    }
+    if (ev.target.name ==='project1') {
+      this.setState({
+        project1: { ...state2.project1,link: ev.target.value }
+      });
+    }
+    if (ev.target.name==='name2') {
+      this.setState({
+        project2: { ...state2.project2,name: ev.target.value }
+      });
+    }
+    if (ev.target.name==='project2') {
+      this.setState({
+        project2: { ...state2.project2,link: ev.target.value }
+      });
+    }
+    this.props.storeAnswer({ name: 'projects', value: this.state });
   }
+
   handlePortfolio(ev) {
     const portfolio= ev.target.value;
     this.props.storeAnswer({ name: 'portfolio', value: portfolio });
-
   }
   uploadFile(files) {
-    console.log('file data shit');
     const file = files[0];
     const cloudName = 'drgrbu6fw';
     const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
@@ -58,10 +81,9 @@ class Q6 extends Component {
 
         return;
       }
-      console.log('upload complete: ', JSON.stringify(res.body));
-      const uploaded = res.body.original_filename;
+      const uploaded = res.body.url;
       this.setState({
-        files: 'success uploading one file',
+        files: `success uploading one file ${res.body.original_filename}`,
         filename: uploaded
       });
       this.props.storeAnswer({ name: 'cv', value: uploaded });
@@ -82,13 +104,13 @@ class Q6 extends Component {
 
             </div>
             <div className='q6_input'>
-              <input type='text' placeholder='Project1 Title' onChange={this.handleLinks}/>
-              <input type='text' placeholder='Project2 Title' onChange={this.handleLinks}/>
+              <input type='text' name='name1' placeholder='Project1 Title' onChange={this.handleLinks}/>
+              <input type='text' name='name2' placeholder='Project2 Title' onChange={this.handleLinks}/>
             </div>
             <div>
               <div className='q6_input'>
-                <input type='text' placeholder='Link your project 1' onChange={this.handleLinks}/>
-                <input type='text' placeholder='Link your project 2' onChange={this.handleLinks}/>
+                <input type='text' name='project1' placeholder='Link your project 1' onChange={this.handleLinks}/>
+                <input type='text' name='project2' placeholder='Link your project 2' onChange={this.handleLinks}/>
                 <input type='text' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
                 <Dropzone onDrop={this.uploadFile.bind(this)}
                   style={{ width: '200px',height: '66px',borderWidth: '2px',
@@ -102,7 +124,7 @@ class Q6 extends Component {
           </div>
 
         </div>
-        <h3 style={{ marginTop: '225px',marginRight: '-31px',color: 'lawngreen' }}>{this.state.files} {this.state.filename}</h3>
+        <h3 style={{ marginTop: '225px',marginRight: '-31px',color: 'lawngreen' }}>{this.state.files}</h3>
         <div className='buttons'>
           <ButtonBack prevQuestion='Q5' />
           <ButtonNext nextQuestion='End' />

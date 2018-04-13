@@ -11,7 +11,7 @@ import allData from './actions/getAllDataAction';
 class PrivateRoute extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {};
   }
   componentDidMount() {
     this.props.login();
@@ -29,6 +29,8 @@ class PrivateRoute extends Component {
           <Route
             {...rest}
             render={props => {
+              console.log(props,'props auth to form');
+
               return (
                 user.isLogged &&user.user.isadmin? (
                   <ComponentName {...props} />
@@ -54,6 +56,7 @@ class PrivateRoute extends Component {
           <Route
             {...rest}
             render={props => {
+
               return (
                 user.isLogged && user.user.newuser && !user.user.isadmin? (
                   <ComponentName {...props} />
@@ -110,6 +113,7 @@ PrivateRoute.propTypes = {
   ComponentName: PropTypes.str,
   data: PropTypes.func,
   login: PropTypes.func,
+  newuser: PropTypes.func,
   reqestStatus: PropTypes.str,
   user: PropTypes.obj,
   computedMatch: PropTypes.obj
@@ -124,6 +128,5 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   data: allData,
   login: login.loginuser
-
 };
 export default connect(mapStateToProps, mapDispatchToProps)(PrivateRoute);

@@ -29,7 +29,6 @@ export default (state = initialState, action) => {
         ...state,
         error: action.payload,
         reqestStatus: REQUEST_FAILED
-
       };
     }
     default:

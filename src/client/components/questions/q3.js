@@ -47,12 +47,10 @@ class Q3 extends Component {
     if (! this.state.skills.includes(techValue)) {
       this.setState({ message: 'Sorry this skill is not available' });
       ev.target[0].value='';
-      console.log(this.state);
 
     } else {
       this.setState({ message: '' });
 
-      console.log(!this.state.mySkills.includes(techValue)&&this.state.mySkills.length===5);
       if (!this.state.mySkills.includes(techValue)&&this.state.mySkills.length!==5) {
         this.state.mySkills.push(techValue);
         this.props.storeAnswer({ name: 'skills', value: this.state.mySkills });

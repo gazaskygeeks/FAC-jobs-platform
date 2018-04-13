@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import './style.css';
 import PropTypes from 'prop-types';
@@ -7,6 +6,7 @@ import PropTypes from 'prop-types';
 class Students extends Component {
   constructor(props) {
     super(props);
+
     this._handleCircleColor = this._handleCircleColor.bind(this);
 
   }
@@ -19,6 +19,7 @@ class Students extends Component {
         objColor.backgroundColor = 'red';
 
     return objColor;
+
   }
 
   render() {
@@ -57,18 +58,13 @@ class Students extends Component {
           </div>
         </div>
         <div className='student__status'>
-          {
-            (this.props.dataStudent.status === 'Urgent')?
-              this.setState({ backgroundColor: 'green' }):
-              (this.props.dataStudent.status==='Kind Of')?
-                this.setState({ backgroundColor: 'orange' }):
-                this.setState({ backgroundColor: 'red' })
-          }
+
           <div className='student__circle' title={this.props.dataStudent.status}
-            style={this.state}></div>
-          <Link to={`/profile/${this.props.dataStudent.username}`}>
-            <input className='student__view' type='submit' value='View'/>
-          </Link>  </div>
+            style={this._handleCircleColor(this.props.dataStudent.status)}></div>
+          <a href={`/profile/${this.props.dataStudent.id}`}>
+            <input className='student__view' type='submit' value='View'></input>
+          </a>
+        </div>
 
       </div>
     );
