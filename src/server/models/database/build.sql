@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS users_info (
   status TEXT NOT NULL,
 	campus TEXT NOT NULL,
 	cohort TEXT NOT NULL,
-  portfolio TEXT NOT NULL,
+  portfolio TEXT ,
 	interests TEXT[] NOT NULL,
 	skills TEXT[] NOT NULL,
   projects TEXT[] NOT NULL,
