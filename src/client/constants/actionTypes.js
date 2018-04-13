@@ -20,3 +20,10 @@ export const STORE_DATA_FAILURE = Symbol(' STORE_ANSWER');
 
 export const SUCCESS_GET_USERID = Symbol('SUCCESS_GET_USERID');
 export const FAILURE_GET_USERID = Symbol('FAILURE_GET_USERID');
+
+export const START_SETTINGS = Symbol('START_SETTINGS');
+export const SUCCESS_SETTINGS = Symbol('SUCCESS_SETTINGS');
+export const FAILURE_SETTINGS = Symbol('FAILURE_SETTINGS');
+
+export const UPDATE_DATA_USER = Symbol('UPDATE_DATA_USER');
+export const FAILURE_UPDATE = Symbol('FAILURE_UPDATE');

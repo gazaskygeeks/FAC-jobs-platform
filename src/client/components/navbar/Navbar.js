@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './navbar.css';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit() {
+    this.props.propsNav.history.push('/profilesettings');
+  }
   render() {
+
     return (
       <div>
         <div className='navbar'>
@@ -15,9 +24,9 @@ class Navbar extends Component {
             <div className='dropdown'>
               <i className='fas fa-sliders-h dropbtn'></i>
               <div className='dropdown-content'>
-                <a href='#'>Settings
+                <a onClick={this.handleSubmit}>Settings
                   <i className='fas fa-cog settings'></i></a>
-                <a href='#'>Logout
+                <a href='/api/v1/logout'>Logout
                   <i className='fas fa-sign-out-alt settings'></i></a>
               </div>
             </div>
@@ -27,4 +36,8 @@ class Navbar extends Component {
     );
   }
 }
+
+Navbar.propTypes = {
+  propsNav: PropTypes.obj
+};
 export default Navbar;
