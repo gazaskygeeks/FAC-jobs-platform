@@ -1,7 +1,6 @@
 require('env2')('config.env');
 const path = require('path');
 const express = require('express');
-// const fileupload = require('express-fileupload');
 const app = express();
 const routes = require('./controllers/routes');
 const getUserData = require('./models/queries/getUserData');
@@ -78,12 +77,9 @@ app.use(
   cookieSession({
     name: 'FAC-APT',
     maxAge: 24 * 60 * 60* 1000,
-    keys: [process.env.COOKIEKEY],
-    httpOnly: false
-  }),
+    keys: [process.env.COOKIEKEY] }),
 );
 passport.serializeUser((user, done) => {
-  console.log(user,'useere');
   done(null, { id: user.id,name: user.username,isadmin: user.is_admin,newuser: user.new_user });
 });
 
@@ -96,7 +92,6 @@ passport.deserializeUser((id, done) => {
   });
 });
 
-// app.use(fileupload());
 app.use(express.static('public'));
 app.use('/api/v1/', routes);
 app.use('/', authRoutes);
