@@ -26,6 +26,7 @@ const storedata = (data, cb) => {
 
     ]
   };
+  console.log(sql);
   dbConnection.query(sql, cb);
 };
 

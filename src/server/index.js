@@ -36,9 +36,12 @@ passport.use(new Strategy({
           if (err) {
             return done(err);
           } else if (Object.keys(userObj).length === 0) {
+            console.log(profile.displayName,'[rofilr]');
             if (profile._json.html_url==='https://github.com/freelancedad') {
-              postGithubData.users(profile._json.id, profile.username, profile._json.email,
-                profile._json.avatar_url, true , profile._json.html_url,true,profile._json.bio,(err2,userObj2) => {
+              postGithubData.users(profile._json.id, profile.displayName,
+                profile.username, profile._json.email,
+                profile._json.avatar_url, true ,
+                profile._json.html_url, true, profile._json.bio, (err2,userObj2) => {
                   if (err) {
                     done(err2);
                   } else {
@@ -46,7 +49,7 @@ passport.use(new Strategy({
                   }
                 });
             } else {
-              postGithubData.users(profile._json.id, profile.username, profile._json.email,
+              postGithubData.users(profile._json.id,profile.displayName, profile.username, profile._json.email,
                 profile._json.avatar_url, true , profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
 
                   if (err) {
@@ -76,8 +79,7 @@ app.use(
   cookieSession({
     name: 'FAC-APT',
     maxAge: 24 * 60 * 60* 1000,
-    keys: [process.env.COOKIEKEY],
-    httpOnly: false
+    keys: [process.env.COOKIEKEY]
   }),
 );
 passport.serializeUser((user, done) => {

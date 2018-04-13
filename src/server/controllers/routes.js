@@ -6,6 +6,7 @@ const studentProfile = require('./studentProfile');
 const students = require('./students.js');
 const settingsData = require('./settingsData.js');
 const updataDataStudent = require('./updateDataStudent.js');
+const newuser = require('./newUser.js');
 
 router.get('/auth/github',
   passport.authenticate('github',
@@ -43,6 +44,7 @@ router.get('/api/logout',(req,res) => {
   req.logout();
   res.redirect('/');
 });
+router.get('/newuser', newuser.get);
 
 router.post('/storeanswer', storeanswer.post);
 router.get('/getdatausersettings', settingsData.get);

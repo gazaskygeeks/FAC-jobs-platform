@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import * as start from '../../actions/getQuestion';
-import * as login from '../../actions/login';
 import './style.css';
 
 class Start extends Component {
@@ -13,10 +12,6 @@ class Start extends Component {
   }
   handleSubmit() {
     this.props.firstQ('Q1');
-  }
-
-  componentDidMount() {
-    this.props.login();
   }
 
   render() {
@@ -44,8 +39,6 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = {
-  firstQ: start.firstQ,
-  login: login.loginuser
-
+  firstQ: start.firstQ
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Start);

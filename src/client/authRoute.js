@@ -11,9 +11,10 @@ import allData from './actions/getAllDataAction';
 class PrivateRoute extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {};
   }
   componentDidMount() {
+    this.props.newuser();
     this.props.login();
 
   }
@@ -23,12 +24,16 @@ class PrivateRoute extends Component {
     if (reqestStatus === undefined || reqestStatus === REQUEST_PENDING) {
       return <div>Loading  ...</div>;
     }
+    const newUser = this.props.newuser();
+    console.log(newUser,'aaaaaaaa');
     switch (rest.path) {
       case '/dashboard':
         return (
           <Route
             {...rest}
             render={props => {
+              console.log(props,'props auth to form');
+
               return (
                 user.isLogged &&user.user.isadmin? (
                   <ComponentName {...props} />
@@ -54,6 +59,7 @@ class PrivateRoute extends Component {
           <Route
             {...rest}
             render={props => {
+
               return (
                 user.isLogged && user.user.newuser && !user.user.isadmin? (
                   <ComponentName {...props} />
@@ -110,6 +116,7 @@ PrivateRoute.propTypes = {
   ComponentName: PropTypes.str,
   data: PropTypes.func,
   login: PropTypes.func,
+  newuser: PropTypes.func,
   reqestStatus: PropTypes.str,
   user: PropTypes.obj,
   computedMatch: PropTypes.obj
@@ -118,12 +125,13 @@ PrivateRoute.propTypes = {
 const mapStateToProps = state => {
   return {
     user: state.login,
+    newuser: state.newuser,
     reqestStatus: state.login.reqestStatus
   };
 };
 const mapDispatchToProps = {
   data: allData,
-  login: login.loginuser
-
+  login: login.loginuser,
+  newuser: login.newuser
 };
 export default connect(mapStateToProps, mapDispatchToProps)(PrivateRoute);
