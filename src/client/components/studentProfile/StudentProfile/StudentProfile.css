@@ -92,12 +92,10 @@
   justify-content: center;
   text-align: center;
   font-size: 25px;
-  width: 135px;
-  height: 39px;
   background: #EB5757;
   border-radius: 5px;
-  padding-top: 10px;
   color: #fff;
+  padding: 5px;
 }
 
 .studentGitter {
@@ -158,9 +156,8 @@
 
 .studentContactInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
   height: 60%;
 }
 
@@ -227,9 +224,19 @@
   background: #F0F0F0;
   border-radius: 455.5px;
 }
-.studentProfile__BeatLoader{
-  margin-top: 250px;
+.studentSingleSkills_a{
+  text-decoration: none;
+  color: #000;
 }
+.studentSingleSkills_a:hover{
+}
+.studentSingleSkills_li:hover{
+  cursor: pointer;
+  color: orange;
+  background-color: #b4b4b4
+}
+
+
 @media (max-width: 786px) {
   .wholeStudentContainers {
     font-size: 15px;

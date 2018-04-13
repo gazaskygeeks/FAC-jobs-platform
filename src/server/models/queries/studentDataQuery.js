@@ -15,7 +15,20 @@ const studentData = (student_name , cb) => {
 
   });
 };
+const newUser = (student_name , cb) => {
+  const sql = {
+    text: 'SELECT new_user FROM users_table WHERE username = $1',
+
+    values: [student_name]
+  };
+  dbConnection.query(sql, (dataBaseConnectionErorr, data) => {
+    if (dataBaseConnectionErorr) return cb(dataBaseConnectionErorr);
+
+    return cb(null, data.rows);
+
+  });
+};
 
 module.exports = {
-  studentData
+  studentData,newUser
 };

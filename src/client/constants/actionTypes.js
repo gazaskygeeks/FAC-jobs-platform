@@ -32,3 +32,5 @@ export const FAILURE_SETTINGS = Symbol('FAILURE_SETTINGS');
 
 export const UPDATE_DATA_USER = Symbol('UPDATE_DATA_USER');
 export const FAILURE_UPDATE = Symbol('FAILURE_UPDATE');
+
+export const SUCCESS_GET_NEW_USER = Symbol('SUCCESS_GET_NEW_USER');

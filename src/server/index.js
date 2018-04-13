@@ -36,11 +36,12 @@ passport.use(new Strategy({
           if (err) {
             return done(err);
           } else if (Object.keys(userObj).length === 0) {
+            console.log(profile.displayName,'[rofilr]');
             if (profile._json.html_url==='https://github.com/freelancedad') {
-              postGithubData.users(profile._json.id, profile.username, profile._json.email,
-                profile._json.avatar_url,
-                true,
-                profile._json.html_url,true,profile._json.bio,(err2,userObj2) => {
+              postGithubData.users(profile._json.id, profile.displayName,
+                profile.username, profile._json.email,
+                profile._json.avatar_url, true ,
+                profile._json.html_url, true, profile._json.bio, (err2,userObj2) => {
                   if (err) {
                     done(err2);
                   } else {
@@ -48,10 +49,9 @@ passport.use(new Strategy({
                   }
                 });
             } else {
-              postGithubData.users(profile._json.id, profile.username, profile._json.email,
-                profile._json.avatar_url,
-                true,
-                profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
+              postGithubData.users(profile._json.id,profile.displayName, profile.username, profile._json.email,
+                profile._json.avatar_url, true , profile._json.html_url,false,profile._json.bio,(err2,userObj2) => {
+
                   if (err) {
                     done(err2);
                   } else {
@@ -80,7 +80,7 @@ app.use(
     keys: [process.env.COOKIEKEY] }),
 );
 passport.serializeUser((user, done) => {
-  done(null, { id: user.id,name: user.username,isadmin: user.is_admin,newuser: user.new_user });
+  done(null, { id: user.id,name: user.username,isadmin: user.is_admin });
 });
 
 passport.deserializeUser((id, done) => {

@@ -51,10 +51,9 @@ export const firstQ = data => (dispatch, getState) => {
     if (getState().questionAnswer.interesting !=='') {
       const intersts = ['Freelancing','Mentoring','CFing','Contracts'];
 
-      if (!intersts.includes(getState().questionAnswer.interesting)) {
+      if (!checkValidSkill(intersts, getState().questionAnswer.interesting)) {
         return 'Please Enter Valid Data inputs';
         dispatch(failer());
-
       } else {
         dispatch(success(data));
 
@@ -68,7 +67,7 @@ export const firstQ = data => (dispatch, getState) => {
     }
   } else if (data==='Q4') {
     if ((getState().questionAnswer.skills !=='')&&(getState().questionAnswer.skills.length>=3)) {
-      const skills = ['Node','HTML','Express','CSS','React'];
+      const skills = ['React.js','Node.js','JavaScript','HTML','CSS','CSS3','HTML5','Express.js','PostgreSQL'];
       if (!checkValidSkill(skills, getState().questionAnswer.skills)) {
         return 'Please Enter Valid Data inputs';
         dispatch(failer());
