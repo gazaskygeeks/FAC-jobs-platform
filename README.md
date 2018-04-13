@@ -52,6 +52,7 @@ Note: Here are some quick instructions to remind you how to set up a database:
 In terminal type psql, or pgcli if installed. Within psql/pcli enter the following commands each followed by a return. Things in square brackets are for your desired values. Note that password is a string inside ' ' (NOT double quotes ""):
 
 
+
 ```
 CREATE DATABASE [db_name];
 ```
