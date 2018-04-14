@@ -79,7 +79,6 @@ const sortedLastUpdated= allStudents => {
   return array;
 };
 export default (allStudents,sortdata) => {
-  console.log(sortdata,'sortdata');
   if (sortdata==='alphabetical') {
     return sortedAlphbetically(allStudents);
   } else if (sortdata==='last updated') {

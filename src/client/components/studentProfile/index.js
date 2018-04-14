@@ -16,7 +16,6 @@ class StudentProfile extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props,'stPro');
     const { fetchStudentData } = this.props;
     fetchStudentData(this.props.match.params.student_name);
     if (this.props.history.location.state !== undefined) {

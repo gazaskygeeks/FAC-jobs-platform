@@ -11,8 +11,6 @@ export const start = () => {
   };
 };
 export const success = data => {
-  console.log(data,'data in success');
-
   return {
     type: SUCCESS_LOGIN,
     payload: data

@@ -29,7 +29,6 @@ class PrivateRoute extends Component {
           <Route
             {...rest}
             render={props => {
-              console.log(props,'props auth to form');
 
               return (
                 user.isLogged &&user.user.isadmin? (

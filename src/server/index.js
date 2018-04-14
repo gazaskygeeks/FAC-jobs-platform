@@ -36,7 +36,6 @@ passport.use(new Strategy({
           if (err) {
             return done(err);
           } else if (Object.keys(userObj).length === 0) {
-            console.log(profile.displayName,'[rofilr]');
             if (profile._json.html_url==='https://github.com/freelancedad') {
               postGithubData.users(profile._json.id, profile.displayName,
                 profile.username, profile._json.email,

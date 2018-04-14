@@ -17,7 +17,6 @@ class Profile extends Component {
     }
   }
   render() {
-    console.log(this.props);
     if (!this.props.studentData)
 
       return <div />;

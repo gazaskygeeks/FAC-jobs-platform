@@ -18,8 +18,6 @@ post.users = (
     github_url,is_admin,bio] };
   connect.query(sqlQuery, (err,res) => {
     if (err) {
-      console.log(err);
-      console.log(sqlQuery,'sql query');
 
       return callback(new Error('Database error while adding new user'));
     }

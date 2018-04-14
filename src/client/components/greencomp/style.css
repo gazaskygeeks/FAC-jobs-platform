@@ -11,7 +11,7 @@
 }
 
 .container-question {
-  background-color: rgba(0,  194, 174, 0.5);
+  background-color: rgba(0, 194, 174, 0.5);
   width: 742px;
   height: 390px;
   border-radius: 10px;
@@ -25,7 +25,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .container-question {
-        width: 358px;
-    }
+  .container-question {
+    width: 358px;
+  }
 }

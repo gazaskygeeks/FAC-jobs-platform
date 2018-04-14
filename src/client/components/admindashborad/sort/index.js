@@ -26,7 +26,6 @@ class Sort extends Component {
     if (sortBy==='all') {
       this.props.filterStudents(allStudents,{ username: '' });
     } else {
-      console.log(sortBy,'ssss');
       this.props.sortStudents(allStudents,sortBy);
     }
 
@@ -56,6 +55,11 @@ class Sort extends Component {
   }
 }
 
+Sort.propTypes = {
+  students: PropTypes.obj,
+  filterStudents: PropTypes.func,
+  sortStudents: PropTypes.func
+};
 const mapDispatchToProps = {
   filterStudents: filterStudentsAction.filterStudents,
   sortStudents
