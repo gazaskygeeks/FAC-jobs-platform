@@ -8,7 +8,6 @@ const storedata = (data, cb) => {
       return obj[key];
     });
   });
-  console.log(newArrIntersts,'newArrIntersts');
   const sql = {
     text:
         'INSERT INTO users_info (user_id,campus,cohort,interests,skills,cv,status,social_links,portfolio,projects)' +

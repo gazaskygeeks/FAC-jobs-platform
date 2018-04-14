@@ -8,7 +8,10 @@ class Navbar extends Component {
 
   constructor(props) {
     super(props);
-
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit() {
+    this.props.propsNav.history.push('/profilesettings');
   }
   render() {
 

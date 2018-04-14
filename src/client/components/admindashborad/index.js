@@ -36,8 +36,8 @@ class AdminDashboard extends Component {
               (dataStudentsToFilter.length === 0)?
                 <div className='admindashboard__beatLoader'>Sorry, There Is No Result.</div>
                 :dataStudentsToFilter.map((dataStudent,i) => {
-                  while (dataStudent !== undefined && i<dataStudentsToFilter.length ) {
-                    return <Students dataStudent={dataStudent} key={dataStudent.id}/>
+                  while (dataStudent !== undefined && i<dataStudentsToFilter.length) {
+                    return <Students dataStudent={dataStudent} key={dataStudent.id}/>;
 
                   }
                 })
@@ -46,7 +46,7 @@ class AdminDashboard extends Component {
             {error && <div className='data-error'>{error}</div>}
 
           </div>
-          <div className='admindashboard__filter'>
+          <div className='adm indashboard__filter'>
             <Filter allStudents={dataStudents}/>
           </div>
         </div>
