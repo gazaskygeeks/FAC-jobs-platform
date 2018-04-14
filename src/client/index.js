@@ -19,8 +19,8 @@ ReactDOM.render(
       <div className='app'>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/dashboard' component={AdminDashboard} />
-          <PrivateRoute path='/form' ComponentName={Form} />
+          <PrivateRoute path='/dashboard' ComponentName={AdminDashboard} />
+          <Route path='/form' component={Form} />
           <PrivateRoute path='/profile/:student_name' ComponentName={Profile} />
           <Route exact path='/profilesettings' component={MainSettings} />
           <Route component={Page404} />

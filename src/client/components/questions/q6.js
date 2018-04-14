@@ -61,7 +61,8 @@ class Q6 extends Component {
     const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
     const timestamp = Date.now()/1000;
     const uploadPreset = 'wnb3avvf';
-    const paramsStr = `timestamp=${timestamp}&upload_preset=${uploadPreset}Fe4eNIyg_ZlUTQ2q2zdGbsebjAw`;
+    const paramsStr =
+    `timestamp=${timestamp}&upload_preset=${uploadPreset}Fe4eNIyg_ZlUTQ2q2zdGbsebjAw`;
     const signature = sha1(paramsStr);
     const params = {
       api_key: '722744556869565',
@@ -104,14 +105,19 @@ class Q6 extends Component {
 
             </div>
             <div className='q6_input'>
-              <input type='text' name='name1' placeholder='Project1 Title' onChange={this.handleLinks}/>
-              <input type='text' name='name2' placeholder='Project2 Title' onChange={this.handleLinks}/>
+              <input type='text' name='name1'
+                placeholder='Project1 Title' onChange={this.handleLinks}/>
+              <input type='text' name='name2'
+                placeholder='Project2 Title' onChange={this.handleLinks}/>
             </div>
             <div>
               <div className='q6_input'>
-                <input type='text' name='project1' placeholder='Link your project 1' onChange={this.handleLinks}/>
-                <input type='text' name='project2' placeholder='Link your project 2' onChange={this.handleLinks}/>
-                <input type='text' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
+                <input type='text' name='project1'
+                  placeholder='Link your project 1' onChange={this.handleLinks}/>
+                <input type='text' name='project2'
+                  placeholder='Link your project 2' onChange={this.handleLinks}/>
+                <input type='text' placeholder='Link your portfolio'
+                  onChange={this.handlePortfolio}/>
                 <Dropzone onDrop={this.uploadFile.bind(this)}
                   style={{ width: '200px',height: '66px',borderWidth: '2px',
                     borderColor: 'rgb(255, 255, 255)',borderStyle: 'dashed', borderRadius: '12px' }}
@@ -124,7 +130,8 @@ class Q6 extends Component {
           </div>
 
         </div>
-        <h3 style={{ marginTop: '225px',marginRight: '-31px',color: 'lawngreen' }}>{this.state.files}</h3>
+        <h3 style={{ marginTop: '225px',marginRight: '-31px',
+          color: 'lawngreen' }}>{this.state.files}</h3>
         <div className='buttons'>
           <ButtonBack prevQuestion='Q5' />
           <ButtonNext nextQuestion='End' />
