@@ -16,7 +16,6 @@ const dataUpdateFailure = massage => {
   };
 };
 export const UpdateDataUser= data => dispatch => {
-  console.log('yes  im heeere');
   fetch('/api/v1/updatedata', {
     method: 'POST',
     headers: {

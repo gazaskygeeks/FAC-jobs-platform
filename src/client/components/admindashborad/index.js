@@ -37,7 +37,8 @@ class AdminDashboard extends Component {
                 <div className='admindashboard__beatLoader'>Sorry, There Is No Result.</div>
                 :dataStudentsToFilter.map((dataStudent,i) => {
                   while (dataStudent !== undefined && i<dataStudentsToFilter.length) {
-                    return <Students dataStudent={dataStudent} key={dataStudent.id}/>;
+                    return <Students props={this.props}
+                      dataStudent={dataStudent} key={dataStudent.id}/>;
 
                   }
                 })

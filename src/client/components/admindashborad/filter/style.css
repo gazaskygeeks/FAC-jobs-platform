@@ -1,4 +1,4 @@
-.filter{
+.filter {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -9,15 +9,17 @@
   padding: 20px;
 }
 
-.filter__text{
+.filter__text {
   font-size: 35px;
   margin-left: 15px;
 }
-.filter__form{
+
+.filter__form {
   display: flex;
   flex-direction: column;
 }
-.filter__select{
+
+.filter__select {
   background-color: white;
   font-size: 23px;
   width: 75%;
@@ -25,7 +27,7 @@
   padding-left: 5px;
 }
 
-.filter__search{
+.filter__search {
   width: 50%;
   background-color: #67B5BA;
   border-radius: 10px;
@@ -36,15 +38,15 @@
   border: none;
   padding: 4px;
 }
-.filter__search:hover{
+
+.filter__search:hover {
   cursor: pointer;
   background-color: #38686b;
   transition: ease 0.5s;
 }
 
 @media only screen and (max-width: 568px) {
-    .filter{
-      width: 73vw;
-
+  .filter {
+    width: 73vw;
   }
 }

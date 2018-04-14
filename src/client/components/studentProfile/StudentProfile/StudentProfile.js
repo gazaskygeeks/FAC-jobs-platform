@@ -44,16 +44,19 @@ class Profile extends Component {
                 </div>
               </div>
 
-              <div className='studentContactInfo'>
-                <div className='studentState'>{item.status}</div>
-                {/* <span className='studentPurpose'>{item.interests}</span> */}
-                {/* <a className='studentGitter__a' href={`https://gitter.im/${item.username}`} target='__blank'>
-                  <div className='studentGitter'>
-                    <img className='studentGitter__img' src='/assets/gittericon.png' />
-                    <span className='studentGitter__span' >Messege on Gitter</span>
-                  </div>
-                </a> */}
-              </div>
+              {(this.props.coming==='AdminDashboard')?
+                <div className='studentContactInfo'>
+                  <div className='studentState'>{item.status}</div>
+                  {/* <span className='studentPurpose'>{item.interests}</span> */}
+                  {<a className='studentGitter__a' href={`https://gitter.im/${item.username}`} target='__blank'>
+                    <div className='studentGitter'>
+                      <img className='studentGitter__img' src='/assets/gittericon.png' />
+                      <span className='studentGitter__span' >Messege on Gitter</span>
+                    </div>
+                  </a> }
+                </div>:<div className='studentContactInfo'>
+                  <div className='studentState'>{item.status}</div>
+                </div>}
             </div>
             <div className='studentSkills'>
               <div className='studentStdHeader'>
@@ -135,7 +138,8 @@ class Profile extends Component {
 
 Profile.propTypes = {
   studentData: PropTypes.array,
-  filter: PropTypes.func
+  filter: PropTypes.func,
+  coming: PropTypes.str
 };
 
 export default Profile;

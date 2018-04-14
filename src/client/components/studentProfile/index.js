@@ -10,9 +10,21 @@ import './StudentProfile/StudentProfile.css';
 import { BeatLoader } from 'react-spinners';
 
 class StudentProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state={ coming: '' };
+  }
+
   componentDidMount() {
     const { fetchStudentData } = this.props;
     fetchStudentData(this.props.match.params.student_name);
+    if (this.props.history.location.state !== undefined) {
+
+      this.setState({ coming: this.props.history.location.state.coming });
+    } else {
+      this.setState({ coming: '' });
+
+    }
   }
   render() {
     const { isFetching , error , studentData } = this.props;
@@ -30,8 +42,9 @@ class StudentProfile extends Component {
                 Wait!!</h1>
               </center>
               :<div>
-                <Navbar studentData={studentData} propsNav={this.props}/>
+                <Navbar coming={this.state.coming} studentData={studentData} propsNav={this.props}/>
                 <Profile
+                  coming={this.state.coming}
                   studentData={studentData}
                 />
                 <Footer />
@@ -57,6 +70,7 @@ StudentProfile.propTypes = {
   error: PropTypes.string,
   isFetching: PropTypes.bool,
   student_id: PropTypes.string,
+  history: PropTypes.object,
   match: PropTypes.object
 };
 

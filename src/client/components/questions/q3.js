@@ -12,7 +12,8 @@ class Q3 extends Component {
   constructor() {
     super();
     this.state = {
-      skills: ['React.js','Node.js','JavaScript','HTML','CSS','CSS3','HTML5','Express.js','PostgreSQL'],
+      skills: ['React.js','Node.js','JavaScript','HTML',
+        'CSS','CSS3','HTML5','Express.js','PostgreSQL'],
       mySkills: [],
       message: ''
     };
@@ -71,14 +72,14 @@ class Q3 extends Component {
 
   }
   render() {
-    console.log(this.state);
 
     return (
       <div className='question__container'>
         <div className='q__container'>
           <h1>Tell us your top 5 tech skills</h1>
           <form onSubmit={this.getSkills}>
-            <input className='q3__input' type='text'placeholder='Skill (ex: HTML)' list = 'techList' onInput={this.tech}/>
+            <input className='q3__input' type='text'placeholder='Skill (ex: HTML)'
+              list = 'techList' onInput={this.tech}/>
             <datalist id = 'techList'>
             </datalist>
           </form>
@@ -88,8 +89,9 @@ class Q3 extends Component {
             {
               this.state.mySkills.length !== 0? (
                 this.state.mySkills.map((skill, index) => {
-                  return (<li className='mySkill' key={index}>{skill}  <i id={skill} onClick={this.removeSkill} className='fa fa-remove'
-                    style={{ color: 'red', position: 'absolute',left: '82px',top: '2px' }}></i>
+                  return (<li className='mySkill' key={index}>{skill}
+                    <i id={skill} onClick={this.removeSkill} className='fa fa-remove'
+                      style={{ color: 'red', position: 'absolute',left: '82px',top: '2px' }}></i>
                   </li>);
                 })
               ) :<div/>
