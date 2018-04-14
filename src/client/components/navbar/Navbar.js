@@ -21,19 +21,21 @@ class Navbar extends Component {
           <div className='logo'>
             <img src='/assets/logo.png' className='logo' alt='star' />
           </div>
-          <Sort students={this.props}/>
-          <div className='rightSideNav'>
-            <i className='far fa-bell bell'></i>
-            <div className='dropdown'>
-              <i className='fas fa-sliders-h dropbtn'></i>
-              <div className='dropdown-content'>
-                <a onClick={this.handleSubmit}>Settings
-                  <i className='fas fa-cog settings'></i></a>
-                <a href='/api/v1/logout'>Logout
-                  <i className='fas fa-sign-out-alt settings'></i></a>
+          {(this.props.allStudents)?
+            <Sort students={this.props}/>:<div/>}
+          {(this.props.coming==='AdminDashboard')?<div/>:
+            <div className='rightSideNav'>
+              <i className='far fa-bell bell'></i>
+              <div className='dropdown'>
+                <i className='fas fa-sliders-h dropbtn'></i>
+                <div className='dropdown-content'>
+                  <a onClick={this.handleSubmit}>Settings
+                    <i className='fas fa-cog settings'></i></a>
+                  <a href='/api/v1/logout'>Logout
+                    <i className='fas fa-sign-out-alt settings'></i></a>
+                </div>
               </div>
-            </div>
-          </div>
+            </div>}
         </div>
       </div>
     );
@@ -41,6 +43,8 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  propsNav: PropTypes.obj
+  propsNav: PropTypes.obj,
+  allStudents: PropTypes.obj,
+  coming: PropTypes.str
 };
 export default Navbar;

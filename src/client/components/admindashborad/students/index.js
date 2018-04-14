@@ -8,6 +8,7 @@ class Students extends Component {
     super(props);
 
     this._handleCircleColor = this._handleCircleColor.bind(this);
+    this.view = this.view.bind(this);
 
   }
   _handleCircleColor(status) {
@@ -19,6 +20,13 @@ class Students extends Component {
         objColor.backgroundColor = 'red';
 
     return objColor;
+
+  }
+  view() {
+    this.props.props.history.push({
+      pathname: `/profile/${this.props.dataStudent.username}`,
+      state: { coming: 'AdminDashboard' }
+    });
 
   }
 
@@ -61,9 +69,7 @@ class Students extends Component {
 
           <div className='student__circle' title={this.props.dataStudent.status}
             style={this._handleCircleColor(this.props.dataStudent.status)}></div>
-          <a href={`/profile/${this.props.dataStudent.id}`}>
-            <input className='student__view' type='submit' value='View'></input>
-          </a>
+          <input onClick={this.view} className='student__view' type='submit' value='View'></input>
         </div>
 
       </div>
@@ -73,7 +79,7 @@ class Students extends Component {
 
 Students.propTypes = {
   dataStudent: PropTypes.array,
-  history: PropTypes.obj
+  props: PropTypes.obj
 
 };
 
