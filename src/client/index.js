@@ -21,7 +21,7 @@ ReactDOM.render(
           <Route exact path='/' component={Home} />
           <PrivateRoute path='/dashboard' ComponentName={AdminDashboard} />
           <PrivateRoute path='/form' ComponentName={Form} />
-          <Route path='/profile/:student_name' component={Profile} />
+          <PrivateRoute path='/profile/:student_name' ComponentName={Profile} />
           <Route exact path='/profilesettings' component={MainSettings} />
           <Route component={Page404} />
         </Switch>

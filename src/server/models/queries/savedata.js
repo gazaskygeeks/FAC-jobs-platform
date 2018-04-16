@@ -3,7 +3,7 @@ const dbConnection = require('../database/dbConnection');
 const storedata = (data, cb) => {
   const projects = data.questionAnswer.projects;
   const arr = Object.keys(projects).map(key => projects[key]);
-  const newArrIntersts = arr.map(obj => {
+  const projectsLink = arr.map(obj => {
     return Object.keys(obj).map(key => {
       return obj[key];
     });
@@ -22,7 +22,7 @@ const storedata = (data, cb) => {
       `${data.questionAnswer.opportunity}`,
       `{${data.questionAnswer.stackoverflow},${data.questionAnswer.linkedin}}`,
       `${data.questionAnswer.portfolio}`,
-      `{${newArrIntersts}}`
+      `{${projectsLink}}`
 
     ]
   };
