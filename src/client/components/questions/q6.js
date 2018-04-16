@@ -61,7 +61,8 @@ class Q6 extends Component {
     const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
     const timestamp = Date.now()/1000;
     const uploadPreset = 'wnb3avvf';
-    const paramsStr = `timestamp=${timestamp}&upload_preset=${uploadPreset}Fe4eNIyg_ZlUTQ2q2zdGbsebjAw`;
+    const paramsStr =
+    `timestamp=${timestamp}&upload_preset=${uploadPreset}Fe4eNIyg_ZlUTQ2q2zdGbsebjAw`;
     const signature = sha1(paramsStr);
     const params = {
       api_key: '722744556869565',
@@ -111,7 +112,7 @@ class Q6 extends Component {
               <div className='q6_input'>
                 <input type='text' name='project1' placeholder='Link your project 1' onChange={this.handleLinks}/>
                 <input type='text' name='project2' placeholder='Link your project 2' onChange={this.handleLinks}/>
-                <input type='text' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
+                <input type='text' className='q6_input_portfolio' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
               </div>
               <Dropzone onDrop={this.uploadFile.bind(this)}
                 className='Dropzone'>
@@ -123,10 +124,11 @@ class Q6 extends Component {
           </div>
 
         </div>
-        <h3 style={{ marginTop: '225px',marginRight: '-31px',color: 'lawngreen' }}>{this.state.files}</h3>
+        <h3 style={{ marginTop: '225px',marginRight: '-31px',
+          color: 'lawngreen' }}>{this.state.files}</h3>
         <div className='buttons'>
           <ButtonBack prevQuestion='Q5' />
-          <ButtonNext nextQuestion='End' />
+          <ButtonNext classname='q6error' nextQuestion='End' />
         </div>
       </div>
     );

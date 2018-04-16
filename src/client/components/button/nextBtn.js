@@ -10,17 +10,24 @@ class ButtonNext extends Component {
     super(props);
     this.state={};
     this.handleNext = this.handleNext.bind(this);
-  };
-
+  }
   handleNext() {
     const error = this.props.firstQ(this.props.nextQuestion);
-    this.setState({ error });
+    if (this.props.classname !== undefined) {
+
+      this.setState({ classname: this.props.classname, error });
+    } else {
+      this.setState({ classname: 'errorMessage' , error });
+
+    }
   }
 
   render() {
+    console.log(this.state,'state');
+
     return (
       <div className='buttonWithErrorMessage'>
-        <h4 className='errorMessage'>{this.state.error}</h4>
+        <h4 className={this.state.classname}>{this.state.error}</h4>
         <div className='next__btn' onClick={this.handleNext}>
           <h1 className='btn__next'>Next</h1>
           <i className='fa fa-angle-right next__btn__q' id='fa-angle-right'></i>
@@ -38,6 +45,7 @@ ButtonNext.propTypes = {
   stackoverflow: PropTypes.string,
   linkedin: PropTypes.string,
   skills: PropTypes.obj,
+  classname: PropTypes.obj,
   firstQ: PropTypes.func
 };
 
