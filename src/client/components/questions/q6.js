@@ -105,27 +105,21 @@ class Q6 extends Component {
 
             </div>
             <div className='q6_input'>
-              <input type='text' name='name1'
-                placeholder='Project1 Title' onChange={this.handleLinks}/>
-              <input type='text' name='name2'
-                placeholder='Project2 Title' onChange={this.handleLinks}/>
+              <input type='text' name='name1' placeholder='Project1 Title' onChange={this.handleLinks}/>
+              <input type='text' name='name2' className='projects_container_name2' placeholder='Project2 Title' onChange={this.handleLinks}/>
             </div>
             <div>
               <div className='q6_input'>
-                <input type='text' name='project1'
-                  placeholder='Link your project 1' onChange={this.handleLinks}/>
-                <input type='text' name='project2'
-                  placeholder='Link your project 2' onChange={this.handleLinks}/>
-                <input type='text' placeholder='Link your portfolio'
-                  onChange={this.handlePortfolio}/>
-                <Dropzone onDrop={this.uploadFile.bind(this)}
-                  style={{ width: '200px',height: '66px',borderWidth: '2px',
-                    borderColor: 'rgb(255, 255, 255)',borderStyle: 'dashed', borderRadius: '12px' }}
-                >
-                  <h3 className='q6_input__h3'>Upload CV.
-                    <i className='fa fa-upload'></i></h3>
-                </Dropzone>
+                <input type='text' name='project1' placeholder='Link your project 1' onChange={this.handleLinks}/>
+                <input type='text' name='project2' placeholder='Link your project 2' onChange={this.handleLinks}/>
+                <input type='text' className='q6_input_portfolio' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
               </div>
+              <Dropzone onDrop={this.uploadFile.bind(this)}
+                className='Dropzone'>
+                <h3 className='q6_input__h3'>Upload CV.
+                  <i className='fa fa-upload'></i>
+                </h3>
+              </Dropzone>
             </div>
           </div>
 
@@ -134,7 +128,7 @@ class Q6 extends Component {
           color: 'lawngreen' }}>{this.state.files}</h3>
         <div className='buttons'>
           <ButtonBack prevQuestion='Q5' />
-          <ButtonNext nextQuestion='End' />
+          <ButtonNext classname='q6error' nextQuestion='End' />
         </div>
       </div>
     );

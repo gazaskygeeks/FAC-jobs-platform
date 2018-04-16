@@ -20,8 +20,8 @@ ReactDOM.render(
         <Switch>
           <Route exact path='/' component={Home} />
           <PrivateRoute path='/dashboard' ComponentName={AdminDashboard} />
-          <Route path='/form' component={Form} />
-          <PrivateRoute path='/profile/:student_name' ComponentName={Profile} />
+          <PrivateRoute path='/form' ComponentName={Form} />
+          <Route path='/profile/:student_name' component={Profile} />
           <Route exact path='/profilesettings' component={MainSettings} />
           <Route component={Page404} />
         </Switch>

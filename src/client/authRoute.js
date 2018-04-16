@@ -83,9 +83,11 @@ class PrivateRoute extends Component {
           <Route
             {...rest}
             render={props => {
+              console.log(user.user.name,'kjkkk');
+
               return (
-                user.isLogged && !user.user.newuser && !user.user.isadmin &&
-                user.user.name===student_name? (
+                (user.isLogged && !user.user.newuser)&&
+                (user.user.name===student_name||user.user.isadmin) ? (
                     <ComponentName {...props} />
                   ) :user.isLogged&&!user.user.newuser&&!user.user.isadmin? (<Redirect
                     to={{ pathname: '/404' }}

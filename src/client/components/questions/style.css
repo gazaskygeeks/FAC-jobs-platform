@@ -277,7 +277,7 @@
 .q6_input {
   display: flex;
   flex-direction: column;
-  height: 414px;
+  height: 180px;
 }
 
 .q6_input input {
@@ -285,7 +285,8 @@
   width: 210px;
   margin-bottom: 13px;
   text-indent: 10px;
-  border-radius: 10px
+  border-radius: 10px;
+  border:none
 }
 
 .q6__lastInput {
@@ -299,7 +300,6 @@
 }
 
 .q6_input__h3 {
-  margin-top: 30px;
   cursor: pointer;
 }
 
@@ -316,4 +316,36 @@
 
 .Link {
   text-decoration: none;
+}
+.Dropzone{
+  width: '200px';
+  height: '66px';
+  border: 2px dashed #fff;
+  border-radius: 12px
+}
+
+@media only screen and (max-width: 700px){
+  .Dropzone{
+    width: 106px;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    border-style: dashed;
+    border-radius: 12px;
+  }
+  .q6_input{
+    height: 192px;
+  }
+  .q6_input input{
+    width: 100px;
+    font-size: 10px;
+  }
+  .q6_input_portfolio{
+    margin-top: 15px;
+  }
+  .q6_input__h3{
+    font-size: 10px;
+  }
+  .projects_container_name2{
+    margin-top: 0 important;
+  }
 }
