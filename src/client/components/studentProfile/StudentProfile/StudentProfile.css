@@ -2,7 +2,6 @@
   background-color: #E5E5E5;
 }
 
-
 .wholeStudentContainers {
   display: flex;
   justify-content: center;
@@ -19,10 +18,12 @@
   padding-top: 25px;
   margin: auto;
 }
-.studentGitter__img{
+
+.studentGitter__img {
   width: 45px;
 }
-.studentGitter__span{
+
+.studentGitter__span {
   text-decoration: none;
   color: #FF0064;
   margin: auto;
@@ -30,13 +31,16 @@
   text-align: center;
   margin-right: 30px;
 }
-.studentGitter__a{
+
+.studentGitter__a {
   text-decoration: none;
 }
-.studentGitter{
+
+.studentGitter {
   display: flex;
   justify-content: center;
 }
+
 .studentContainer {
   display: flex;
   justify-content: space-around;
@@ -48,12 +52,13 @@
   -moz-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56);
   box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.56); */
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-
 }
-.studentContainer__container{
+
+.studentContainer__container {
   display: flex;
   align-items: center;
 }
+
 .studentImg img {
   width: 213px;
   left: 365px;
@@ -87,12 +92,10 @@
   justify-content: center;
   text-align: center;
   font-size: 25px;
-  width: 135px;
-  height: 39px;
   background: #EB5757;
   border-radius: 5px;
-  padding-top: 10px;
   color: #fff;
+  padding: 5px;
 }
 
 .studentGitter {
@@ -124,7 +127,7 @@
   color: #fff;
 }
 
-.studentTitle{
+.studentTitle {
   font-size: 24px;
   padding-left: 17px;
   margin: 7px 0;
@@ -153,9 +156,8 @@
 
 .studentContactInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
   height: 60%;
 }
 
@@ -163,7 +165,8 @@
   padding-top: 25px;
   padding-bottom: 25px;
 }
-.studentInfo a{
+
+.studentInfo a {
   text-decoration: none;
   margin-top: 10px;
 }
@@ -175,20 +178,18 @@
   /* -webkit-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56);
   -moz-box-shadow: 1px -2px 22px 1px rgba(0,0,0,0.56); */
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-
- }
+}
 
 .addbtn {
   font-size: 32px;
   color: #C4C4C4;
-  align-self:  center;
+  align-self: center;
   padding-right: 21px;
 }
 
 .portfolio {
   padding-left: 30px;
 }
-
 
 .studentSkillsList {
   display: flex;
@@ -202,15 +203,14 @@
   /* -webkit-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
   -moz-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56); */
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-
- }
+}
 
 .studentSingleSkills {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 117px;
   height: 39px;
+  padding: 0px 25px;
   background: #F0F0F0;
   border-radius: 455.5px;
 }
@@ -223,6 +223,19 @@
   height: 39px;
   background: #F0F0F0;
   border-radius: 455.5px;
+}
+
+.studentSingleSkills_a {
+  text-decoration: none;
+  color: #000;
+}
+
+.studentSingleSkills_a:hover {}
+
+.studentSingleSkills_li:hover {
+  cursor: pointer;
+  color: orange;
+  background-color: #b4b4b4
 }
 
 @media (max-width: 786px) {

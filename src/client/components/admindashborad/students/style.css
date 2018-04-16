@@ -1,4 +1,4 @@
-.student{
+.student {
   display: flex;
   align-items: center;
   height: 140px;
@@ -9,49 +9,56 @@
   margin: 10px 0;
 }
 
-.student__img{
+.student__img {
   border-radius: 50%;
   width: 123px;
   margin-left: 10px;
 }
-.student__divImg{
+
+.student__divImg {
   margin: auto 0;
 }
 
-.student__name{
+.student__name {
   font-size: 25px;
   font-weight: bold;
 }
-.student__info{
+
+.student__info {
   margin-left: 10px;
 }
-.student__status{
+
+.student__status {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   justify-content: space-between;
 }
-.student__span{
+
+.student__span {
   font-size: 16px;
   font-weight: bold;
 }
-.student__circle{
+
+.student__circle {
   height: 25px;
   width: 25px;
   border-radius: 50%;
   display: inline-block;
   margin-top: 20px;
 }
-.students__container{
+
+.students__container {
   display: flex;
   width: 100%;
-
 }
-.student__circle:hover{
+
+.student__circle:hover {
   cursor: context-menu;
 }
-.student__view{
+
+.student__view {
   width: 70px;
   height: 37px;
   border-radius: 4px;
@@ -60,43 +67,41 @@
   color: white;
   border: none;
 }
-.student__view:hover{
+
+.student__view:hover {
   cursor: pointer;
   background-color: #38686b;
   transition: ease 0.5s;
 }
-.beatLoader{
-  margin: 0 auto;
 
+.beatLoader {
+  margin: 0 auto;
   margin-top: 20px;
 }
 
 @media only screen and (max-width: 568px) {
-    .student{
-      width: 78vw;
-      height: 100%;
-
-    }
-    .students__container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-    }
-    .student{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-    }
-    .student__divImg{
-      margin: 0 auto;
-    }
-    .student__info{
-      margin: 0 auto;
-      text-align: center;
-    }
-    .student__circle{
-      margin-bottom: 10px;
-    }
+  .student {
+    width: 78vw;
+    height: 100%;
+  }
+  .students__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .student {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .student__divImg {
+    margin: 0 auto;
+  }
+  .student__info {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .student__circle {
+    margin-bottom: 10px;
+  }
 }

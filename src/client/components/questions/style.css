@@ -4,12 +4,14 @@
   justify-content: space-between;
   padding: 10px;
 }
-.question__container{
+
+.question__container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%
 }
+
 .projects_container {
   display: flex;
   justify-content: space-between;
@@ -84,7 +86,6 @@
   background-position: 13px;
   background-size: 43px;
   font-size: 16px;
-
 }
 
 .Q_dropdown {
@@ -117,6 +118,45 @@
   justify-content: space-between;
   width: 700px;
   height: 80px;
+}
+
+.q3__input {
+  text-indent: 23px;
+  margin-top: 30px;
+  align-self: center;
+  width: 317px;
+  height: 53px;
+  border-radius: 10px;
+}
+
+.myskills_container {
+  display: flex;
+  justify-content: center;
+}
+
+.mySkill {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 31px;
+  padding: 0px 25px;
+  background: #000;
+  border-radius: 455.5px;
+  width: 51px;
+}
+
+.mySkills_list {
+  display: flex;
+  justify-content: space-around;
+  width: 313px;
+  justify-self: center;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  height: 117px;
+  margin: 0;
+  padding: 0;
 }
 
 /*Select tech skills*/
@@ -185,47 +225,40 @@
   text-align: center;
   line-height: 44px;
   cursor: pointer;
-
 }
 
 .custom-radios input[type="radio"]+label span img {
   opacity: 0;
   transition: all .1s ease;
   cursor: pointer;
-
 }
 
 .custom-radios input[type="radio"]#color-1+label span {
-  background-color: #2ecc71;
+  background-color: orange;
   cursor: pointer;
-
 }
 
 .custom-radios input[type="radio"]#color-2+label span {
-  background-color: #3498db;
+  background-color: red;
   margin-left: 45px;
   cursor: pointer;
-
 }
 
 .custom-radios input[type="radio"]#color-3+label span {
-  background-color: #e74c3c;
+  background-color: green;
   margin-left: -10px;
   cursor: pointer;
-
 }
 
 .custom-radios input[type="radio"]:checked+label span img {
   opacity: 1;
   cursor: pointer;
-
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-
 }
 
 .end {
@@ -244,25 +277,29 @@
 .q6_input {
   display: flex;
   flex-direction: column;
-  height: 248px;
+  height: 180px;
 }
 
 .q6_input input {
-  height: 44px;
+  height: 42px;
   width: 210px;
   margin-bottom: 13px;
+  text-indent: 10px;
+  border-radius: 10px;
+  border:none
 }
-.q6__lastInput{
-  margin: 0 !important;
 
+.q6__lastInput {
+  margin: 0 !important;
 }
+
 .q6_links {
   display: flex;
   flex-direction: column;
   height: 248px;
 }
-.q6_input__h3{
-  margin-top: 30px;
+
+.q6_input__h3 {
   cursor: pointer;
 }
 
@@ -276,6 +313,39 @@
 .q6_p__h3 {
   height: 75px;
 }
-.Link{
+
+.Link {
   text-decoration: none;
+}
+.Dropzone{
+  width: '200px';
+  height: '66px';
+  border: 2px dashed #fff;
+  border-radius: 12px
+}
+
+@media only screen and (max-width: 700px){
+  .Dropzone{
+    width: 106px;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    border-style: dashed;
+    border-radius: 12px;
+  }
+  .q6_input{
+    height: 192px;
+  }
+  .q6_input input{
+    width: 100px;
+    font-size: 10px;
+  }
+  .q6_input input:last-child{
+    margin-top: 20px;
+  }
+  .q6_input__h3{
+    font-size: 10px;
+  }
+  .projects_container_name2{
+    margin-top: 0;
+  }
 }

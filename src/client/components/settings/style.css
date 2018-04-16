@@ -1,36 +1,108 @@
-.setting{
-    width: 100%;
-    height: 100vh;
-    background-image: url('../../../../public/assets/Artboard1.png');
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+.setting {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/assets/Artboard1.png');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
-.setting__nav{
+.setting__nav {
   display: flex;
   justify-content: center;
   height: 79px;
   width: 100%;
   background-color: white;
 }
-.setting__nav img{
+
+.setting__nav img {
   height: 73px;
 }
-.setting__nav h1{
+
+.setting__nav h1 {
   font-family: Lato;
 }
-.setting__container{
-  width: 822px;
-  height: 513px;
+
+.setting__container {
+  width: 759px;
+  height: 419px;
   background-color: white;
 }
-.setting__container h1{
-  text-align:center;
+
+.big__container {
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-around
+}
+
+.setting__container h1 {
+  text-align: center;
   font-family: Lato;
   font-weight: normal;
+}
+
+.setting__input {
+  border: 2px solid black;
+  background-image: url('/assets/61456.png');
+  background-repeat: no-repeat;
+  background-position: 151px;
+  background-size: 15px;
+  text-indent: 8px;
+}
+
+.container__left {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-items: center;
+  height: 212px;
+  justify-content: space-around;
+}
+
+.container__right {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-items: center;
+  height: 212px;
+  justify-content: space-around;
+}
+
+.social__links__setting {
+  width: 134px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.social__links__setting img {
+  height: 19px;
+}
+
+.settings__save__btn {
+  background-color: #67B5BA;
+  border: none;
+  border-radius: 13px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 5px 36px;
+}
+
+.setting__btn__div {
+  display: flex;
+  justify-content: center;
+  margin-top: 66px;
+}
+
+.github__URL {
+  background-image: url('/assets/github.svg');
+  background-repeat: no-repeat;
+  background-position: 3px;
+  background-size: 14px;
+  text-indent: 21px;
 }

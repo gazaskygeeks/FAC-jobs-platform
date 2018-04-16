@@ -12,58 +12,95 @@ class Q3 extends Component {
   constructor() {
     super();
     this.state = {
-      showReply: false
+      skills: ['React.js','Node.js','JavaScript','HTML',
+        'CSS','CSS3','HTML5','Express.js','PostgreSQL'],
+      mySkills: [],
+      message: ''
     };
-    this.showCheckboxes = this.showCheckboxes.bind(this);
+    this.tech = this.tech.bind(this);
     this.getSkills = this.getSkills.bind(this);
+    this.removeSkill = this.removeSkill.bind(this);
 
   }
-  showCheckboxes(e) {
-    e.preventDefault();
-    const checkboxes = document.getElementById('checkboxes');
-    if (!this.state.showReply) {
-      checkboxes.style.display = 'block';
-    } else {
-      checkboxes.style.display = 'none';
-    }
-    this.setState({ showReply: !this.state.showReply });
+  componentDidMount() {
+    this.props.storeAnswer({ name: 'skills', value: this.state.mySkills });
+
   }
-  getSkills() {
-    const checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
-    const arr = Array.prototype.slice.call(checkboxes);
-    const skills = arr.map(e => {
-      return e.value;
+  tech(ev) {
+    const datalist = document.getElementById('techList');
+    const techs= ev.target.value.toUpperCase();
+    const sameSkills = this.state.skills.filter(skill => skill.startsWith(techs));
+    const childArray = datalist.children;
+    let cL = childArray.length;
+    while (cL > 0) {
+      cL--;
+      datalist.removeChild(childArray[cL]);
+    }
+    sameSkills.map(sameSkill => {
+      const option =document.createElement('option');
+      option.setAttribute('value', sameSkill);
+      datalist.appendChild(option);
     });
-    this.props.storeAnswer({ name: 'skills', value: skills });
+  }
+  getSkills(ev) {
+    ev.preventDefault();
+    const techValue=ev.target[0].value;
+    if (! this.state.skills.includes(techValue)) {
+      this.setState({ message: 'Sorry this skill is not available' });
+      ev.target[0].value='';
+
+    } else {
+      this.setState({ message: '' });
+
+      if (!this.state.mySkills.includes(techValue)&&this.state.mySkills.length!==5) {
+        this.state.mySkills.push(techValue);
+        this.props.storeAnswer({ name: 'skills', value: this.state.mySkills });
+        ev.target[0].value='';
+
+      } else {
+
+        this.setState({ message: 'Delete one to choose another skill' });
+      }
+
+    }
+
+  }
+  removeSkill(ev) {
+    const skillname = ev.target.id;
+    const Skills = this.state.mySkills.filter(skills => skills!==skillname);
+    this.setState({ mySkills: Skills });
 
   }
   render() {
+
     return (
       <div className='question__container'>
         <div className='q__container'>
           <h1>Tell us your top 5 tech skills</h1>
-          <div className='selectBox' onClick={this.showCheckboxes}>
-            <select className='Q_dropdown'>
-              <option>Choose at least 3 tech</option>
-            </select>
-            <div className='overSelect'></div>
-          </div>
-          <div id='checkboxes' className='checkboxes' onClick={this.getSkills}>
-            <label htmlFor='node'>
-              <input type='checkbox' id='node' value='Node' />Node</label>
-            <label htmlFor='html'>
-              <input type='checkbox' id='html' value='HTML' />HTML</label>
-            <label htmlFor='express'>
-              <input type='checkbox' id='express' value='Express'/>Express</label>
-            <label htmlFor='css'>
-              <input type='checkbox' id='css' value='CSS'/>CSS</label>
-            <label htmlFor='react'>
-              <input type='checkbox' id='react' value='React'/>React</label>
-          </div>
+          <form onSubmit={this.getSkills}>
+            <input className='q3__input' type='text'placeholder='Skill (ex: HTML)'
+              list = 'techList' onInput={this.tech}/>
+            <datalist id = 'techList'>
+            </datalist>
+          </form>
+        </div>
+        <div className='myskills_container'>
+          <ul className='mySkills_list'>
+            {
+              this.state.mySkills.length !== 0? (
+                this.state.mySkills.map((skill, index) => {
+                  return (<li className='mySkill' key={index}>{skill}
+                    <i id={skill} onClick={this.removeSkill} className='fa fa-remove'
+                      style={{ color: 'red', position: 'absolute',left: '82px',top: '2px' }}></i>
+                  </li>);
+                })
+              ) :<div/>
+            }
+          </ul>
 
         </div>
+        <h3 style={{ color: 'red' }}>{this.state.message}</h3>
         <div className='buttons'>
-
           <ButtonBack prevQuestion='Q2'/>
           <ButtonNext nextQuestion='Q4'/>
         </div>

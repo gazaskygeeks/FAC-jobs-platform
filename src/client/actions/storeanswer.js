@@ -1,6 +1,6 @@
 import {
   STORE_ANSWER,
-  STORE_DATA_FAILURE
+  STORE_DATA_FAILURE,STORE_DATA_SUCCESS
 } from '../constants/actionTypes';
 
 export const compilationOfAnswers = data => {
@@ -16,8 +16,14 @@ export const dataSavedFailure = massage => {
     payload: massage
   };
 };
+export const dataSAvedSuccess = massage => {
+  return {
+    type: STORE_DATA_SUCCESS,
+    payload: massage
+  };
+};
 export const saveAnswer= () => (dispatch, getState) => {
-  const data = { questionAnswer: getState().questionAnswer,id: getState().login.user.id };
+  const data = { questionAnswer: getState().questionAnswer,id: getState().login.user.id,name: getState().login.user.name };
 
   fetch('/api/v1/storeanswer', {
     method: 'POST',
@@ -32,9 +38,8 @@ export const saveAnswer= () => (dispatch, getState) => {
       if (response.status >= 400) {
         throw new Error('Bad response From Sarver In Reserve');
       }
-
-      return response;
+      dispatch(dataSAvedSuccess('done'));
     })
-    .catch(err => dispatch(dataSavedFailure(err.massage)));
+    .catch(err => dispatch(dataSavedFailure(err)));
 
 };

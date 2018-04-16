@@ -1,3 +1,3 @@
-export const getUserId = () => (dispatch,getState) => {
-  return getState().login.user.id;
+export default () => (dispatch,getState) => {
+  return getState().login.user.name;
 };

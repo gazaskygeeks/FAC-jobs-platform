@@ -1,5 +1,5 @@
 import {
-  STORE_ANSWER
+  STORE_ANSWER,STORE_DATA_FAILURE,STORE_DATA_SUCCESS
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -21,6 +21,16 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         [payload.name]: payload.value
+      };
+    case STORE_DATA_FAILURE:
+      return {
+        ...state,
+        message: 'Done'
+      };
+    case STORE_DATA_SUCCESS:
+      return {
+        ...state,
+        message: payload
       };
     default:
       return state;

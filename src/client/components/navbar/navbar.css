@@ -7,7 +7,6 @@
 }
 
 .logo {
-  flex: 1;
   padding-left: 32px;
 }
 
@@ -17,14 +16,14 @@
 }
 
 .bell {
-  font-size:44px;
+  font-size: 44px;
   margin: 18px;
   bottom: 0;
   color: #000;
 }
 
 .dropbtn {
-  font-size:44px;
+  font-size: 44px;
   margin: 18px;
   bottom: 0;
   color: #000;
@@ -40,7 +39,7 @@
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
   z-index: 1;
   right: 5px;
 }

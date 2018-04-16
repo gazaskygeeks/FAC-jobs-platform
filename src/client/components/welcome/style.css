@@ -5,25 +5,30 @@
   justify-content: center;
   width: 100%;
 }
-.start__img{
+
+.start__img {
   width: 303px;
   height: 198px;
   margin: 0 auto;
 }
+
 .start__container p {
   font-size: 20px;
   margin: 13px;
 }
-.start__h1{
+
+.start__h1 {
   margin: 0;
 }
-.start__btn{
+
+.start__btn {
   width: 159px;
   display: flex;
   align-items: center;
   align-self: flex-end;
   justify-content: space-evenly;
 }
+
 .btn__start {
   color: black;
   font-size: 36px;

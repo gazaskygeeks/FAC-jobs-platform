@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import * as bulidProfile from '../../actions/storeanswer';
-import * as getUserId from '../../actions/getUserIdAction';
+import getUsername from '../../actions/getUserIdAction';
 
 import ButtonBack from '../button/backBtn';
 
@@ -16,12 +16,10 @@ class End extends Component {
   }
   handleSubmit() {
     this.props.completeLogin();
-    this.props.history.push(`/profile/${this.props.id()}`);
+    this.props.history.push(`/profile/${this.props.name()}`);
   }
 
   render() {
-    console.log(this.props,' prpos here');
-
     return (
       <div className='question__container'>
         <div className='q__container end'>
@@ -52,13 +50,13 @@ class End extends Component {
 
 End.propTypes = {
   completeLogin: PropTypes.func,
-  id: PropTypes.func,
+  name: PropTypes.func,
   history: PropTypes.obj
 };
 
 const mapDispatchToProps = {
   completeLogin: bulidProfile.saveAnswer,
-  id: getUserId.getUserId
+  name: getUsername
 
 };
 export default connect(null, mapDispatchToProps)(End);

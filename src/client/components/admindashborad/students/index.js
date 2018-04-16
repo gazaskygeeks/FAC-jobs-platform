@@ -6,10 +6,30 @@ import PropTypes from 'prop-types';
 class Students extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      backgroundColor: ''
-    };
+
+    this._handleCircleColor = this._handleCircleColor.bind(this);
+    this.view = this.view.bind(this);
+
   }
+  _handleCircleColor(status) {
+    const objColor = { backgroundColor: '' };
+    (status === 'Urgent')?
+      objColor.backgroundColor = 'green':
+      (status==='Kind Of')?
+        objColor.backgroundColor = 'orange' :
+        objColor.backgroundColor = 'red';
+
+    return objColor;
+
+  }
+  view() {
+    this.props.props.history.push({
+      pathname: `/profile/${this.props.dataStudent.username}`,
+      state: { coming: 'AdminDashboard' }
+    });
+
+  }
+
   render() {
     const arrayOfSkills = this.props.dataStudent.skills;
 
@@ -46,16 +66,10 @@ class Students extends Component {
           </div>
         </div>
         <div className='student__status'>
-          {
-            (this.props.dataStudent.status === 'Urgent')?
-              this.setState({ backgroundColor: '#e74c3c' }):
-              (this.props.dataStudent.status==='Kind Of')?
-                this.setState({ backgroundColor: '#2ecc71' }):
-                this.setState({ backgroundColor: '#3498db' })
-          }
+
           <div className='student__circle' title={this.props.dataStudent.status}
-            style={this.state}></div>
-          <input className='student__view' type='submit' value='View'></input>
+            style={this._handleCircleColor(this.props.dataStudent.status)}></div>
+          <input onClick={this.view} className='student__view' type='submit' value='View'></input>
         </div>
 
       </div>
@@ -64,7 +78,9 @@ class Students extends Component {
 }
 
 Students.propTypes = {
-  dataStudent: PropTypes.array
+  dataStudent: PropTypes.array,
+  props: PropTypes.obj
+
 };
 
 export default Students;

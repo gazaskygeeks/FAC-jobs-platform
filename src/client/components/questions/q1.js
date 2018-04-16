@@ -82,10 +82,10 @@ class Q1 extends Component {
               <option name='nazareth' value='FACN1' hidden>FACN1</option>
               <option name='nazareth' value='FACN2' hidden>FACN2</option>
               <option name='nazareth' value='FACN3' hidden>FACN3</option>
-              <option name='london' value='FAC' hidden>FAC</option>
+              <option name='london' value='FAC9' hidden>FAC9</option>
+              <option name='london' value='FAC10' hidden>FAC10</option>
               <option name='london' value='FAC11' hidden>FAC11</option>
               <option name='london' value='FAC12' hidden>FAC12</option>
-              <option name='london' value='FAC10' hidden>FAC10</option>
             </select>
           </div>
         </div>

@@ -1,13 +1,14 @@
-.buttonWithErrorMessage{
+.buttonWithErrorMessage {
   display: flex;
-    text-align: center;
-    width: 68%;
-    justify-content: space-between;
+  text-align: center;
+  width: 68%;
+  justify-content: space-between;
 }
 
-.errorMessage{
+.errorMessage {
   color: red;
 }
+
 .next__btn {
   width: 159px;
   display: flex;
@@ -21,7 +22,6 @@
   font-size: 36px;
   font-family: Lato;
 }
-
 
 .btn__next:hover {
   color: #fff;
