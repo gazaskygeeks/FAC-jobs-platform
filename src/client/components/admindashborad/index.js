@@ -19,6 +19,7 @@ class AdminDashboard extends Component {
     fetchStudentsView();
   }
   render() {
+    console.log(this.props, 'admin dash props');
     const { isFetching, error , dataStudents,dataStudentsToFilter } = this.props.data;
 
     return (

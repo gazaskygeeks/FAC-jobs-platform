@@ -1,67 +1,111 @@
 import React, { Component } from 'react';
+import send from '../../actions/emailsendingAction';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import './emailContact.css';
 
 class EmailContact extends Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {
+      error: undefined
+    };
     this.close = this.close.bind(this);
+    this.handlesubmit = this.handlesubmit.bind(this);
   }
+
   close(ev) {
     console.log(ev);
     ev('.chat').slideToggle(300, 'swing');
     ev('.chat-message-counter').fadeToggle(300, 'swing');
   }
 
+  handlesubmit(event) {
+    event.preventDefault();
+    if (event.target[1].value.trim() !== '') {
+
+      const data = {
+        recieveremail: event.target[2].value,
+        msgContent: event.target[1].value
+      };
+      this.props.send(data);
+      event.target[1].value='';
+    } else {
+      this.setState({
+        error: 'write something'
+      });
+    }
+  }
+
   render() {
-    return (
-      <div id='live-chat'>
-        <header className='clearfix'>
-          <button onClick={this.close.bind(this)} className='chat-close'>x</button>
-          <h4>John Doe</h4>
-        </header>
+    console.log(this.props.message,'send');
+    if (!this.props.studentData)
 
-        <div className='chat'>
-          <div className='chat-history'>
-            <div className='chat-message clearfix'>
-              <div className='chat-message-content clearfix'>
-                <span className='chat-time'>13:35</span>
-                <h5>John Doe</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Error, explicabo quasi ratione odio dolorum harum.</p>
-              </div>
-            </div>
-            <div>
-              <div className='chat-message clearfix'>
-                <div className='chat-message-content clearfix'>
-                  <span className='chat-time'>13:37</span>
-                  <h5>Marco Biedermann</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-            nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
+      return <div />;
+    const arr = this.props.studentData.map(item => {
+      return (
+        <div id='live-chat' key={item.id}>
+          <header className='clearfix'>
+            <button onClick={this.close.bind(this)} className='chat-close'>x</button>
+            <h4>{item.username}</h4>
+          </header>
+
+          <div className='chat'>
+            <div className='chat-history'>
+              <div>
+                <div className='chat-message clearfix'>
+                  <div className='chat-message-content clearfix'>
+                    {(this.props.message.success!=='')?
+                      <h3 style={{ color: 'green' }}>Message Sent</h3>
+                      :(this.state.error!==undefined)?
+                        <h3 style={{ color: 'orange' }}>{this.state.error}</h3>
+                        :
+                        (item.email!=='')?
+                          <h3 style={{ color: 'blue' }}>Send Email</h3>:
+                          <h3 style={{ color: 'red' }}>User did not have Email</h3>}
+                  </div>
                 </div>
               </div>
-
-              <div className='chat-message clearfix'>
-                <div className='chat-message-content clearfix'>
-                  <span className='chat-time'>13:38</span>
-                  <h5>John Doe</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                </div>
-              </div>
-
             </div>
+            <form onSubmit={this.handlesubmit}>
+              <fieldset>
+                <input type='text' className='msgInput' placeholder='Type your message…' autoFocus />
+                <input value={item.email} type='hidden' />
+                {(item.email!=='')?
+                  <button type='submit' className='sendMailBtn'>Send</button>:
+                  <button type='submit' className='sendMailBtn' disabled>Send</button>}
+              </fieldset>
+            </form>
           </div>
-          <form action='#' method='post'>
-            <fieldset>
-              <input type='text' placeholder='Type your message…' autoFocus />
-              <input type='hidden' />
-            </fieldset>
-          </form>
         </div>
+      );
+    });
+
+    return (
+      <div>
+        {arr}
       </div>
     );
   }
 }
 
-export default EmailContact;
+EmailContact.propTypes = {
+  studentData: PropTypes.array,
+  sendData: PropTypes.array,
+  filter: PropTypes.func,
+  coming: PropTypes.str,
+  message: PropTypes.obj,
+  send: PropTypes.func
+};
+
+const mapStateToProps = state => {
+  return {
+    message: state.send
+  };
+};
+const mapDispatchToProps = {
+  send
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmailContact);

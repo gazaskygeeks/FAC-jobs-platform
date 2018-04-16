@@ -7,6 +7,7 @@ const students = require('./students.js');
 const settingsData = require('./settingsData.js');
 const updataDataStudent = require('./updateDataStudent.js');
 const current_user = require('./current_user.js');
+const sendMail = require('./sendEmail.js');
 
 router.get('/auth/github',
   passport.authenticate('github',
@@ -37,6 +38,7 @@ router.get('/auth/github/callback',
 );
 
 router.get('/current_user', current_user.get);
+router.post('/send', sendMail.post);
 
 router.post('/storeanswer', storeanswer.post);
 router.get('/getdatausersettings', settingsData.get);

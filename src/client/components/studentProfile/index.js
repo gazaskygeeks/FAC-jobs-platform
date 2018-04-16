@@ -60,11 +60,9 @@ class StudentProfile extends Component {
             )
           }
         </div>
-<<<<<<< HEAD
-        <Footer />
-        <EmailContact />
-=======
->>>>>>> 49c2bf7867c9f3d604190dcd52e7a2649b2dd54d
+        {(this.state.coming==='AdminDashboard')?
+          <EmailContact studentData={studentData} />:
+          <div/>}
       </div>
     );
   }

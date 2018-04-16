@@ -10,11 +10,11 @@ class Profile extends Component {
 
   }
   handleUrl(url) {
-    if (url.includes === 'https://') {
-      return url;
-    } else {
-      return `https://${url}`;
-    }
+    // if (url.includes === 'https://') {
+    //   return url;
+    // } else {
+    return `https://${url}`;
+    // }
   }
   render() {
     if (!this.props.studentData)
@@ -47,7 +47,6 @@ class Profile extends Component {
               {(this.props.coming==='AdminDashboard')?
                 <div className='studentContactInfo'>
                   <div className='studentState'>{item.status}</div>
-                  {/* <span className='studentPurpose'>{item.interests}</span> */}
                   {<a className='studentGitter__a' href={`https://gitter.im/${item.username}`} target='__blank'>
                     <div className='studentGitter'>
                       <img className='studentGitter__img' src='/assets/gittericon.png' />

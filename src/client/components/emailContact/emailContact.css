@@ -72,7 +72,13 @@ p { margin: 0; }
 	border-radius: 3px;
 	padding: 8px;
 	outline: none;
-	width: 234px;
+	width: 150px;
+}
+
+fieldset {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
 }
 
 .chat-message-counter {
@@ -111,7 +117,7 @@ p { margin: 0; }
 }
 
 .chat-history {
-	height: 252px;
+	height: 100px;
 	padding: 8px 24px;
 	overflow-y: scroll;
 }
