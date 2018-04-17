@@ -33,7 +33,7 @@ class Profile extends Component {
 
                 <div className='studentInfo'>
                   <h1 className='studentName'>{item.display_name}</h1>
-                  <span style={{ paddingLeft: '90px',color: '#4d4b4b',fontSize: '18px' }}>({item.username})</span>
+                  <span style={{ paddingLeft: '10px',color: '#4d4b4b',fontSize: '18px' }}>({item.username})</span>
                   <p className='studentLocation'>
                     <i className='fas fa-map-marker-alt dropbtn'></i>
                     {item.campus}

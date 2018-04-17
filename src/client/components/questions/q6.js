@@ -25,6 +25,7 @@ class Q6 extends Component {
     };
     this.handleLinks = this.handleLinks.bind(this);
     this.handlePortfolio = this.handlePortfolio.bind(this);
+    this.save = this.save.bind(this);
   }
   handleLinks(ev) {
     const state2 = this.state;
@@ -48,9 +49,11 @@ class Q6 extends Component {
         project2: { ...state2.project2,link: ev.target.value }
       });
     }
-    this.props.storeAnswer({ name: 'projects', value: this.state });
   }
+  save() {
+    this.props.storeAnswer({ name: 'projects', value: this.state });
 
+  }
   handlePortfolio(ev) {
     const portfolio= ev.target.value;
     this.props.storeAnswer({ name: 'portfolio', value: portfolio });
@@ -83,10 +86,6 @@ class Q6 extends Component {
         return;
       }
       const uploaded = res.body.url;
-      this.setState({
-        files: `success uploading one file ${res.body.original_filename}`,
-        filename: uploaded
-      });
       this.props.storeAnswer({ name: 'cv', value: uploaded });
     });
   }
@@ -105,13 +104,13 @@ class Q6 extends Component {
 
             </div>
             <div className='q6_input'>
-              <input type='text' name='name1' placeholder='Project1 Title' onChange={this.handleLinks}/>
-              <input type='text' name='name2' className='projects_container_name2' placeholder='Project2 Title' onChange={this.handleLinks}/>
+              <input type='text' name='name1' placeholder='Project1 Title' onChange={this.handleLinks} onKeyUp={this.save}/>
+              <input type='text' name='name2' className='projects_container_name2' placeholder='Project2 Title' onChange={this.handleLinks} onKeyUp={this.save}/>
             </div>
             <div>
               <div className='q6_input'>
-                <input type='text' name='project1' placeholder='Link your project 1' onChange={this.handleLinks}/>
-                <input type='text' name='project2' placeholder='Link your project 2' onChange={this.handleLinks}/>
+                <input type='text' name='project1' placeholder='Link your project 1' onChange={this.handleLinks} onKeyUp={this.save}/>
+                <input type='text' name='project2' placeholder='Link your project 2' onChange={this.handleLinks} onKeyUp={this.save}/>
                 <input type='text' className='q6_input_portfolio' placeholder='Link your portfolio' onChange={this.handlePortfolio}/>
               </div>
               <Dropzone onDrop={this.uploadFile.bind(this)}

@@ -5,9 +5,19 @@ const storedata = (data, cb) => {
   const arr = Object.keys(projects).map(key => projects[key]);
   const projectsLink = arr.map(obj => {
     return Object.keys(obj).map(key => {
-      return obj[key];
+      if (obj[key].trim()!=='') {
+
+        return obj[key];
+      }
     });
   });
+  const socialLinks=[];
+  if (data.questionAnswer.linkedin.trim() !== '') {
+    socialLinks.push(data.questionAnswer.linkedin);
+  }
+  if (data.questionAnswer.stackoverflow.trim() !== '') {
+    socialLinks.push(data.questionAnswer.stackoverflow);
+  }
   const sql = {
     text:
         'INSERT INTO users_info (user_id,campus,cohort,interests,skills,cv,status,social_links,portfolio,projects)' +
@@ -20,12 +30,13 @@ const storedata = (data, cb) => {
       `{${data.questionAnswer.skills}}`,
       `${data.questionAnswer.cv}`,
       `${data.questionAnswer.opportunity}`,
-      `{${data.questionAnswer.stackoverflow},${data.questionAnswer.linkedin}}`,
+      `{${socialLinks}}`,
       `${data.questionAnswer.portfolio}`,
       `{${projectsLink}}`
 
     ]
   };
+  console.error(sql,'error sql save data');
   dbConnection.query(sql, cb);
 };
 

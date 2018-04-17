@@ -17,9 +17,11 @@ class End extends Component {
   handleSubmit() {
     this.props.completeLogin();
     this.props.history.push(`/profile/${this.props.name()}`);
+
   }
 
   render() {
+
     return (
       <div className='question__container'>
         <div className='q__container end'>
@@ -51,7 +53,8 @@ class End extends Component {
 End.propTypes = {
   completeLogin: PropTypes.func,
   name: PropTypes.func,
-  history: PropTypes.obj
+  history: PropTypes.obj,
+  completeSaveData: PropTypes.obj
 };
 
 const mapDispatchToProps = {

@@ -13,7 +13,7 @@ class PrivateRoute extends Component {
     super(props);
     this.state = {};
   }
-  componentDidMount() {
+  componentWillMount() {
     this.props.login();
 
   }
@@ -84,7 +84,7 @@ class PrivateRoute extends Component {
             {...rest}
             render={props => {
               return (
-                (user.isLogged && !user.user.newuser)&&
+                (user.isLogged)&&
                 (user.user.name===student_name||user.user.isadmin) ? (
                     <ComponentName {...props} />
                   ) :user.isLogged&&!user.user.newuser&&!user.user.isadmin? (<Redirect
