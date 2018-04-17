@@ -41,7 +41,10 @@ class Students extends Component {
             <img className='student__img' src={this.props.dataStudent.avatar} />
           </div>
           <div className='student__info'>
-            <div className='student__name'>{this.props.dataStudent.username}</div>
+            { (this.props.dataStudent.display_name==='')?
+              <div className='student__name'>{this.props.dataStudent.username}</div>
+              :
+              <div className='student__name'>{this.props.dataStudent.display_name}</div>}
             <div className='student__job student__span'>Full Stack Developer</div>
             <div><span className='student__span'>Skills: </span>
               {

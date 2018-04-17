@@ -67,7 +67,8 @@ export const firstQ = data => (dispatch, getState) => {
     }
   } else if (data==='Q4') {
     if ((getState().questionAnswer.skills !=='')&&(getState().questionAnswer.skills.length>=3)) {
-      const skills = ['React.js','Node.js','JavaScript','HTML','CSS','CSS3','HTML5','Express.js','PostgreSQL'];
+      const skills =
+      ['React.js','Node.js','JavaScript','HTML','CSS','CSS3','HTML5','Express.js','PostgreSQL'];
       if (!checkValidSkill(skills, getState().questionAnswer.skills)) {
         return 'Please Enter Valid Data inputs';
         dispatch(failer());
@@ -83,13 +84,15 @@ export const firstQ = data => (dispatch, getState) => {
     }
 
   } else if (data==='Q5') {
-    if ((getState().questionAnswer.stackoverflow !=='')||(getState().questionAnswer.linkedin!=='')) {
-      if (!getState().questionAnswer.stackoverflow.toLowerCase().includes('stackoverflow') ||
-        !getState().questionAnswer.linkedin.toLowerCase().includes('linkedin')) {
-        return 'Please Enter Valid Urls';
-        dispatch(failer());
+    if ((getState().questionAnswer.stackoverflow !=='')
+    ||(getState().questionAnswer.linkedin!=='')) {
+      if (getState().questionAnswer.stackoverflow.toLowerCase().includes('stackoverflow') ||
+        getState().questionAnswer.linkedin.toLowerCase().includes('linkedin')) {
+        dispatch(success(data));
       }
-      dispatch(success(data));
+      dispatch(failer());
+
+      return 'Please Enter Valid Urls';
 
     } else {
       dispatch(failer(''));
@@ -108,13 +111,18 @@ export const firstQ = data => (dispatch, getState) => {
 
     }
   } else if (data==='End') {
-    if (getState().questionAnswer.projects !=='') {
+    if ((getState().questionAnswer.projects.length !==0)&&
+    ((getState().questionAnswer.projects.project1.name.trim()!==''
+    &&getState().questionAnswer.projects.project1.link.trim()!=='')
+    ||(getState().questionAnswer.projects.project2.name.trim()!==''
+    &&getState().questionAnswer.projects.project2.link.trim()!==''))
+    &&getState().questionAnswer.cv!=='') {
       dispatch(success(data));
 
     } else {
       dispatch(failer('Answer for all of questions, please'));
 
-      return 'Put at least one link for your project, Please!';
+      return 'Put at least one link for your project & upload CV, Please!';
 
     }
   } else {
