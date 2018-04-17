@@ -6,6 +6,7 @@ import * as studentDataAction from '../../actions/studentProfile';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Profile from './StudentProfile/StudentProfile.js';
+import EmailContact from '../emailContact/EmailContact.js';
 import './StudentProfile/StudentProfile.css';
 import { BeatLoader } from 'react-spinners';
 
@@ -59,6 +60,9 @@ class StudentProfile extends Component {
             )
           }
         </div>
+        {(this.state.coming==='AdminDashboard')?
+          <EmailContact studentData={studentData} />:
+          <div/>}
       </div>
     );
   }
