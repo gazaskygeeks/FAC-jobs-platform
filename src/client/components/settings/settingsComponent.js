@@ -20,7 +20,7 @@ class Settings extends Component {
       this.setState({
         display_name: item.display_name,interests: item.interests,
         skills: item.skills,email: item.email,
-        profile_url: item.email });
+        profile_url: item.profile_url });
 
     });
 
@@ -240,57 +240,3 @@ const mapDispatchToProps = {
   updatedata: updatedata.UpdateDataUser
 };
 export default connect(null, mapDispatchToProps)(Settings);
-// {
-//   interests.map((interest,i) => {
-//     const arr = myinterest.map(element => {
-//       if (myinterest.includes(interest)) {
-//         return <label key={i} htmlFor={interest}>
-//           <input type='checkbox' id={interest} value={interest} checked />
-//           {interest}</label>;
-//       } else {
-//         console.log('wwww');
-//
-//         return <label key={i} htmlFor={interest}>
-//           <input type='checkbox' id={interest} value={interest} />
-//           {interest}</label>;
-//       }
-//
-//     });
-//     console.log(arr);
-//
-//     return arr;
-//   })
-// }
-
-// {
-//   interests.map((interest,i) => {
-//     this.state.interests.map(myinterest => {
-//       if (interests.includes(myinterest)) {
-//         return <label key={i} htmlFor={interest}>
-//           <input type='checkbox' id={interest} value={interest} checked />
-//           {interest}</label>;
-//       } else {
-//         return <label key={i} htmlFor={interest}>
-//           <input type='checkbox' id={interest} value={interest} />
-//           {interest}</label>;
-//       }
-//
-//     });
-//
-//   })
-// }
-
-// <input type='text' value={this.state.interests} readOnly />
-
-// <input autoFocus id='username' className='setting__input' type='text' placeholder={item.display_name}/>
-// getData(id) {
-//   return document.getElementById(id).value;
-// }
-// handleSubmit() {
-//   const data ={ username: this.getData('username'),campus: this.getData('campus'),
-//     cohort: this.getData('cohort'),interests: this.getData('interests'),skills: this.getData('skills'),
-//     email: this.getData('email'),profile_url: this.getData('profile_url'),
-//     social_links: this.getData('social_links')
-//   };
-//   this.props.updatedata(data);
-// }
