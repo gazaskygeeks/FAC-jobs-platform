@@ -1,0 +1,24 @@
+.filter_input {
+  font-size: 35px;
+  margin-left: 15px;
+}
+
+.sort_select {
+  background-color: white;
+  border-color: white;
+  width: 15px;
+  position: absolute;
+  right: 346px;
+  top: 20px;
+  color: blue;
+}
+
+.sort_input {
+  background-image: url('/assets/icons_search-128.png');
+  background-repeat: no-repeat;
+  background-position: 13px;
+  background-size: 43px;
+  width: 421px;
+  height: 50px;
+  text-indent: 113px;
+}
