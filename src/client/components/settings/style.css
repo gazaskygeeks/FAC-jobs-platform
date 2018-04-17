@@ -36,7 +36,8 @@
 .big__container {
   margin-top: 26px;
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .setting__container h1 {
@@ -47,19 +48,15 @@
 
 .setting__input {
   border: 2px solid black;
-  background-image: url('/assets/61456.png');
-  background-repeat: no-repeat;
-  background-position: 151px;
-  background-size: 15px;
   text-indent: 8px;
 }
 
 .container__left {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   width: 350px;
-  align-items: center;
-  height: 212px;
+  /* align-items: center; */
+  /* height: 295px; */
   justify-content: space-around;
 }
 
@@ -68,7 +65,7 @@
   flex-direction: column;
   width: 350px;
   align-items: center;
-  height: 212px;
+  height: 295px;
   justify-content: space-around;
 }
 
@@ -96,7 +93,7 @@
 .setting__btn__div {
   display: flex;
   justify-content: center;
-  margin-top: 66px;
+  margin-top: -6px;
 }
 
 .github__URL {
@@ -105,4 +102,81 @@
   background-position: 3px;
   background-size: 14px;
   text-indent: 21px;
+}
+
+#setting_input_btn, #setting_input_btn2, #setting_input_btn1 {
+  border: 2px solid;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.setting_edit {
+  background-color: inherit;
+  border: none;
+}
+
+.fa-pencil, .fa-check {
+  pointer-events: none;
+}
+
+.edit {
+  background-color: transparent;
+  border: none;
+  float: right;
+  color: #000;
+}
+
+.hidden {
+  display: none;
+}
+
+.setting_selectBox {
+  position: relative;
+}
+
+.setting_selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.setting_overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.setting_checkboxes {
+  overflow: scroll;
+  height: 90px;
+  display: none;
+  border: 1px solid #dadada;
+}
+
+.setting_checkboxes label {
+  display: block;
+}
+
+.setting_checkboxes label:hover {
+  background-color: #1e90ff
+}
+
+.setting_names {
+  height: 295px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 700px) {
+  .setting__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 333px;
+    overflow: scroll;
+    justify-content: center;
+  }
+
 }

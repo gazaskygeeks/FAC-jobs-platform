@@ -32,7 +32,8 @@ class Profile extends Component {
                 </div>
 
                 <div className='studentInfo'>
-                  <h1 className='studentName'>{item.username}</h1>
+                  <h1 className='studentName'>{item.display_name}</h1>
+                  <span style={{ paddingLeft: '90px',color: '#4d4b4b',fontSize: '18px' }}>({item.username})</span>
                   <p className='studentLocation'>
                     <i className='fas fa-map-marker-alt dropbtn'></i>
                     {item.campus}
@@ -119,7 +120,7 @@ class Profile extends Component {
                 <i className='fas fa-plus-circle addbtn'></i>
               </div>
               <ul className='studentSkillsList'>
-                <li className='studentSingleSkills'><a>{item.cv}</a></li>
+                <li className='studentSingleSkills studentSingleSkills_li'><a className='studentSingleSkills_a' target='blank' href={item.cv}>My CV.</a></li>
               </ul>
             </div>
           </div>

@@ -73,7 +73,7 @@
 }
 
 .studentName {
-  font-size: 36px;
+  font-size: 33px;
   color: #424040;
   margin: 0;
   padding-left: 10px;
@@ -230,12 +230,13 @@
   color: #000;
 }
 
-.studentSingleSkills_a:hover {}
-
-.studentSingleSkills_li:hover {
+.studentSingleSkills_li:hover  {
   cursor: pointer;
-  color: orange;
   background-color: #b4b4b4
+}
+.studentSingleSkills_li:hover a  {
+  color: blue;
+
 }
 
 .sendMailBtn {
