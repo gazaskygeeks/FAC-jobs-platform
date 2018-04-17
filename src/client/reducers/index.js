@@ -7,6 +7,7 @@ import questionAnswer from './questionsAnswerReducer';
 import login from './loginReducer';
 import getStudentDataToSettings from './settingsReducer';
 import updatedata from './updateDataReducer';
+import send from './sendEmailReducer';
 
 export default combineReducers({
   data,
@@ -15,6 +16,7 @@ export default combineReducers({
   studentData,
   students,
   getStudentDataToSettings,
-  updatedata
+  updatedata,
+  send
 
 });

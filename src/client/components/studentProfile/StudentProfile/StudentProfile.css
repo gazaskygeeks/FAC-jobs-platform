@@ -229,13 +229,101 @@
   color: #000;
 }
 
-.studentSingleSkills_li:hover  {
+.studentSingleSkills_li:hover {
   cursor: pointer;
   background-color: #b4b4b4
 }
-.studentSingleSkills_li:hover a  {
-  color: blue;
 
+.studentSingleSkills_li:hover a {
+  color: blue;
+}
+
+.sendMailBtn {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid #f7f7f7;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  &:after {
+    position: absolute;
+    transition: .3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: #f7f7f7;
+  }
+  &:nth-of-type(2):after {
+    left: 0;
+  }
+  &:nth-of-type(3):after {
+    right: 0;
+    left: auto;
+  }
+  &:nth-of-type(4):after {
+    left: 0;
+    bottom: auto;
+    top: -3px;
+    width: 100%;
+  }
+  &:nth-of-type(5):after {
+    height: 120%;
+    left: -10%;
+    transform: skewX(15deg);
+    z-index: -1;
+  }
+  &:hover {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+    &:nth-of-type(4):after {
+      top: calc(100% - 3px);
+    }
+    &:nth-of-type(5) {
+      color: #5bcaff;
+    }
+    &:nth-of-type(5):after {
+      left: -10%;
+      width: 120%;
+    }
+    &:nth-of-type(6) {
+      flex-grow: 3;
+    }
+    &:nth-of-type(6):after {
+      width: 0%;
+    }
+    &:nth-of-type(7) {
+      border-radius: 30px;
+    }
+    &:nth-of-type(7):after {
+      width: 0%;
+    }
+    &:nth-of-type(8) {
+      transform: scale(1.2);
+    }
+    &:nth-of-type(8):after {
+      width: 0%;
+    }
+    &:nth-of-type(9) {
+      box-shadow: inset 0px 0px 0px 3px #f7f7f7;
+    }
+    &:nth-of-type(9):after {
+      width: 0%;
+    }
+    &:nth-of-type(10) {
+      box-shadow: 0px 0px 0px 3px #f7f7f7;
+    }
+    &:nth-of-type(10):after {
+      width: 0%;
+    }
+  }
 }
 
 @media (max-width: 786px) {
