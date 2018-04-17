@@ -8,7 +8,7 @@ if (!process.env.DATABASE_URL) {
 if (process.env.NODE_ENV === 'test') {
   data_url = process.env.DATABASE_URL_LOCALLY;
 } else {
-  data_url = process.env.DATABASE_URL;
+  data_url = process.env.DATABASE_URL_LOCALLY;
 }
 
 module.exports = new Pool({ connectionString: data_url, ssl: true });

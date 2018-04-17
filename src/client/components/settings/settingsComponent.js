@@ -86,8 +86,10 @@ class Settings extends Component {
       this.setState({ expanded: true });
 
     } else {
-      const checkbox = document.querySelectorAll('input[type=checkbox]:checked');
-      const arr = Array.prototype.slice.call(checkbox);
+      const checkbox = document.getElementsByName('interest');
+      const arr = Array.prototype.slice.call(checkbox).filter(e => {
+        return e.checked;
+      }); ;
       const interesting = arr.map(e => {
         return e.value;
       });
@@ -105,8 +107,10 @@ class Settings extends Component {
       this.setState({ expanded: true });
 
     } else {
-      const checkbox = document.querySelectorAll('input[type=checkbox]:checked');
-      const arr = Array.prototype.slice.call(checkbox);
+      const checkbox = document.getElementsByName('skills');
+      const arr = Array.prototype.slice.call(checkbox).filter(e => {
+        return e.checked;
+      }); ;
       const skills = arr.map(e => {
         return e.value;
       });
@@ -121,32 +125,16 @@ class Settings extends Component {
   render() {
     const staticInterests=['Freelancing','Mentoring','CFing','Contracts'];
     const staticSkills=['React.js','Node.js','JavaScript','HTML','CSS','CSS3','HTML5','Express.js','PostgreSQL'];
-    const mySkills=[this.state.skills];
-    const myinterest=[this.state.interests];
     const interests = staticInterests.map((interest,i) => {
-      if (myinterest[0].includes(interest)) {
-        return <label key={i} htmlFor={interest}>
-          <input type='checkbox' id={interest} value={interest} checked />
-          {interest}</label>;
-      } else {
-        return <label key={i} htmlFor={interest}>
-          <input type='checkbox' id={interest} value={interest} />
-          {interest}</label>;
-
-      }
+      return <label key={i} htmlFor={interest}>
+        <input name='interest' type='checkbox' id={interest} value={interest} />
+        {interest}</label>;
 
     });
     const skills = staticSkills.map((skill,i) => {
-      if (mySkills[0].includes(skill)) {
-        return <label key={i} htmlFor={skill}>
-          <input type='checkbox' id={skill} value={skill} checked />
-          {skill}</label>;
-      } else {
-        return <label key={i} htmlFor={skill}>
-          <input type='checkbox' id={skill} value={skill} />
-          {skill}</label>;
-
-      }
+      return <label key={i} htmlFor={skill}>
+        <input name='skills' type='checkbox' id={skill} value={skill} />
+        {skill}</label>;
 
     });
 

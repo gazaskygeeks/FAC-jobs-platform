@@ -193,6 +193,7 @@
 
 .studentSkillsList {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
@@ -200,8 +201,6 @@
   background-color: #FFFFFF;
   margin: 0;
   padding: 0;
-  /* -webkit-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56);
-  -moz-box-shadow: 1px 2px 22px 1px rgba(0,0,0,0.56); */
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 

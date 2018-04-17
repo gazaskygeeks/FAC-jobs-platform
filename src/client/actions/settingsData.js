@@ -32,7 +32,9 @@ export const UpdateDataUser= data => dispatch => {
 
       return response;
     })
-    .then(success => dispatch(dataUpdateSuccess(success.message)))
-    .catch(err => dispatch(dataUpdateFailure(err.massage)));
+    .then(success => {
+      dispatch(dataUpdateSuccess(success));
+    })
+    .catch(err => dispatch(dataUpdateFailure(err)));
 
 };
