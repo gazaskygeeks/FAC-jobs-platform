@@ -83,8 +83,6 @@ class PrivateRoute extends Component {
           <Route
             {...rest}
             render={props => {
-              console.log(user.user.name,'kjkkk');
-
               return (
                 (user.isLogged && !user.user.newuser)&&
                 (user.user.name===student_name||user.user.isadmin) ? (

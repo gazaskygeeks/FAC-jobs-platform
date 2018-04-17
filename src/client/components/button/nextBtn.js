@@ -23,8 +23,6 @@ class ButtonNext extends Component {
   }
 
   render() {
-    console.log(this.state,'state');
-
     return (
       <div className='buttonWithErrorMessage'>
         <h4 className={this.state.classname}>{this.state.error}</h4>

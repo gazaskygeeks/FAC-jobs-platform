@@ -67,7 +67,7 @@ passport.use(new Strategy({
       }
     })
     .catch(error => {
-      console.log(error);
+      console.error(error);
     });
 
 }));
