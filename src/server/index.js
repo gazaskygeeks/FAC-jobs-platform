@@ -22,9 +22,9 @@ app.use(passport.session());
 
 passport.use(new Strategy({
 
-  clientID: process.env.GITHUB_CLIENTID,
-  clientSecret: process.env.GITHUB_SECRET,
-  callbackURL: process.env.GITHUB_URL_CB_LOCALLY,
+  clientID: process.env.GITHUB_CLIENTID_HEROKU,
+  clientSecret: process.env.GITHUB_SECRET_HEROKU,
+  callbackURL: process.env.GITHUB_URL_CB_HEROKU,
   profileFields: ['email','displayName','profileUrl','picture.type(large)']
 },(accessToken,refreshToken,profile,done) => {
   axios.get(`https://api.github.com/user/orgs?access_token=${accessToken}`)
