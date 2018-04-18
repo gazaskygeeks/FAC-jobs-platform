@@ -16,6 +16,10 @@ export const START_GET_Q = Symbol('START_GET_Q');
 export const SUCCESS_GET_Q = Symbol('SUCCESS_GET_Q');
 export const FAIL_GET_Q = Symbol('FAIL_GET_Q');
 
+export const SEND_START = Symbol('SEND_START');
+export const SEND_SUCCESS = Symbol('SEND_SUCCESS');
+export const SEND_FAIL = Symbol('SEND_FAIL');
+
 export const START_LOGIN = Symbol('START_LOGIN');
 export const SUCCESS_LOGIN = Symbol('SUCCESS_LOGIN');
 export const FAILURE_LOGIN = Symbol('FAILURE_LOGIN');

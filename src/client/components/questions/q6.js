@@ -86,6 +86,10 @@ class Q6 extends Component {
         return;
       }
       const uploaded = res.body.url;
+      this.setState({
+        files: `success uploading one file ${res.body.original_filename}`,
+        filename: uploaded
+      });
       this.props.storeAnswer({ name: 'cv', value: uploaded });
     });
   }

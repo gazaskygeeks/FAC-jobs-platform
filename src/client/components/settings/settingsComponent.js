@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+
 import * as updatedata from '../../actions/settingsData';
 
 import './style.css';
@@ -139,82 +141,87 @@ class Settings extends Component {
     });
 
     return (
-      <div id='setting' className='setting' >
-        <div className='setting__nav'>
-          <img src='./assets/logo.png'/>
-          <h1>Founders & Coders</h1>
-        </div>
-        <div className='setting__container'>
-          <h1>Edit your Profile</h1>
-          <div className='big__container'>
-            <div className='container__left'>
-              <div className='setting_names'>
-                <div>Display name / </div>
-                <div>Interests / </div>
-                <div>Skills / </div>
-              </div>
-              <div className='setting_names'>
-                <div id='setting_input_btn' className='display_name'>
-                  <span id='span'>{this.state.display_name}</span>
-                  <button id='edit' className='setting_edit' onClick={this.handleEditDispllayName}>
-                    <i id='editIcon' className='fa fa-pencil iconStyle'></i>
-                  </button>
+      (this.props.update.success.ok)?
+        (<Redirect
+          to={{ pathname: `/profile/${this.props.studentData[0].username}` }}
+        />)
+        :
+        <div id='setting' className='setting' >
+          <div className='setting__nav'>
+            <img src='./assets/logo.png'/>
+            <h1>Founders & Coders</h1>
+          </div>
+          <div className='setting__container'>
+            <h1>Edit your Profile</h1>
+            <div className='big__container'>
+              <div className='container__left'>
+                <div className='setting_names'>
+                  <div>Display name / </div>
+                  <div>Interests / </div>
+                  <div>Skills / </div>
                 </div>
-                <div id='setting_input_btn1' className='display_name'>
-                  <span id='span'>My interests</span>
-                  <button id='edit' className='setting_edit' onClick={this.showCheckboxes}>
-                    <i id='editIconInterest' className='fa fa-pencil iconStyle'></i>
-                  </button>
-                  <div className='setting_multiselect'>
-                    <div className='setting_checkboxes' id='checkboxes'>
-                      {interests}
-                    </div>
+                <div className='setting_names'>
+                  <div id='setting_input_btn' className='display_name'>
+                    <span id='span'>{this.state.display_name}</span>
+                    <button id='edit' className='setting_edit' onClick={this.handleEditDispllayName}>
+                      <i id='editIcon' className='fa fa-pencil iconStyle'></i>
+                    </button>
                   </div>
-
-                </div>
-                <div id='setting_input_btn1' className='display_name'>
-                  <span id='span'>My skills</span>
-                  <button id='edit' className='setting_edit' onClick={this.showCheckboxes2}>
-                    <i id='editIconSkills' className='fa fa-pencil iconStyle'></i>
-                  </button>
-                  <div className='setting_multiselect'>
-                    <div className='setting_checkboxes' id='checkboxes2'>
-                      {skills}
+                  <div id='setting_input_btn1' className='display_name'>
+                    <span id='span'>My interests</span>
+                    <button id='edit' className='setting_edit' onClick={this.showCheckboxes}>
+                      <i id='editIconInterest' className='fa fa-pencil iconStyle'></i>
+                    </button>
+                    <div className='setting_multiselect'>
+                      <div className='setting_checkboxes' id='checkboxes'>
+                        {interests}
+                      </div>
                     </div>
-                  </div>
 
+                  </div>
+                  <div id='setting_input_btn1' className='display_name'>
+                    <span id='span'>My skills</span>
+                    <button id='edit' className='setting_edit' onClick={this.showCheckboxes2}>
+                      <i id='editIconSkills' className='fa fa-pencil iconStyle'></i>
+                    </button>
+                    <div className='setting_multiselect'>
+                      <div className='setting_checkboxes' id='checkboxes2'>
+                        {skills}
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='container__right'>
-              <div id='setting_input_btn2' className='email'>
-                {
-                  (this.state.email!=='')?
-                    <span id='span2'>{this.state.email}</span>
-                    :
-                    <span id='span2'>You don\t have email yet</span>
+              <div className='container__right'>
+                <div id='setting_input_btn2' className='email'>
+                  {
+                    (this.state.email!=='')?
+                      <span id='span2'>{this.state.email}</span>
+                      :
+                      <span id='span2'>You don\t have email yet</span>
 
-                }
-                <button id='edit' className='setting_edit' onClick={this.handleEditEmail}>
-                  <i id='editIcon2' className='fa fa-pencil iconStyle'></i>
-                </button>
+                  }
+                  <button id='edit' className='setting_edit' onClick={this.handleEditEmail}>
+                    <i id='editIcon2' className='fa fa-pencil iconStyle'></i>
+                  </button>
 
-              </div>
-              <div className='social__links__setting'><h3>
+                </div>
+                <div className='social__links__setting'><h3>
                 Social Links </h3><img src='./assets/plus.png'/></div>
-              <input id='profile_url' className='setting__input github__URL'
-                type='url' placeholder={this.state.profile_url}/>
-              <input id='social_links' className='setting__input' type='url' />
+                <input id='profile_url' className='setting__input github__URL'
+                  type='url' placeholder={this.state.profile_url}/>
+                <input id='social_links' className='setting__input' type='url' />
 
+              </div>
+            </div>
+            <div className='setting__btn__div'>
+              <input type='submit' value='Save'
+                className='settings__save__btn' onClick={this.handleSubmit}/>
             </div>
           </div>
-          <div className='setting__btn__div'>
-            <input type='submit' value='Save'
-              className='settings__save__btn' onClick={this.handleSubmit}/>
-          </div>
+          <div/>
         </div>
-        <div/>
-      </div>
     );
 
   }
@@ -222,9 +229,15 @@ class Settings extends Component {
 
 Settings.propTypes = {
   studentData: PropTypes.array,
-  updatedata: PropTypes.fun };
+  updatedata: PropTypes.fun,
+  update: PropTypes.obj };
 
+const mapStateToProps = state => {
+  return {
+    update: state.updatedata
+  };
+};
 const mapDispatchToProps = {
   updatedata: updatedata.UpdateDataUser
 };
-export default connect(null, mapDispatchToProps)(Settings);
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

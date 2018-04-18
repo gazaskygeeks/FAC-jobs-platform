@@ -14,9 +14,8 @@ exports.post = (req, res) => {
     if (result[1].rowCount===0) {
       return res.status(503).send();
     }
-    const name=req.session.passport.user.name;
 
-    return res.redirect(`/profile/${name}`);
+    return res.status(200).send('Success Update');
 
   });
 

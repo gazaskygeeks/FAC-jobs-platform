@@ -7,6 +7,7 @@ const students = require('./students.js');
 const settingsData = require('./settingsData.js');
 const updataDataStudent = require('./updateDataStudent.js');
 const current_user = require('./current_user.js');
+const sendMail = require('./sendEmail.js');
 
 router.get('/auth/github',
   passport.authenticate('github',
@@ -35,18 +36,13 @@ router.get('/auth/github/callback',
     }
   }
 );
-
+router.post('/send', sendMail.post);
 router.get('/current_user', current_user.get);
-
 router.post('/storeanswer', storeanswer.post);
 router.get('/getdatausersettings', settingsData.get);
-
 router.get('/getstudent/:student_name', studentProfile.get);
-
 router.get('/students', students.get);
-
 router.post('/updatedata', updataDataStudent.post);
-
 router.get('/logout',(req,res) => {
   res.clearCookie('FAC-APT'); res.redirect('/');
 });

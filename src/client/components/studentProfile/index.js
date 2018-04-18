@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Loader } from 'react-loaders';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as studentDataAction from '../../actions/studentProfile';
+import { Loader } from 'react-loaders';
+import { BeatLoader } from 'react-spinners';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Profile from './StudentProfile/StudentProfile.js';
+import EmailContact from '../emailContact/EmailContact.js';
+import * as studentDataAction from '../../actions/studentProfile';
 import './StudentProfile/StudentProfile.css';
-import { BeatLoader } from 'react-spinners';
 
 class StudentProfile extends Component {
   constructor(props) {
@@ -59,6 +60,9 @@ class StudentProfile extends Component {
             )
           }
         </div>
+        {(this.state.coming==='AdminDashboard')?
+          <EmailContact studentData={studentData} />:
+          <div/>}
       </div>
     );
   }
