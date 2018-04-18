@@ -52,7 +52,7 @@ class Q6 extends Component {
   }
   save() {
     this.props.storeAnswer({ name: 'projects', value: this.state });
-
+    delete this.state.files;
   }
   handlePortfolio(ev) {
     const portfolio= ev.target.value;
@@ -87,14 +87,14 @@ class Q6 extends Component {
       }
       const uploaded = res.body.url;
       this.setState({
-        files: `success uploading one file ${res.body.original_filename}`,
-        filename: uploaded
+        files: `success uploading one file ${res.body.original_filename}`
       });
       this.props.storeAnswer({ name: 'cv', value: uploaded });
     });
   }
 
   render() {
+    console.log(this.props,'ppprops');
 
     return (
       <div className='question__container'>
