@@ -114,7 +114,7 @@ export const firstQ = data => (dispatch, getState) => {
     if ((getState().questionAnswer.projects.length !==0)&&
     ((getState().questionAnswer.projects.project1.name.trim()!==''
     &&getState().questionAnswer.projects.project1.link.trim()!=='')
-    ||(getState().questionAnswer.projects.project2.name.trim()!==''
+    &&(getState().questionAnswer.projects.project2.name.trim()!==''
     &&getState().questionAnswer.projects.project2.link.trim()!==''))
     &&getState().questionAnswer.cv!=='') {
       dispatch(success(data));

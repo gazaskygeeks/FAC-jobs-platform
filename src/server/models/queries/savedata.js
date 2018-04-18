@@ -5,7 +5,10 @@ const storedata = (data, cb) => {
   const arr = Object.keys(projects).map(key => projects[key]);
   const projectsLink = arr.map(obj => {
     return Object.keys(obj).map(key => {
-      return obj[key];
+      if (obj[key].trim()!=='') {
+
+        return obj[key];
+      }
     });
   });
   const socialLinks=[];
@@ -33,6 +36,7 @@ const storedata = (data, cb) => {
 
     ]
   };
+  console.error(sql,'error sql save data');
   dbConnection.query(sql, cb);
 };
 

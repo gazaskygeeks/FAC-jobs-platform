@@ -25,7 +25,7 @@ export default (state = initialState, { type, payload }) => {
     case STORE_DATA_FAILURE:
       return {
         ...state,
-        message: 'Done'
+        message: 'fail'
       };
     case STORE_DATA_SUCCESS:
       return {
