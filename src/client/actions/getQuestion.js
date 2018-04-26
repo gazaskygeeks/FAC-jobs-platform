@@ -29,7 +29,7 @@ export const firstQ = data => (dispatch, getState) => {
     if ((getState().questionAnswer.cohort !=='')&&(getState().questionAnswer.compus !=='')) {
       const campuses = ['Gaza','London','Nazareth'];
       const cohorts = ['FACG1','FACG2','FACG3','FACN1',
-        'FACN2','FACN3','FAC9','FAC10','FAC11','FAC12'];
+        'FACN2','FACN3','FAC1','FAC2','FAC3','FAC4','FAC5','FAC6','FAC7','FAC8','FAC9','FAC10','FAC11','FAC12'];
       if (!campuses.includes(getState().questionAnswer.compus) ||
        !cohorts.includes(getState().questionAnswer.cohort)) {
         dispatch(failer());
