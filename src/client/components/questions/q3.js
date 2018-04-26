@@ -20,16 +20,31 @@ class Q3 extends Component {
     this.tech = this.tech.bind(this);
     this.getSkills = this.getSkills.bind(this);
     this.removeSkill = this.removeSkill.bind(this);
+    this.inituitList = this.inituitList.bind(this);
 
   }
   componentDidMount() {
     this.props.storeAnswer({ name: 'skills', value: this.state.mySkills });
 
   }
+
+  inituitList(char) {
+    return this.state.skills.reduce((acc, skill) => {
+      if (skill.toUpperCase().includes(char)) {
+        acc.push(skill);
+
+        return acc;
+      }
+
+      return acc;
+    }, []);   
+  }
+
   tech(ev) {
     const datalist = document.getElementById('techList');
     const techs= ev.target.value.toUpperCase();
-    const sameSkills = this.state.skills.filter(skill => skill.startsWith(techs));
+    //const sameSkills = this.state.skills.filter(skill => skill.startsWith(techs));
+    const sameSkills= this.inituitList(techs);
     const childArray = datalist.children;
     let cL = childArray.length;
     while (cL > 0) {
