@@ -3,6 +3,9 @@ const connect = require('../database/dbConnection');
 const getUser = {};
 
 getUser.github_id = (github_id, callback) => {
+  console.log({
+    github_id
+  });
   const sqlQuery = `
     SELECT *
       FROM users_table
@@ -10,7 +13,10 @@ getUser.github_id = (github_id, callback) => {
   `;
   connect.query(sqlQuery, (err, response) => {
     if (err) {
-      return callback(new Error('Database error while fetching user'));
+      console.log({
+        err
+      });
+      return callback(new Error('Database error while fetching user1'));
     }
     callback(null, response.rows[0] ? response.rows[0] : []);
   });
@@ -25,7 +31,7 @@ getUser.id = (id, callback) => {
 
   connect.query(sqlQuery, (err, response) => {
     if (err) {
-      return callback(new Error('Database error while fetching user'));
+      return callback(new Error('Database error while fetching user2'));
     }
 
     callback(null, response.rows[0]);

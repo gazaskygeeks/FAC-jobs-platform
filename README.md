@@ -4,7 +4,7 @@
 </p>
 
 # FAC-jobs-platform
-A jobs provider for the Founders & Coders members, where the graduates could look for jobs and present their interests in the ones which they like to work on.
+A jobs provider for the Founders & Coders members, where the graduates could look for jobs and present their interests in the ones they like to work on.
 
 ## Getting Started:
 Clone the repo
@@ -22,7 +22,7 @@ Clone the repo
   ```
   npm i
   ```
-  If not; you should have GitHub account and a founders and coders membership :smile:
+  <h6>If not; you should have GitHub account and a founders and coders membership :smile:</h6>
 
 ## Register with GH
 
@@ -41,7 +41,7 @@ config.env
  COOKIEKEY=<insert a random text>
  ```
 
-The npm install would have added env2. We need to now create a config.env file in the root directory.
+The npm install would have added env2. We need now to create a config.env file in the root directory.
 
 
 
@@ -49,7 +49,7 @@ The npm install would have added env2. We need to now create a config.env file i
 
 Note: Here are some quick instructions to remind you how to set up a database:
 
-In terminal type psql, or pgcli if installed. Within psql/pcli enter the following commands each followed by a return. Things in square brackets are for your desired values. Note that password is a string inside ' ' (NOT double quotes ""):
+In terminal type psql, or pgcli if installed. Within psql/pcli enter the following commands each followed by a return. Things in square brackets are for your desired values. The password should be in a single quotation marks ' ' (NOT double quotes ""):
 
 
 
@@ -72,7 +72,7 @@ CREATE USER <user name> with password <your password>
  Add the database URL in the following format, adding your database's details in your config.env file:
 
 
-DATABASE_URL_LOCALLY = postgres://[username]:[password]@localhost:5432/[database]
+DATABASE_URL_LOCALLY = postgres://[username]:[password]@localhost:5432/[database_name]
 
 Build the database with:
 ```
